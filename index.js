@@ -80,7 +80,8 @@ client.on("message", async message => {
         //console.log(`Channel created ${message.guild.channels.cache.size}`);
 
         message.channel.send(`Channel & Category created : ${message.guild.channels.cache.size}`);
-        console.log(message);
+        //var args = message.content.split(" ");
+        console.log(JSON.stringify(message.guild.channels));
     };
 });
 
