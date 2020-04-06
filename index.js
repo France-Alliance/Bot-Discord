@@ -75,6 +75,12 @@ client.on("message", async message => {
   if (command === "info") {
     message.channel.send(`Your username: ${message.author.username}\nServer name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}\nChannel name: ${message.channel.name}`);
   };
+  
+  if (command === "nbrchannel") {
+    //console.log(`Channel created ${message.guild.channels.cache.size}`);
+
+    message.channel.send(`Channel & Category created : ${message.guild.channels.cache.size}`);
+  };
 });
 
 client.login(token);
