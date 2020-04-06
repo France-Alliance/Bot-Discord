@@ -5,8 +5,7 @@ nodemon --inspect test.js
 console:
 chrome://inspect/
 
-Token:
-NjgxNDk5MDY4MzY2NTg1ODk3.XlPWAA.FWMeagOQiCpozTVBTA3RzmC8n8g
+Token:LOLXD
 
 App ID:
 681499068366585897
