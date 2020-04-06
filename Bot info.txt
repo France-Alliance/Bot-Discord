@@ -1,0 +1,14 @@
+Launch script:
+nodemon --inspect index.js
+nodemon --inspect test.js
+
+console:
+chrome://inspect/
+
+Token:LOLXD
+
+App ID:
+681499068366585897
+
+Bot link:
+https://discordapp.com/oauth2/authorize?client_id=681499068366585897&scope=bot
