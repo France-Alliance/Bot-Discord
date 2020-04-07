@@ -77,11 +77,29 @@ client.on("message", async message => {
     };
 
     if (command === "nbrchannel") {
-        //console.log(`Channel created ${message.guild.channels.cache.size}`);
+        var timestampCreate = [];
+        var argsc = message.content.split(" ");
+        var date = argsc[1];
+        date = date.split("/");
+        var ndate = date[1] + "/" + date[0] + "/" + date[2];
+        var tdate = new Date(ndate).getTime();
+        //var nndate = new Date().getTime();
+        var gdate = [];
+        var i = 0;
 
         message.channel.send(`Channel & Category created : ${message.guild.channels.cache.size}`);
-        //var args = message.content.split(" ");
-        console.log(JSON.stringify(message.guild.channels));
+
+        var tableauformat = message.guild.channels.cache.map((obj) => {
+            timestampCreate.push(obj.createdTimestamp)
+        });
+
+        while (i <= timestampCreate) {
+            if (timestampCreate[i] >= tdate) {
+                gdate.push(timestampCreate[i]);
+            }
+        };
+
+        console.log(timestampCreate, nndate, ndate, tdate, gdate, argsc);
     };
 });
 
