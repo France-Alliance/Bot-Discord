@@ -2,7 +2,7 @@
 //https://gist.github.com/eslachance/3349734a98d30011bb202f47342601d3
 
 const Discord = require('discord.js');
-const { prefix, token, state } = require('./config.json');
+const { prefix, token, state } = require('../config.json');
 const client = new Discord.Client();
 const newUsers = [];
 
