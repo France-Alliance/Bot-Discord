@@ -101,8 +101,13 @@ client.on("message", async message => {
         */
         for (let index = 0; index < timestampCreate.length; index++) {
             const element = timestampCreate[index];
-            gdate.push(element);
-        }
+
+            if (element > tdate && element < nndate) {
+                gdate.push(element);
+            } else {
+                continue
+            };
+        };
 
         console.log(timestampCreate, nndate, ndate, tdate, gdate, argsc);
         message.channel.send(`Channel & Category created since ${ndate} : ${gdate.length}`);
