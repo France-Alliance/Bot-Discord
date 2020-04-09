@@ -182,23 +182,23 @@ the command <>
 
         if (argsc[1] === "start") {
             console.log("start of the meeting");
-            var SMeet_Unix = new Date().getTime();
-            var SMeet = new Date().getHours();
+            var SMeet = new Date().getTime();
+            var SMeetD = new Date().getHours();
 
-            console.log(SMeet_Unix);
+            console.log(SMeetD);
             Meet.push(SMeet_Unix, argsc[2], null)
 
-            message.channel.send(`Vous commencez une réunion nommée ${argsc[2]} à ${SMeet}h, bon bah bonne réunion ;)`);
+            message.channel.send(`Vous commencez une réunion nommée ${argsc[2]} à ${SMeetD}h, bon bah bonne réunion ;)`);
         };
 
         if (argsc[1] === "end") {
             console.log("End of the meeting");
-            var FMeet_Unix = new Date().getTime();
-            var FMeet = new Date().getHours();
+            var FMeet = new Date().getTime();
+            var FMeetD = new Date().getHours();
 
-            console.log(FMeet_Unix);
+            console.log(FMeet);
 
-            message.channel.send(`Vous finissez votre réunion nommée ${argsc[2]} à ${FMeet}h !`);
+            message.channel.send(`Vous finissez votre réunion nommée ${argsc[2]} de {heuretotal} à cette heure-là ${FMeetD}h !`);
         };
 
     };
