@@ -56,6 +56,24 @@ client.on("message", async message => {
 
     // Let's go with a few common example commands! Feel free to delete or change those.
 
+	if (command === "help") {
+		message.channel.send(`the command <!info> give you:
+Your username:{X}
+Channel name:{X}
+Server name:{X} (with {X} total members)
+
+the command <!say [What you want]> give you:
+[What you want]
+
+the command <!ping> give you:
+Pong!
+For real, latency is {X}ms and API Latency is {X}ms
+
+the command <!token> give you:
+the token is {X}
+`);
+	}
+	
     if (command === "ping") {
         // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
         // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
@@ -74,8 +92,17 @@ client.on("message", async message => {
     };
     //if !info, answer with the username, the guild name and the number of user in the guild
     if (command === "info") {
-        message.channel.send(`Your username: ${message.author.username}\nServer name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}\nChannel name: ${message.channel.name}`);
+        message.channel.send(`Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)
+		\nThis bot has been built by @Darzzake and with the M A S S I V E help of @Fr_Space ☭.\rYou know AM2 ?! You'r looking for a group to play with, don't hesitate to join our Alliance : Discord.gg/ZGWHpfm !`);
     };
+	
+    if (command === "serveur_infos") {
+        message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\rChannel Count: ${message.guild.channelsCount}\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner}\rCreated: ${message.guild.createdAt}\rServer Icon: ${message.guild.icon}`);
+    };
+	
+	if (command === "token") {
+		message.channel.send(`Really ${message.author.username} ?! Did you actually think i would put my token in a command?`);
+	}
 
     if (command === "nbrchannel") {
         var timestampCreate = [];
@@ -107,6 +134,7 @@ client.on("message", async message => {
         console.log(timestampCreate, nndate, ndate, tdate, gdate, argsc);
         message.channel.send(`Channel & Category created since ${ndate} : ${gdate.length}`);
     };
+
 });
 
 client.login(token);
