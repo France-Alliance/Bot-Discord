@@ -6,6 +6,7 @@ const { prefix, state } = require('./config.json');
 const { token } = require('./token.json');
 const client = new Discord.Client();
 const newUsers = [];
+const Meet = []; // Strutures = SMeet, OMeet, FMeet
 
 client.on("ready", () => {
     // This event will run if the bot starts, and logs in, successfully.
@@ -91,14 +92,7 @@ client.on("message", async message => {
         var tableauformat = message.guild.channels.cache.map((obj) => {
             timestampCreate.push(obj.createdTimestamp)
         });
-        /*
-                while (i <= timestampCreate) {
-                    console.log(timestampCreate[i]);
-                    if (timestampCreate[i] >= tdate) {
-                        gdate.push(timestampCreate[i]);
-                    }
-                };
-        */
+
         for (let index = 0; index < timestampCreate.length; index++) {
             const element = timestampCreate[index];
 
@@ -111,6 +105,34 @@ client.on("message", async message => {
 
         console.log(timestampCreate, nndate, ndate, tdate, gdate, argsc);
         message.channel.send(`Channel & Category created since ${ndate} : ${gdate.length}`);
+    };
+
+    if (command === "meet") {
+        var argsc = message.content.split(" ");
+        console.log(argsc);
+        // Strutures = SMeet, OMeet, FMeet
+
+        if (argsc[1] === "Start") {
+            console.log("Start Meet");
+            var SMeet = new Date().getTime();
+            var SMeetD = new Date().getHours();
+
+            console.log(SMeet);
+            Meet.push(SMeet, argsc[2], null)
+
+            message.channel.send(`Vous commencez une réunion nommée ${argsc[2]} à ${SMeetD}h, bon bah bonne réunion ;)`);
+        };
+
+        if (argsc[1] === "End") {
+            console.log("End Meet");
+            var FMeet = new Date().getTime();
+            var FMeetD = new Date().getHours();
+
+            console.log(FMeet);
+
+            message.channel.send(`Vous finissez votre réunion nommée ${argsc[2]} de {heurefin} à cette heure-là ${FMeetD}h !`);
+        };
+
     };
 });
 
