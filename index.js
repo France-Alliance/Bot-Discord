@@ -160,16 +160,22 @@ the command <>
         var tableauformat = message.guild.channels.cache.map((obj) => {
             timestampCreate.push(obj.createdTimestamp)
         });
+        /*
+                for (let index = 0; index < timestampCreate.length; index++) {
+                    const element = timestampCreate[index];
 
-        for (let index = 0; index < timestampCreate.length; index++) {
-            const element = timestampCreate[index];
-
-            if (element > tdate && element < nndate) {
-                gdate.push(element);
-            } else {
-                continue
+                    if (element > tdate && element < nndate) {
+                        gdate.push(element);
+                    } else {
+                        continue
+                    };
+                };
+        */
+        timestampCreate.forEach(ttc => {
+            if (ttc > tdate && ttc < nndate) {
+                gdate.push(ttc);
             };
-        };
+        });
 
         console.log(timestampCreate, nndate, ndate, tdate, gdate, argsc);
         message.channel.send(`Channel & Category created since ${ndate} : ${gdate.length}`);
@@ -186,7 +192,7 @@ the command <>
             var SMeetD = new Date().getHours();
 
             console.log(SMeetD);
-            Meet.push(SMeet_Unix, argsc[2], null)
+            Meet.push(SMeet, argsc[2], null)
 
             message.channel.send(`Vous commencez une réunion nommée ${argsc[2]} à ${SMeetD}h, bon bah bonne réunion ;)`);
         };
@@ -197,6 +203,10 @@ the command <>
             var FMeetD = new Date().getHours();
 
             console.log(FMeet);
+
+            Meet.forEach(m => {
+                console.log(m);
+            });
 
             message.channel.send(`Vous finissez votre réunion nommée ${argsc[2]} de {heuretotal} à cette heure-là ${FMeetD}h !`);
         };
