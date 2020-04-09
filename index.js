@@ -84,23 +84,28 @@ client.on("message", async message => {
         date = date.split("/");
         var ndate = date[1] + "/" + date[0] + "/" + date[2];
         var tdate = new Date(ndate).getTime();
-        //var nndate = new Date().getTime();
+        var nndate = new Date().getTime();
         var gdate = [];
         var i = 0;
-
-        message.channel.send(`Channel & Category created : ${message.guild.channels.cache.size}`);
 
         var tableauformat = message.guild.channels.cache.map((obj) => {
             timestampCreate.push(obj.createdTimestamp)
         });
-
-        while (i <= timestampCreate) {
-            if (timestampCreate[i] >= tdate) {
-                gdate.push(timestampCreate[i]);
-            }
-        };
+        /*
+                while (i <= timestampCreate) {
+                    console.log(timestampCreate[i]);
+                    if (timestampCreate[i] >= tdate) {
+                        gdate.push(timestampCreate[i]);
+                    }
+                };
+        */
+        for (let index = 0; index < timestampCreate.length; index++) {
+            const element = timestampCreate[index];
+            gdate.push(element);
+        }
 
         console.log(timestampCreate, nndate, ndate, tdate, gdate, argsc);
+        message.channel.send(`Channel & Category created since ${ndate} : ${gdate.length}`);
     };
 });
 
