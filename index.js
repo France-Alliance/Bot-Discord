@@ -14,10 +14,9 @@ const mysql = require('mysql');
 var conn = mysql.createConnection({ host: "localhost", user: "Program", password: "HelloWords42", port: "27017" });
 
 conn.connect((err) => {
-    if (err) throw err;
-    console.log("Connected!");
+    console.log("Connected!", err);
     conn.query("CREATE DATABASE Botdiscord", function(err) {
-        console.log("Database created");
+        console.log("Database created", err);
     });
 });
 
