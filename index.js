@@ -7,16 +7,26 @@ const { token } = require('./token.json');
 const client = new Discord.Client();
 const newUsers = [];
 const Meet = []; // Strutures = SMeet, OMeet, FMeet
+const Cbdd = false;
 
 // DEBUT PARTIE BDD
+
 const mysql = require('mysql');
 
 var conn = mysql.createConnection({ host: "localhost", user: "Program", password: "HelloWords42", port: "27017" });
 
 conn.connect((err) => {
-    console.log("Connected!", err);
+
+    if (err != null || "" || undefined) {
+        console.log("Not Connected", err);
+    };
+
+    if (err == null || "" || undefined) {
+        console.log("Connected!");
+    };
+
     conn.query("CREATE DATABASE Botdiscord", function(err) {
-        console.log("Database created", err);
+        console.log("Database created");
     });
 });
 
@@ -111,7 +121,7 @@ the command <>
     //if !info, answer with the username, the guild name and the number of user in the guild
     if (command === "info") {
         message.channel.send(`Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)
-		\nThis bot has been built by @Darzzake and with the M A S S I V E help of @Fr_Space ☭.\rYou know AM2 ?! You'r looking for a group to play with, don't hesitate to join our Alliance : Discord.gg/ZGWHpfm !`);
+        \nThis bot has been built by @${message.author.username} and with the M A S S I V E help of @Fr_Space ☭.\rYou know AM2 ?! You'r looking for a group to play with, don't hesitate to join our Alliance : Discord.gg/ZGWHpfm !`);
     };
 
     if (command === "serveur_infos") {
