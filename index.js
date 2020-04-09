@@ -160,17 +160,7 @@ the command <>
         var tableauformat = message.guild.channels.cache.map((obj) => {
             timestampCreate.push(obj.createdTimestamp)
         });
-        /*
-                for (let index = 0; index < timestampCreate.length; index++) {
-                    const element = timestampCreate[index];
 
-                    if (element > tdate && element < nndate) {
-                        gdate.push(element);
-                    } else {
-                        continue
-                    };
-                };
-        */
         timestampCreate.forEach(ttc => {
             if (ttc > tdate && ttc < nndate) {
                 gdate.push(ttc);
