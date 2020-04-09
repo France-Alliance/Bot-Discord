@@ -6,6 +6,7 @@ const { prefix, state } = require('./config.json');
 const { token } = require('./token.json');
 const client = new Discord.Client();
 const newUsers = [];
+const Meet = []; // Strutures = SMeet, OMeet, FMeet
 
 client.on("ready", () => {
     // This event will run if the bot starts, and logs in, successfully.
@@ -73,7 +74,7 @@ the command <!token> give you:
 the token is {X}
 `);
 	}
-	
+
     if (command === "ping") {
         // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
         // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
@@ -95,11 +96,11 @@ the token is {X}
         message.channel.send(`Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)
 		\nThis bot has been built by @Darzzake and with the M A S S I V E help of @Fr_Space ☭.\rYou know AM2 ?! You'r looking for a group to play with, don't hesitate to join our Alliance : Discord.gg/ZGWHpfm !`);
     };
-	
+
     if (command === "serveur_infos") {
         message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\rChannel Count: ${message.guild.channelsCount}\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner}\rCreated: ${message.guild.createdAt}\rServer Icon: ${message.guild.icon}`);
     };
-	
+
 	if (command === "token") {
 		message.channel.send(`Really ${message.author.username} ?! Did you actually think i would put my token in a command?`);
 	}
@@ -118,23 +119,48 @@ the token is {X}
         var tableauformat = message.guild.channels.cache.map((obj) => {
             timestampCreate.push(obj.createdTimestamp)
         });
-        /*
-                while (i <= timestampCreate) {
-                    console.log(timestampCreate[i]);
-                    if (timestampCreate[i] >= tdate) {
-                        gdate.push(timestampCreate[i]);
-                    }
-                };
-        */
+
         for (let index = 0; index < timestampCreate.length; index++) {
             const element = timestampCreate[index];
-            gdate.push(element);
-        }
+
+            if (element > tdate && element < nndate) {
+                gdate.push(element);
+            } else {
+                continue
+            };
+        };
 
         console.log(timestampCreate, nndate, ndate, tdate, gdate, argsc);
         message.channel.send(`Channel & Category created since ${ndate} : ${gdate.length}`);
     };
 
+    if (command === "meet") {
+        var argsc = message.content.split(" ");
+        console.log(argsc);
+        // Strutures = SMeet, OMeet, FMeet
+
+        if (argsc[1] === "Start") {
+            console.log("Start Meet");
+            var SMeet = new Date().getTime();
+            var SMeetD = new Date().getHours();
+
+            console.log(SMeet);
+            Meet.push(SMeet, argsc[2], null)
+
+            message.channel.send(`Vous commencez une réunion nommée ${argsc[2]} à ${SMeetD}h, bon bah bonne réunion ;)`);
+        };
+
+        if (argsc[1] === "End") {
+            console.log("End Meet");
+            var FMeet = new Date().getTime();
+            var FMeetD = new Date().getHours();
+
+            console.log(FMeet);
+
+            message.channel.send(`Vous finissez votre réunion nommée ${argsc[2]} de {heurefin} à cette heure-là ${FMeetD}h !`);
+        };
+
+    };
 });
 
 client.login(token);
