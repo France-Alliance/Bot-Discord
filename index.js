@@ -8,6 +8,21 @@ const client = new Discord.Client();
 const newUsers = [];
 const Meet = []; // Strutures = SMeet, OMeet, FMeet
 
+// DEBUT PARTIE BDD
+const mysql = require('mysql');
+
+var conn = mysql.createConnection({ host: "localhost", user: "Program", password: "HelloWords42", port: "27017" });
+
+conn.connect((err) => {
+    if (err) throw err;
+    console.log("Connected!");
+    conn.query("CREATE DATABASE Botdiscord", function(err) {
+        console.log("Database created");
+    });
+});
+
+// FIN PARTIE BDD
+
 client.on("ready", () => {
     // This event will run if the bot starts, and logs in, successfully.
     console.log(`Bot is ready.\nHe has started in ${client.guilds.cache.size} guilds,  with ${client.users.cache.size} users in ${client.channels.cache.size} channels`);
@@ -57,8 +72,8 @@ client.on("message", async message => {
 
     // Let's go with a few common example commands! Feel free to delete or change those.
 
-	if (command === "help") {
-		message.channel.send(`the command <!info> give you:
+    if (command === "help") {
+        message.channel.send(`the command <!info> give you:
 Your username:{X}
 Channel name:{X}
 Server name:{X} (with {X} total members)
@@ -76,7 +91,7 @@ the token is {X}
 the command <>
 
 `);
-	}
+    };
 
     if (command === "ping") {
         // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
@@ -104,23 +119,23 @@ the command <>
         message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\rChannel Count: ${message.guild.channelsCount}\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner}\rCreated: ${message.guild.createdAt}\rServer Icon: ${message.guild.icon}`);
     };
 
-  	if (command === "token") {
-  		message.channel.send(`Really ${message.author.username} ?! Did you actually think i would put my token in a command?`);
+    if (command === "token") {
+        message.channel.send(`Really ${message.author.username} ?! Did you actually think i would put my token in a command?`);
     };
 
-  	if (command === "myID") {
-      console.log("1st step");
-      var user = msg.mentions.users.first();
+    if (command === "myID") {
+        console.log("1st step");
+        var user = msg.mentions.users.first();
 
-    if (!user) {
-          console.log("Your ID is...");
-      		message.channel.send(`Your ID is ${message.author.id} `);
-    };
-    if (user) {
-          console.log("His ID is...");
-          message.channel.send(`His ID is ${message.user.id} `);
-    };
-	}
+        if (!user) {
+            console.log("Your ID is...");
+            message.channel.send(`Your ID is ${message.author.id} `);
+        };
+        if (user) {
+            console.log("His ID is...");
+            message.channel.send(`His ID is ${message.user.id} `);
+        };
+    }
 
     if (command === "nbrchannel") {
         var timestampCreate = [];
