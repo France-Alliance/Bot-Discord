@@ -11,4 +11,4 @@ App ID:
 681499068366585897
 
 Bot link:
-https://discordapp.com/oauth2/authorize?client_id=681499068366585897&scope=bot
+https://discordapp.com/oauth2/authorize?client_id=697747694017314817&scope=bot
