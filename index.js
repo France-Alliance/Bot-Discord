@@ -167,14 +167,18 @@ the command <>
             };
         });
 
-        console.log(timestampCreate, nndate, ndate, tdate, gdate, argsc);
         message.channel.send(`Channel & Category created since ${ndate} : ${gdate.length}`);
     };
 
     if (command === "meet") {
         var argsc = message.content.split(" ");
+        var timeHServer = new Date().getHours();
+        var timeMServer = new Date().getMinutes();
+        var timeSServer = new Date().getSeconds();
+        message.channel.send(`Heure du serveur : ${timeHServer}:${timeMServer}:${timeSServer}`);
+
         console.log(argsc);
-        // Strutures = SMeet_Unix, FMeet_Unix
+        // Strutures = SMeet, name, FMeet
 
         if (argsc[1] === "start") {
             console.log("start of the meeting");
@@ -182,7 +186,8 @@ the command <>
             var SMeetD = new Date().getHours();
 
             console.log(SMeetD);
-            Meet.push(SMeet, argsc[2], null)
+            Meet.push([SMeet, argsc[2], null])
+            console.log(Meet);
 
             message.channel.send(`Vous commencez une réunion nommée ${argsc[2]} à ${SMeetD}h, bon bah bonne réunion ;)`);
         };
@@ -194,11 +199,18 @@ the command <>
 
             console.log(FMeet);
 
-            Meet.forEach(m => {
-                console.log(m);
-            });
+            for (let index = 0; index < Meet.length; index++) {
+                const meet = Meet[index];
 
-            message.channel.send(`Vous finissez votre réunion nommée ${argsc[2]} de {heuretotal} à cette heure-là ${FMeetD}h !`);
+                if (meet[1] === argsc[2]) {
+                    var duree = FMeet - meet[0]
+                    duree = new Date(duree).getMinutes();
+                };
+
+                console.log("meet : ", meet, duree);
+            };
+
+            message.channel.send(`Vous finissez votre réunion nommée ${argsc[2]} de ${duree}min à cette heure-là ${FMeetD}h !`);
         };
 
     };
