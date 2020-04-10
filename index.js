@@ -177,40 +177,71 @@ the command <>
         var timeSServer = new Date().getSeconds();
         message.channel.send(`Heure du serveur : ${timeHServer}:${timeMServer}:${timeSServer}`);
 
-        console.log(argsc);
-        // Strutures = SMeet, name, FMeet
-
         if (argsc[1] === "start") {
-            console.log("start of the meeting");
             var SMeet = new Date().getTime();
             var SMeetD = new Date().getHours();
 
-            console.log(SMeetD);
             Meet.push([SMeet, argsc[2], null])
-            console.log(Meet);
 
             message.channel.send(`Vous commencez une réunion nommée ${argsc[2]} à ${SMeetD}h, bon bah bonne réunion ;)`);
         };
 
+        if (argsc[1] === "list") {
+
+            if (Meet.length != 0) {
+                message.channel.send(`Il y a ${Meet.length} réunion en cours`);
+            } else {
+                message.channel.send(`Auncune réunion est enregistré`);
+            };
+
+        };
+
+        if (argsc[1] === "search") {
+
+            if (Meet.length != 0) {
+                for (let index = 0; index < Meet.length; index++) {
+                    const meet = Meet[index];
+                    var SMeet = null;
+                    SMeet = meet.indexOf(argsc[2]);
+
+                    console.log(SMeet);
+                    if (SMeet != null) {
+                        var SMeetH = new Date(meet[0]).getHours();
+                        var SMeetM = new Date(meet[0]).getMinutes();
+                        var SMeetS = new Date(meet[0]).getSeconds();
+
+                        message.channel.send(`Il ya bien une réunion au nom de ${argsc[2]} qui à commencé à ${SMeetH}:${SMeetM}:${SMeetS}`);
+                    };
+                };
+            } else {
+                message.channel.send(`Auncune réunion à ce nom : ${argsc[2]}`);
+            };
+
+        };
+
         if (argsc[1] === "end") {
-            console.log("End of the meeting");
             var FMeet = new Date().getTime();
             var FMeetD = new Date().getHours();
 
-            console.log(FMeet);
+            if (Meet.length != 0) {
+                for (let index = 0; index < Meet.length; index++) {
+                    const meet = Meet[index];
 
-            for (let index = 0; index < Meet.length; index++) {
-                const meet = Meet[index];
+                    if (meet[1] === argsc[2]) {
+                        var duree = FMeet - meet[0]
+                        duree = new Date(duree).getMinutes();
+                        message.channel.send(`Vous finissez votre réunion nommée ${argsc[2]} de ${duree}min à cette heure-là ${FMeetD}h !`);
+                        Meet.splice(index, 1);
+                    };
 
-                if (meet[1] === argsc[2]) {
-                    var duree = FMeet - meet[0]
-                    duree = new Date(duree).getMinutes();
+                    if (meet[1] != argsc[2]) {
+                        message.channel.send(`Auncune réunion à ce nom : ${argsc[2]}`);
+                    };
                 };
-
-                console.log("meet : ", meet, duree);
+            } else {
+                message.channel.send(`Auncune réunion est enregistré`);
             };
 
-            message.channel.send(`Vous finissez votre réunion nommée ${argsc[2]} de ${duree}min à cette heure-là ${FMeetD}h !`);
         };
 
     };
