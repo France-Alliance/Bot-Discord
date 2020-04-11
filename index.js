@@ -55,11 +55,6 @@ client.on("guildMemberAdd", (member) => {
     };
 });
 
-client.on("guildMemberRemove", (member) => {
-    const guild = member.guild;
-    if (newUsers[guild.id].has(member.id)) newUsers.delete(member.id);
-});
-
 //commands code
 client.on("message", async message => {
     // This event will run on every single message received, from any channel or DM.
