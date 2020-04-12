@@ -158,9 +158,9 @@ the command <>
         message.channel.send(`Really ${message.author.username} ?! Did you actually think i would put my token in a command?`);
     };
 
-    if (command === "myID") {
+    if (command === "myid") {
         console.log("1st step");
-        var user = msg.mentions.users.first();
+        var user = message.mentions.users.first();
 
         if (!user) {
             console.log("Your ID is...");
@@ -170,7 +170,7 @@ the command <>
             console.log("His ID is...");
             message.channel.send(`His ID is ${message.user.id} `);
         };
-    }
+    };
 
     if (command === "nbrchannel") {
         var timestampCreate = [];
