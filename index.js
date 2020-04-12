@@ -177,16 +177,17 @@ Server Icon: {X}
         };
     };
 
-  if (command === "azerty") {
-      console.log("HE IS MAYBE THE MASTER !");
+    if (command === "azerty") {
+        console.log("HE IS MAYBE THE MASTER !");
 
-  		if (msg.author.id == "331778741917319168" || "145525624939741184") {
-        console.log("HE IS THE MASTER !");
-  			message.channel.send("What can I do for you, Master ?");
-  		} else {
-        console.log();
-  			message.channel.send("Sorry your not a dev");
-  		};
+        if (message.author.id == "331778741917319168" || "145525624939741184") {
+            console.log("HE IS THE MASTER !");
+            message.channel.send("What can I do for you, Master ?");
+        } else {
+            console.log();
+            message.channel.send("Sorry your not a dev");
+        };
+    };
 
     if (command === "nbrchannel") {
         var timestampCreate = [];
