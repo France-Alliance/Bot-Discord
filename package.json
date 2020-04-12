@@ -1,6 +1,6 @@
 {
     "name": "Bot-Discord",
-    "version": "alpha",
+    "version": "1.0.0",
     "dependencies": {
         "discord": "^0.8.2"
     }
