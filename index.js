@@ -77,22 +77,27 @@ client.on("message", async message => {
     // Let's go with a few common example commands! Feel free to delete or change those.
 
     if (command === "help") {
-        message.channel.send(`the command <!info> give you:
+        message.channel.send(`the command <${prefix}info> give you:
 Your username:{X}
 Channel name:{X}
 Server name:{X} (with {X} total members)
 
-the command <!say [What you want]> give you:
+the command <${prefix}say [What you want]> give you:
 [What you want]
 
-the command <!ping> give you:
+the command <${prefix}ping> give you:
 Pong!
 For real, latency is {X}ms and API Latency is {X}ms
 
-the command <!token> give you:
+the command <${prefix}token> give you:
 the token is {X}
 
-the command <>
+the command <${prefix}serveur_infos>
+Dev Labs: {X}
+Server Region: {X}
+Owner: {X}
+Created: {X}
+Server Icon: {X}
 
 `);
     };
@@ -151,14 +156,14 @@ the command <>
         console.log("Date as YYYY-MM-DD hh:mm:ss Format: " + year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
 
         console.log(ts)
-        message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\rChannel Count: ${message.guild.channelsCount}\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner}\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL("jpg", true, 2048)}`);
+        message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner}\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL("jpg", true, 2048)}`);
     };
 
     if (command === "token") {
         message.channel.send(`Really ${message.author.username} ?! Did you actually think i would put my token in a command?`);
     };
 
-    if (command === "myID") {
+    if (command === "myid") {
         console.log("1st step");
         var user = msg.mentions.users.first();
 
@@ -170,7 +175,7 @@ the command <>
             console.log("His ID is...");
             message.channel.send(`His ID is ${message.user.id} `);
         };
-    }
+    };
 
     if (command === "nbrchannel") {
         var timestampCreate = [];
