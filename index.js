@@ -120,41 +120,38 @@ the command <>
     };
 
     if (command === "serveur_infos") {
-      // unix timestamp
-      var ts = message.guild.createdTimestamp;
+        // unix timestamp
+        var ts = message.guild.createdTimestamp;
 
-      // convert unix timestamp to milliseconds
-      var ts_ms = ts * 1000;
+        // initialize new Date object
+        var date_ob = new Date(ts);
 
-      // initialize new Date object
-      var date_ob = new Date(ts_ms);
+        // year as 4 digits (YYYY)
+        var year = date_ob.getFullYear();
 
-      // year as 4 digits (YYYY)
-      var year = date_ob.getFullYear();
+        // month as 2 digits (MM)
+        var month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
 
-      // month as 2 digits (MM)
-      var month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+        // date as 2 digits (DD)
+        var date = ("0" + date_ob.getDate()).slice(-2);
 
-      // date as 2 digits (DD)
-      var date = ("0" + date_ob.getDate()).slice(-2);
+        // hours as 2 digits (hh)
+        var hours = ("0" + date_ob.getHours()).slice(-2);
 
-      // hours as 2 digits (hh)
-      var hours = ("0" + date_ob.getHours()).slice(-2);
+        // minutes as 2 digits (mm)
+        var minutes = ("0" + date_ob.getMinutes()).slice(-2);
 
-      // minutes as 2 digits (mm)
-      var minutes = ("0" + date_ob.getMinutes()).slice(-2);
+        // seconds as 2 digits (ss)
+        var seconds = ("0" + date_ob.getSeconds()).slice(-2);
 
-      // seconds as 2 digits (ss)
-      var seconds = ("0" + date_ob.getSeconds()).slice(-2);
+        var dte = year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
 
-      var dte = year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
+        console.log(ts.toLocaleString());
 
-      console.log(ts.toLocaleString());
+        console.log("Date as YYYY-MM-DD hh:mm:ss Format: " + year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
 
-      console.log("Date as YYYY-MM-DD hh:mm:ss Format: " + year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
-
-      console.log(ts)
-      message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\rChannel Count: ${message.guild.channelsCount}\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner}\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL("jpg", true, 2048)}`);
+        console.log(ts)
+        message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\rChannel Count: ${message.guild.channelsCount}\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner}\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL("jpg", true, 2048)}`);
     };
 
     if (command === "token") {
