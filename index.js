@@ -165,7 +165,7 @@ Server Icon: {X}
 
     if (command === "myid") {
         console.log("1st step");
-        var user = msg.mentions.users.first();
+        var user = message.mentions.users.first();
 
         if (!user) {
             console.log("Your ID is...");
