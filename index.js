@@ -164,16 +164,13 @@ Server Icon: {X}
     };
 
     if (command === "myid") {
-        console.log("1st step");
-        var user = message.mentions.users.first();
+        var userm = message.mentions;
 
-        if (!user) {
-            console.log("Your ID is...");
+        if (userm.users.size === 0) {
             message.channel.send(`Your ID is ${message.author.id} `);
         };
-        if (user) {
-            console.log("His ID is...");
-            message.channel.send(`His ID is ${message.user.id} `);
+        if (userm.users.size != 0) {
+            message.channel.send(`His ID is ${userm.users.map(user => user.id)} `);
         };
     };
 
