@@ -2,6 +2,7 @@
     "name": "Bot-Discord",
     "version": "1.0.0",
     "dependencies": {
-        "discord": "^0.8.2"
+        "discord": "^0.8.2",
+        "sqlite3": "^4.1.1"
     }
 }
