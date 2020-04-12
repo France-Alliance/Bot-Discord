@@ -8,29 +8,30 @@ const client = new Discord.Client();
 const newUsers = [];
 const Meet = []; // Strutures = SMeet, OMeet, FMeet
 const Cbdd = false;
+const sqlite = require('sqlite3');
+const fs = require('fs');
 
-// DEBUT PARTIE BDD
+if (fs.existsSync('./Bot.db3')) {
+    var db = new sqlite.Database('Bot.db3', sqlite.OPEN_READWRITE, (err) => {
+        if (err) {
+            console.error(err.message);
+        };
 
-const mysql = require('mysql');
+        console.log('Connected to the Database');
+    })
+} else {
+    var db = new sqlite.Database('Bot.db3', (err) => {
+        if (err) {
+            console.error(err.message);
+        };
 
-var conn = mysql.createConnection({ host: "localhost", user: "Program", password: "HelloWords42", port: "27017" });
-
-conn.connect((err) => {
-
-    if (err != null || "" || undefined) {
-        console.log("Not Connected", err);
-    };
-
-    if (err == null || "" || undefined) {
-        console.log("Connected!");
-    };
-
-    conn.query("CREATE DATABASE Botdiscord", function(err) {
-        console.log("Database created");
+        db.run(`CREATE TABLE anniversaire (
+                        PlayerID text, 
+                        Date text
+                )`);
+        console.log('Connected and Create to the Database');
     });
-});
-
-// FIN PARTIE BDD
+};
 
 client.on("ready", () => {
     // This event will run if the bot starts, and logs in, successfully.
@@ -120,8 +121,18 @@ Server Icon: {X}
     };
     //if !info, answer with the username, the guild name and the number of user in the guild
     if (command === "info") {
+        var nameDev = [];
+
+        message.guild.members.cache.map((obj) => {
+            if (obj.id === "331778741917319168" || obj.id === "145525624939741184") {
+                nameDev.push(obj.user);
+            }
+        });
+
+        console.log(nameDev);
+
         message.channel.send(`Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)
-        \nThis bot has been built by @${message.author.username} and with the M A S S I V E help of @Fr_Space ☭.\rYou know AM2 ?! You'r looking for a group to play with, don't hesitate to join our Alliance : Discord.gg/ZGWHpfm !`);
+        \nThis bot has been built by ${nameDev[0]} and with the M A S S I V E help of ${nameDev[1]}.\rYou know AM2 ?! You'r looking for a group to play with, don't hesitate to join our Alliance : Discord.gg/ZGWHpfm !`);
     };
 
     if (command === "serveur_infos") {
@@ -155,7 +166,7 @@ Server Icon: {X}
 
         console.log("Date as YYYY-MM-DD hh:mm:ss Format: " + year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
 
-        console.log(ts)
+        console.log(message.guild.owner)
         message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner}\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL("jpg", true, 2048)}`);
     };
 
@@ -178,7 +189,7 @@ Server Icon: {X}
         console.log("HE IS MAYBE THE MASTER !");
 
         if (message.author.id === "331778741917319168" || message.author.id === "145525624939741184") {
-            console.log("HE IS THE MASTER !", message.author.id);
+            console.log("HE IS THE MASTER !");
             message.channel.send("What can I do for you, Master ?");
         } else {
             console.log();
@@ -197,7 +208,7 @@ Server Icon: {X}
         var gdate = [];
         var i = 0;
 
-        var tableauformat = message.guild.channels.cache.map((obj) => {
+        message.guild.channels.cache.map((obj) => {
             timestampCreate.push(obj.createdTimestamp)
         });
 
@@ -283,6 +294,57 @@ Server Icon: {X}
             };
 
         };
+
+    };
+
+    if (command === 'anniversaire') {
+        var argsc = message.content.split(" ");
+
+        if (argsc[1] === 'add') {
+            var author = message.mentions.users;
+            var date = String(argsc[2]);
+
+            db.serialize
+
+            db.run(`INSERT into anniversaire (PlayerID, Date) VALUES (${author.map((obj) => { return obj.id; })}, ${date})`, (err) => {
+                if (err) {
+                    console.error(err.message);
+                };
+
+                console.log('Add DB Values');
+            });
+            message.channel.send(`l'Anniversaire de ${author.map((obj) => { return obj.username; })} à était enregistrer (${date})`)
+        };
+
+        if (argsc[1] === 'list') {
+            let sql = `SELECT * FROM anniversaire`
+
+            db.all(sql, [], (err, rows) => {
+                if (err) {
+                    throw err;
+                };
+
+                var player = [];
+
+                rows.forEach((row) => {
+                    console.log(row);
+                    message.guild.members.cache.forEach((iddb) => {
+                        if (row.PlayerID === iddb.id) {
+                            player.push([iddb.user, row.Date]);
+                        };
+                    });
+                });
+
+                message.channel.send('Voici la liste des personne ayant enregistrer leurs anniversaire :');
+                player.forEach((name) => {
+                    message.channel.send(` - ${name[0]} (${name[1]})`);
+                })
+            });
+        };
+
+        if (argsc[1] === 'search') {};
+
+        if (argsc[1] === 'remove') {};
 
     };
 });
