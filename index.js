@@ -305,8 +305,6 @@ the command <${prefix}myid> give you:
             var author = message.mentions.users;
             var date = String(argsc[2]);
 
-            db.serialize
-
             db.run(`INSERT into anniversaire (PlayerID, Date) VALUES (${author.map((obj) => { return obj.id; })}, ${date})`, (err) => {
                 if (err) {
                     console.error(err.message);
