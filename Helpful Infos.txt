@@ -1,0 +1,8 @@
+Launch script:
+nodemon --inspect index.js
+
+App ID:
+697747694017314817
+
+Bot link:
+https://discordapp.com/oauth2/authorize?client_id=697747694017314817&scope=bot

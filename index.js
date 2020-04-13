@@ -26,7 +26,7 @@ if (fs.existsSync('./Bot.db3')) {
         };
 
         db.run(`CREATE TABLE anniversaire (
-                        PlayerID text, 
+                        PlayerID text,
                         Date text
                 )`);
         console.log('Connected and Create to the Database');
@@ -93,12 +93,14 @@ For real, latency is {X}ms and API Latency is {X}ms
 the command <${prefix}token> give you:
 the token is {X}
 
-the command <${prefix}serveur_infos>
+the command <${prefix}serveur_infos> give you:
 Dev Labs: {X}
 Server Region: {X}
 Owner: {X}
 Created: {X}
 Server Icon: {X}
+
+the command <${prefix}myid> give you:
 
 `);
     };
@@ -162,11 +164,10 @@ Server Icon: {X}
 
         var dte = year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
 
-        console.log(ts.toLocaleString());
-
         console.log("Date as YYYY-MM-DD hh:mm:ss Format: " + year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
 
         console.log(message.guild.owner)
+
         message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner}\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL("jpg", true, 2048)}`);
     };
 
@@ -193,7 +194,7 @@ Server Icon: {X}
             message.channel.send("What can I do for you, Master ?");
         } else {
             console.log();
-            message.channel.send("Sorry your not a dev");
+            message.channel.send("Sorry your not a dev (CHEH)");
         };
     };
 
