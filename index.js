@@ -314,7 +314,7 @@ the command <${prefix}myid> give you:
 
                 console.log('Add DB Values');
             });
-            message.channel.send(`l'Anniversaire de ${author.map((obj) => { return obj.username; })} à était enregistrer (${date})`)
+            message.channel.send(`l'Anniversaire de ${author.map((obj) => { return obj.username; })} a été enregistré (${date})`)
         };
 
         if (argsc[1] === 'list') {
@@ -336,7 +336,7 @@ the command <${prefix}myid> give you:
                     });
                 });
 
-                message.channel.send('Voici la liste des personne ayant enregistrer leurs anniversaire :');
+                message.channel.send('Voici la liste des personne ayant enregistré leurs anniversaire :');
                 player.forEach((name) => {
                     message.channel.send(` - ${name[0]} (${name[1]})`);
                 })
