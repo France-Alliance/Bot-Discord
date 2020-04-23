@@ -100,26 +100,15 @@ Owner: {X}
 Created: {X}
 Server Icon: {X}
 
-the command <${prefix}myid> give you:
+the command <${prefix}myid> [@somebody] give you:
+Your ID is {X} || His ID is {X}
+
+the command <${prefix}who_is_the_master> tell you if you'r a master or not:
+
+the command <${prefix}nbrchannel> DD/MM/YY give you:
+Channel & Category created since DD/MM/YY : {X}
 
 `);
-    };
-
-    if (command === "ping") {
-        // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
-        // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
-        const m = await message.channel.send("Pong!");
-        m.channel.send(`For real, latency is ${m.createdTimestamp - message.createdTimestamp}ms and API Latency is ${Math.round(client.ping)}ms`);
-    };
-
-    if (command === "say") {
-        // makes the bot say something and delete the message. As an example, it's open to anyone to use.
-        // To get the "message" itself we join the `args` back into a string with spaces:
-        const sayMessage = args.join(" ");
-        // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-        message.delete().catch(O_o => {});
-        // And we get the bot to say the thing:
-        message.channel.send(sayMessage);
     };
     //if !info, answer with the username, the guild name and the number of user in the guild
     if (command === "info") {
@@ -135,6 +124,29 @@ the command <${prefix}myid> give you:
 
         message.channel.send(`Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)
         \nThis bot has been built by ${nameDev[0]} and with the M A S S I V E help of ${nameDev[1]}.\rYou know AM2 ?! You'r looking for a group to play with, don't hesitate to join our Alliance : Discord.gg/ZGWHpfm !`);
+    };
+
+    if (command === "say") {
+        // makes the bot say something and delete the message. As an example, it's open to anyone to use.
+        // To get the "message" itself we join the `args` back into a string with spaces:
+        const sayMessage = args.join(" ");
+        // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+        message.delete().catch(O_o => {});
+        // And we get the bot to say the thing:
+        message.channel.send(sayMessage);
+    };
+
+    if (command === "ping") {
+        // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
+        // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
+        const m = await message.channel.send("Pong!");
+        m.channel.send(`For real, latency is ${m.createdTimestamp - message.createdTimestamp}ms`);
+        //console.log(WebSocketManager.ping);
+        console.log(WebSocketManager.status);
+    };
+
+    if (command === "token") {
+        message.channel.send(`Really ${message.author.username} ?! Did you actually think i would put my token in a command?`);
     };
 
     if (command === "serveur_infos") {
@@ -171,10 +183,6 @@ the command <${prefix}myid> give you:
         message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner}\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL("jpg", true, 2048)}`);
     };
 
-    if (command === "token") {
-        message.channel.send(`Really ${message.author.username} ?! Did you actually think i would put my token in a command?`);
-    };
-
     if (command === "myid") {
         var userm = message.mentions;
 
@@ -186,7 +194,7 @@ the command <${prefix}myid> give you:
         };
     };
 
-    if (command === "azerty") {
+    if (command === "who_is_the_master") {
         console.log("HE IS MAYBE THE MASTER !");
 
         if (message.author.id === "331778741917319168" || message.author.id === "145525624939741184") {
