@@ -308,17 +308,16 @@ Channel & Category created since DD/MM/YY : {X}
 
     if (command === 'anniversaire') {
         var argsc = message.content.split(" ");
+        console.log(argsc);
 
         if (argsc[1] === 'add') {
             var author = message.mentions.users;
-            var date = String(argsc[2]);
+            var date = argsc[2];
 
-            db.run(`INSERT into anniversaire (PlayerID, Date) VALUES (${author.map((obj) => { return obj.id; })}, ${date})`, (err) => {
+            db.run(`INSERT into anniversaire (PlayerID, Date) VALUES ('${author.map((obj) => { return obj.discriminator; })}', '${date}')`, (err) => {
                 if (err) {
                     console.error(err.message);
                 };
-
-                console.log('Add DB Values');
             });
             message.channel.send(`l'Anniversaire de ${author.map((obj) => { return obj.username; })} a été enregistré (${date})`)
         };
@@ -334,7 +333,6 @@ Channel & Category created since DD/MM/YY : {X}
                 var player = [];
 
                 rows.forEach((row) => {
-                    console.log(row);
                     message.guild.members.cache.forEach((iddb) => {
                         if (row.PlayerID === iddb.id) {
                             player.push([iddb.user, row.Date]);
@@ -349,7 +347,26 @@ Channel & Category created since DD/MM/YY : {X}
             });
         };
 
-        if (argsc[1] === 'search') {};
+        if (argsc[1] === 'search') {
+            var author = message.mentions.users;
+            var discri = author.map((obj) => { return obj.discriminator })
+
+            let sql = `SELECT * FROM anniversaire WHERE PlayerID='${discri}'`;
+            console.log(sql);
+
+            db.all(sql, [], (err, rows) => {
+                if (err) {
+                    throw err;
+                };
+
+                message.channel.send('Voici la liste des personne ayant enregistré leurs anniversaire et qui correspond à votre recherche :');
+                rows.forEach((name) => {
+                    console.log(name);
+                    message.channel.send(` - ${name.PlayerID} (${name.Date})`);
+                })
+            })
+
+        };
 
         if (argsc[1] === 'remove') {};
 
