@@ -26,7 +26,7 @@ module.exports = class Meet extends Command {
             var SMeetD = new Date().getHours();
             console.log(argsc);
 
-            db.run(`INSERT into meet (owner, name, HeureStart, HeureEnd) VALUES ('${message.author.username}', '${argsc[2]}','${SMeet}', 'False')`, (err) => {
+            db.run(`INSERT into meet (owner, name, HeureStart, HeureEnd) VALUES ('${message.author.username}', '${argsc[2]}',${SMeet}, False)`, (err) => {
                 if (err) {
                     console.error('Error : ', err);
                 };
@@ -47,15 +47,20 @@ module.exports = class Meet extends Command {
                 var meet = [];
 
                 rows.forEach((row) => {
-                    console.log('!= False', row.HeureEnd);
-                    if (row.HeureEnd != 'False') {
+                    if (row.HeureEnd != 0) {
                         meet.push([row.owner, row.Name, row.HeureStart]);
                     };
                 });
 
                 message.channel.send('Voici la liste des réunion en cours :');
                 meet.forEach((data) => {
-                    var Time = `${new Date(data[2]).getHours}:${new Date(data[2]).getMinutes}:${new Date(data[2]).getSeconds}`;
+                    console.log(data);
+                    var TimeStamp = new Date(data[2]).getTime();
+                    console.log(TimeStamp);
+                    var Heure = new Date(data[2]).getHours();
+                    var Min = new Date(data[2]).getMinutes();
+                    var Sec = new Date(data[2]).getSeconds();
+                    var Time = `${Heure}:${Min}:${Sec}`;
 
                     message.channel.send(` - Name ${data[1]}, Start Time : ${Time}, Owner : ${data[0]}`);
                 });
