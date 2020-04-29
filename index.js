@@ -33,6 +33,13 @@ if (fs.existsSync('./Bot.db3')) {
                         PlayerID text,
                         Date text
                 )`);
+
+        db.run(`CREATE TABLE meet (
+                    owner text,
+                    Name text,
+                    HeureStart text,
+                    HeureEnd text
+            )`);
         console.log('Connected and Create to the Database');
     });
 };
@@ -211,12 +218,12 @@ Channel & Category created since DD/MM/YY : {X}
     };
 
     if (command === "join") {
-      // Only try to join the sender's voice channel if they are in one themselves
-      if (message.member.voice.channel) {
-        const connection = await message.member.voice.channel.join();
-      } else {
-        message.reply('You need to join a voice channel first!');
-      }
+        // Only try to join the sender's voice channel if they are in one themselves
+        if (message.member.voice.channel) {
+            const connection = await message.member.voice.channel.join();
+        } else {
+            message.reply('You need to join a voice channel first!');
+        }
     }
 
     if (command === "nbrchannel") {
