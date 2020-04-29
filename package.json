@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "dependencies": {
         "discord": "^0.8.2",
+        "nodemon": "^2.0.3",
         "sqlite3": "^4.1.1"
     }
 }
