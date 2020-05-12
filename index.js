@@ -7,6 +7,7 @@ const { token } = require('./token.json');
 const client = new Discord.Client();
 const sqlite = require('sqlite3');
 const fs = require('fs');
+const ytdl = require('ytdl-core');
 const Anniv = require('./Function/Anniversaire');
 const meet = require('./Function/Meet');
 
@@ -221,9 +222,11 @@ Channel & Category created since DD/MM/YY : {X}
         // Only try to join the sender's voice channel if they are in one themselves
         if (message.member.voice.channel) {
             const connection = await message.member.voice.channel.join();
+            connection.play(ytdl('https://www.youtube.com/watch?v=lTRiuFIWV54', { filter: 'audioonly' })); //music is { 1 A.M Study Session 📚 - [lofi hip hop/chill beats] }
         } else {
-            message.reply('You need to join a voice channel first!');
+            message.reply('you need to join a voice channel first!');
         }
+
     }
 
     if (command === "nbrchannel") {
