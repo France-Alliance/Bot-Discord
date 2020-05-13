@@ -1,31 +1,31 @@
 //There is code from:
 //https://gist.github.com/eslachance/3349734a98d30011bb202f47342601d3
 
-const Discord = require('discord.js');
-const { prefix, state } = require('./config.json');
-const { token } = require('./token.json');
+const Discord = require(`discord.js`);
+const { prefix, state } = require(`./config.json`);
+const { token } = require(`./token.json`);
 const client = new Discord.Client();
-const sqlite = require('sqlite3');
-const fs = require('fs');
-const ytdl = require('ytdl-core');
-const Anniv = require('./Function/Anniversaire');
-const meet = require('./Function/Meet');
+const sqlite = require(`sqlite3`);
+const fs = require(`fs`);
+const ytdl = require(`ytdl-core`);
+const Anniv = require(`./Function/Anniversaire`);
+const meet = require(`./Function/Meet`);
 
 const newUsers = [];
 const Meet = []; // Strutures = SMeet, OMeet, FMeet
 const Cbdd = false;
 
 
-if (fs.existsSync('./Bot.db3')) {
-    var db = new sqlite.Database('Bot.db3', sqlite.OPEN_READWRITE, (err) => {
+if (fs.existsSync(`./Bot.db3`)) {
+    var db = new sqlite.Database(`Bot.db3`, sqlite.OPEN_READWRITE, (err) => {
         if (err) {
             console.error(err.message);
         };
 
-        console.log('Connected to the Database');
+        console.log(`Connected to the Database`);
     })
 } else {
-    var db = new sqlite.Database('Bot.db3', (err) => {
+    var db = new sqlite.Database(`Bot.db3`, (err) => {
         if (err) {
             console.error(err.message);
         };
@@ -41,38 +41,38 @@ if (fs.existsSync('./Bot.db3')) {
                     HeureStart text,
                     HeureEnd text
             )`);
-        console.log('Connected and Create to the Database');
+        console.log(`Connected and Create to the Database`);
     });
 };
 
 client.on("ready", () => {
     // This event will run if the bot starts, and logs in, successfully.
     console.log(`Bot is ready.\nHe has started in ${client.guilds.cache.size} guilds,  with ${client.users.cache.size} users in ${client.channels.cache.size} channels`);
-    // Example of changing the bot's playing game to something useful. `client.user` is what the
+    // Example of changing the bot`s playing game to something useful. `client.user` is what the
     // docs refer to as the "ClientUser".
     client.user.setActivity(`${state} for ${client.guilds.cache.size} servers`);
 });
 
 //Say hello to every new user
-client.on("guildMemberAdd", (member) => {
-    const guild = member.guild;
-    if (!newUsers[guild.id]) {
-        newUsers[guild.id] = new Discord.Collection();
-        newUsers[guild.id].set(member.id, member.user);
-    };
-
-    if (newUsers[guild.id] > 10) {
-        const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
-        guild.channels.find(channel => channel.name === "general").send("Welcome our new users!\n" + userlist);
-        newUsers[guild.id].clear();
-    };
-});
+//client.on("guildMemberAdd", (member) => {
+//    const guild = member.guild;
+//    if (!newUsers[guild.id]) {
+//        newUsers[guild.id] = new Discord.Collection();
+//        newUsers[guild.id].set(member.id, member.user);
+//    };
+//
+//    if (newUsers[guild.id] > 10) {
+//        const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
+//        guild.channels.find(channel => channel.name === "general").send("Welcome our new users!\n" + userlist);
+//        newUsers[guild.id].clear();
+//    };
+//});
 
 //commands code
 client.on("message", async message => {
     // This event will run on every single message received, from any channel or DM.
 
-    // It's good practice to ignore other bots. This also makes your bot ignore itself
+    // It`s good practice to ignore other bots. This also makes your bot ignore itself
     // and not get into a spam loop (we call that "botception").
     if (message.author.bot) return;
 
@@ -81,16 +81,51 @@ client.on("message", async message => {
     if (message.content.indexOf(prefix) !== 0) return;
 
     // Here we separate our "command" name, and our "arguments" for the command.
-    // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
+    // e.g. if we have the message "!!say Is this the real life?" , we`ll get the following:
     // command = say
     // args = ["Is", "this", "the", "real", "life?"]
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
-    // Let's go with a few common example commands! Feel free to delete or change those.
+
 
     if (command === "help") {
-        message.channel.send(`the command <${prefix}info> give you:
+  
+
+      var nameDev = [];
+      message.guild.members.cache.map((obj) => {
+          if (obj.id === "331778741917319168" || obj.id === "145525624939741184") {
+              nameDev.push(obj.user);
+          }
+      });
+      console.log(nameDev);
+
+      const help = new Discord.MessageEmbed()
+        .setColor(`#0099ff`)
+        .setTitle(`Command available`)
+        .setAuthor(`Control Tower`)
+        .setDescription(`This a list of all the command available now`)
+        .setThumbnail(`https://i.imgur.com/Vjx3EOm.jpg`)
+        .addField(`\u200b`, "`!!infos`\rShow info about you", false)
+        .addField(`\u200b`, "`!!say`\rSay what you want", false)
+        .addField(`\u200b`, "`!!ping`\rShow the ping", false)
+        .addField(`\u200b`, "`!!token`\rShow the token", false)
+        .addField(`\u200b`, "`!!serveur_infos`\rShow the ping", false)
+        .addField(`\u200b`, "`!!id (optional tag)`\rShows ID of you choice", false)
+        .addField(`\u200b`, "`!!master`\r this one is secret but powerful...", false)
+        .addField(`\u200b`, "`!!nbrchannel (DD/MM/YY)`\rShow the number of channel and category created since the date in the server", false)
+        .addField(`\u200b`,`\u200b`, false)
+        .addField(`And now, a message from our sponsor:`, `-----------------------------------\rYou should join us to play Airline Manager 2 !\r We accept everyone, with every level !! (Discord.gg/ZGWHpfm) !\r----------------\rYou have question or problem with the bot ?\r Send a message on this server: (Discord.gg/HaTSNyA)\r----------------\rThis bot has been built by ${nameDev[0]}\rand with the M-A-S-S-I-V-E help of ${nameDev[1]} !\r-----------------------------------`, false)
+        .setTimestamp()
+        .setFooter(`Have a good day !`);
+
+        message.channel.send(help)
+
+
+
+
+
+     message.channel.send(`the command <${prefix}infos> give you:
 Your username:{X}
 Channel name:{X}
 Server name:{X} (with {X} total members)
@@ -112,7 +147,7 @@ Owner: {X}
 Created: {X}
 Server Icon: {X}
 
-the command <${prefix}myid> [@somebody] give you:
+the command <${prefix}id> [@somebody] give you:
 Your ID is {X} || His ID is {X}
 
 the command <${prefix}who_is_the_master> tell you if you'r a master or not:
@@ -120,26 +155,25 @@ the command <${prefix}who_is_the_master> tell you if you'r a master or not:
 the command <${prefix}nbrchannel> DD/MM/YY give you:
 Channel & Category created since DD/MM/YY : {X}
 
+-----------------------------------
+This bot has been built by ${nameDev[0]} and with the M A S S I V E help of ${nameDev[1]}.
+----------------
+You should join us to play Airline Manager 2! We accept everyone, with every level !! (Discord.gg/ZGWHpfm) !
+----------------
+You have question or problem with the bot ? Send a message on this server: (Discord.gg/HaTSNyA)
+-----------------------------------
 `);
+
+
+
     };
     //if !info, answer with the username, the guild name and the number of user in the guild
-    if (command === "info") {
-        var nameDev = [];
-
-        message.guild.members.cache.map((obj) => {
-            if (obj.id === "331778741917319168" || obj.id === "145525624939741184") {
-                nameDev.push(obj.user);
-            }
-        });
-
-        console.log(nameDev);
-
-        message.channel.send(`Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)
-        \nThis bot has been built by ${nameDev[0]} and with the M A S S I V E help of ${nameDev[1]}.\rYou know AM2 ?! You'r looking for a group to play with, don't hesitate to join our Alliance : Discord.gg/ZGWHpfm !`);
+    if (command === "infos") {
+        message.channel.send(`Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`);
     };
 
     if (command === "say") {
-        // makes the bot say something and delete the message. As an example, it's open to anyone to use.
+        // makes the bot say something and delete the message. As an example, it`s open to anyone to use.
         // To get the "message" itself we join the `args` back into a string with spaces:
         const sayMessage = args.join(" ");
         // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
@@ -153,8 +187,7 @@ Channel & Category created since DD/MM/YY : {X}
         // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
         const m = await message.channel.send("Pong!");
         m.channel.send(`For real, latency is ${m.createdTimestamp - message.createdTimestamp}ms`);
-        //console.log(WebSocketManager.ping);
-        console.log(WebSocketManager.status);
+
     };
 
     if (command === "token") {
@@ -189,13 +222,12 @@ Channel & Category created since DD/MM/YY : {X}
         var dte = year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
 
         console.log("Date as YYYY-MM-DD hh:mm:ss Format: " + year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
-
         console.log(message.guild.owner)
 
         message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner}\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL("jpg", true, 2048)}`);
     };
 
-    if (command === "myid") {
+    if (command === "id") {
         var userm = message.mentions;
 
         if (userm.users.size === 0) {
@@ -206,25 +238,25 @@ Channel & Category created since DD/MM/YY : {X}
         };
     };
 
-    if (command === "who_is_the_master") {
-        console.log("HE IS MAYBE THE MASTER !");
+    if (command === "master") {
+        console.log("HE IS MAYBE A MASTER !");
 
         if (message.author.id === "331778741917319168" || message.author.id === "145525624939741184") {
-            console.log("HE IS THE MASTER !");
+            console.log("HE IS A MASTER !");
             message.channel.send("What can I do for you, Master ?");
         } else {
-            console.log();
+            console.log("HE`S NOT A MASTER! BURN HIM!");
             message.channel.send("Sorry your not a dev (CHEH)");
         };
     };
 
     if (command === "join") {
-        // Only try to join the sender's voice channel if they are in one themselves
+        // Only try to join the sender`s voice channel if they are in one themselves
         if (message.member.voice.channel) {
             const connection = await message.member.voice.channel.join();
-            connection.play(ytdl('https://www.youtube.com/watch?v=lTRiuFIWV54', { filter: 'audioonly' })); //music is { 1 A.M Study Session 📚 - [lofi hip hop/chill beats] }
+            connection.play(ytdl(`https://www.youtube.com/watch?v=lTRiuFIWV54`, { filter: `audioonly` })); //music is { 1 A.M Study Session 📚 - [lofi hip hop/chill beats] }
         } else {
-            message.reply('you need to join a voice channel first!');
+            message.reply(`you need to join a voice channel first!`);
         }
 
     }
