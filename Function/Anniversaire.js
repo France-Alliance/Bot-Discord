@@ -24,10 +24,10 @@ module.exports = class Anniversaire extends Command {
             db.run(`INSERT into anniversaire (PlayerID, Date) VALUES ('${author.map((obj) => { return obj.id; })}', '${date}')`, (err) => {
                 if (err) {
                     console.error('Error : ', err);
+                } else {
+                    message.channel.send(`l'Anniversaire de ${author.map((obj) => { return obj.username; })} a été enregistré (${date})`);
                 };
             });
-
-            message.channel.send(`l'Anniversaire de ${author.map((obj) => { return obj.username; })} a été enregistré (${date})`);
         };
 
         if (argsc[1] === 'list') {
@@ -36,44 +36,44 @@ module.exports = class Anniversaire extends Command {
             db.all(sql, [], (err, rows) => {
                 if (err) {
                     console.error('Error : ', err);
-                };
+                } else {
+                    var player = [];
 
-                var player = [];
-
-                rows.forEach((row) => {
-                    message.guild.members.cache.forEach((iddb) => {
-                        if (row.PlayerID === iddb.id) {
-                            player.push([iddb.user, row.Date]);
-                        };
+                    rows.forEach((row) => {
+                        message.guild.members.cache.forEach((iddb) => {
+                            if (row.PlayerID === iddb.id) {
+                                player.push([iddb.user, row.Date]);
+                            };
+                        });
                     });
-                });
 
-                message.channel.send('Voici la liste des personne ayant enregistré leurs anniversaire :');
-                player.forEach((name) => {
-                    message.channel.send(` - ${name[0]} (${name[1]})`);
-                });
+                    message.channel.send('Voici la liste des personne ayant enregistré leurs anniversaire :');
+                    player.forEach((name) => {
+                        message.channel.send(` - ${name[0]} (${name[1]})`);
+                    });
+                };
             });
         };
 
         if (argsc[1] === 'search') {
             var author = message.mentions.users;
-            var id = author.map((obj) => { return obj.id })
+            var id = author.map((obj) => { return obj.id });
 
             let sql = `SELECT * FROM anniversaire WHERE PlayerID='${id}'`;
 
             db.all(sql, [], (err, rows) => {
                 if (err) {
                     console.error('Error : ', err);
-                };
-
-                message.channel.send('Voici la liste des personne ayant enregistré leurs anniversaire et qui correspond à votre recherche :');
-                rows.forEach((name) => {
-                    message.guild.members.cache.forEach((iddb) => {
-                        if (name.PlayerID === iddb.id) {
-                            message.channel.send(` - ${iddb.user} (${name.Date})`);
-                        };
+                } else {
+                    message.channel.send('Voici la liste des personne ayant enregistré leurs anniversaire et qui correspond à votre recherche :');
+                    rows.forEach((name) => {
+                        message.guild.members.cache.forEach((iddb) => {
+                            if (name.PlayerID === iddb.id) {
+                                message.channel.send(` - ${iddb.user} (${name.Date})`);
+                            };
+                        });
                     });
-                });
+                };
             });
 
         };
@@ -87,9 +87,9 @@ module.exports = class Anniversaire extends Command {
             db.all(sql, [], (err, rows) => {
                 if (err) {
                     console.error('Error : ', err);
+                } else {
+                    message.channel.send(`L'anniversaire de ${author.map((obj) => { return obj.username; })} à était supprimé !`);
                 };
-
-                message.channel.send(`L'anniversaire de ${author.map((obj) => { return obj.username; })} à était supprimé !`);
             });
         };
     };
