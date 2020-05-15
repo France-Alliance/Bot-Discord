@@ -90,7 +90,7 @@ client.on("message", async message => {
 
 
     if (command === "help") {
-  
+
 
       var nameDev = [];
       message.guild.members.cache.map((obj) => {
@@ -120,51 +120,6 @@ client.on("message", async message => {
         .setFooter(`Have a good day !`);
 
         message.channel.send(help)
-
-
-
-
-
-     message.channel.send(`the command <${prefix}infos> give you:
-Your username:{X}
-Channel name:{X}
-Server name:{X} (with {X} total members)
-
-the command <${prefix}say [What you want]> give you:
-[What you want]
-
-the command <${prefix}ping> give you:
-Pong!
-For real, latency is {X}ms and API Latency is {X}ms
-
-the command <${prefix}token> give you:
-the token is {X}
-
-the command <${prefix}serveur_infos> give you:
-Dev Labs: {X}
-Server Region: {X}
-Owner: {X}
-Created: {X}
-Server Icon: {X}
-
-the command <${prefix}id> [@somebody] give you:
-Your ID is {X} || His ID is {X}
-
-the command <${prefix}who_is_the_master> tell you if you'r a master or not:
-
-the command <${prefix}nbrchannel> DD/MM/YY give you:
-Channel & Category created since DD/MM/YY : {X}
-
------------------------------------
-This bot has been built by ${nameDev[0]} and with the M A S S I V E help of ${nameDev[1]}.
-----------------
-You should join us to play Airline Manager 2! We accept everyone, with every level !! (Discord.gg/ZGWHpfm) !
-----------------
-You have question or problem with the bot ? Send a message on this server: (Discord.gg/HaTSNyA)
------------------------------------
-`);
-
-
 
     };
     //if !info, answer with the username, the guild name and the number of user in the guild
@@ -239,7 +194,8 @@ You have question or problem with the bot ? Send a message on this server: (Disc
     };
 
     if (command === "master") {
-        console.log("HE IS MAYBE A MASTER !");
+        console.log("IS THIS A MASTER ?");
+        console.log("        ||        ");
 
         if (message.author.id === "331778741917319168" || message.author.id === "145525624939741184") {
             console.log("HE IS A MASTER !");
