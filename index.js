@@ -1,13 +1,14 @@
 //There is code from:
 //https://gist.github.com/eslachance/3349734a98d30011bb202f47342601d3
 
-const Discord = require(`discord.js`);
+const discord = require(`discord.js`);
+const ytdl = require(`ytdl-core`);
+const sqlite = require(`sqlite3`);
 const { prefix, state } = require(`./config.json`);
 const { token } = require(`./token.json`);
-const client = new Discord.Client();
-const sqlite = require(`sqlite3`);
+const client = new discord.Client();
 const fs = require(`fs`);
-const ytdl = require(`ytdl-core`);
+
 const Anniv = require(`./Function/Anniversaire`);
 const meet = require(`./Function/Meet`);
 
@@ -57,7 +58,7 @@ client.on("ready", () => {
 //client.on("guildMemberAdd", (member) => {
 //    const guild = member.guild;
 //    if (!newUsers[guild.id]) {
-//        newUsers[guild.id] = new Discord.Collection();
+//        newUsers[guild.id] = new discord.Collection();
 //        newUsers[guild.id].set(member.id, member.user);
 //    };
 //
@@ -100,7 +101,7 @@ client.on("message", async message => {
       });
       console.log(nameDev);
 
-      const help = new Discord.MessageEmbed()
+      const help = new discord.MessageEmbed()
         .setColor(`#0099ff`)
         .setTitle(`Command available`)
         .setAuthor(`Control Tower`)
@@ -115,7 +116,7 @@ client.on("message", async message => {
         .addField(`\u200b`, "`!!master`\r this one is secret but powerful...", false)
         .addField(`\u200b`, "`!!nbrchannel (DD/MM/YY)`\rShow the number of channel and category created since the date in the server", false)
         .addField(`\u200b`,`\u200b`, false)
-        .addField(`And now, a message from our sponsor:`, `-----------------------------------\rYou should join us to play Airline Manager 2 !\r We accept everyone, with every level !! (Discord.gg/ZGWHpfm) !\r----------------\rYou have question or problem with the bot ?\r Send a message on this server: (Discord.gg/HaTSNyA)\r----------------\rThis bot has been built by ${nameDev[0]}\rand with the M-A-S-S-I-V-E help of ${nameDev[1]} !\r-----------------------------------`, false)
+        .addField(`And now, a message from our sponsor:`, `-----------------------------------\rYou should join us to play Airline Manager 2 !\r We accept everyone, with every level !! (discord.gg/ZGWHpfm) !\r----------------\rYou have question or problem with the bot ?\r Send a message on this server: (discord.gg/HaTSNyA)\r----------------\rThis bot has been built by ${nameDev[0]}\rand with the M-A-S-S-I-V-E help of ${nameDev[1]} !\r-----------------------------------`, false)
         .setTimestamp()
         .setFooter(`Have a good day !`);
 
@@ -217,7 +218,7 @@ client.on("message", async message => {
 
     }
 
-    if (command === "nbrchannel") {
+    if (command === "channel_infos") {
         var timestampCreate = [];
         var argsc = message.content.split(" ");
         var date = argsc[1];

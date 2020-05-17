@@ -6,3 +6,5 @@ App ID:
 
 Bot link:
 https://discordapp.com/oauth2/authorize?client_id=697747694017314817&scope=bot
+
+
