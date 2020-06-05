@@ -12,9 +12,27 @@ const fs = require(`fs`);
 const Anniv = require(`./Function/Anniversaire`);
 const meet = require(`./Function/Meet`);
 
-const newUsers = [];
+//const newUsers = [];
 const Meet = []; // Strutures = SMeet, OMeet, FMeet
+const queue = {}
+const array = ['https://www.youtube.com/watch?v=lTRiuFIWV54', 'https://www.youtube.com/watch?v=wAPCSnAhhC8', 'https://www.youtube.com/watch?v=rA56B4JyTgI']
+
 const Cbdd = false;
+
+var serveur = {};
+
+function play(connection, message) {
+  var server = servers[message.guild.id];
+  serveur.dispatcher = connection.play(ytdl(serveur.queue[0], { filter: `audioonly` }));
+  serveur.queue.shift();
+  server.dispatcher.on("end",function(){
+    if (serveur.queue[0]) play(connection, message);//If there's a music in the queue, play it
+    else connection.disconnect// If not, leave
+  });
+}
+
+
+
 
 
 if (fs.existsSync(`./Bot.db3`)) {
@@ -207,16 +225,85 @@ client.on("message", async message => {
         };
     };
 
-    if (command === "join") {
-        // Only try to join the sender`s voice channel if they are in one themselves
-        if (message.member.voice.channel) {
-            const connection = await message.member.voice.channel.join();
-            connection.play(ytdl(`https://www.youtube.com/watch?v=lTRiuFIWV54`, { filter: `audioonly` })); //music is { 1 A.M Study Session 📚 - [lofi hip hop/chill beats] }
-        } else {
-            message.reply(`you need to join a voice channel first!`);
-        }
+    if (command === "audio") {
+      var argsc = message.content.split(" ");
+      if (message.member.voice.channel) {
 
-    }
+        if (argsc[2] != ""){
+          message.reply(`I'm coming!`);
+          console.log("audio is coming");
+        };
+
+        const connection = await message.member.voice.channel.join();
+        if (argsc[1] === "music") {
+          console.log("audio is now playing");
+          const dispatcher = connection.play(ytdl(array, { filter: `audioonly` })); //music is { 1 A.M Study Session 📚 - [lofi hip hop/chill beats] }
+          console.log(array)
+        };
+          if (argsc[2] === "resume") {
+            dispatcher.resume('resume', () => {
+              console.log('audios now resume');
+            });
+          };
+          if (argsc[2] === "pause") {
+            dispatcher.pause('pause', () => {
+              console.log('audio is now paused');
+            });
+          };
+          if (argsc[2] === "stop") {
+            console.log("audio is now stopped");
+            dispatcher.destroy();
+          };
+
+      } else {
+          message.reply(`you need to join a voice channel first!`);
+        };
+
+    };
+
+    if (command === "play") {
+      var arg = message.content.split(" ");
+
+      if (!arg[1]){
+        message.reply(`I need a link to play music...`);
+      }
+
+      if (message.member.voice.channel) {
+        message.reply(`I'm coming!`);
+        console.log("audio is coming");
+         message.member.voice.channel.join()
+
+      } else {
+        message.reply(`You need to be in a voice channel !`);
+        console.log("audio isn't coming");
+      };
+
+      if (!servers[message.guild.id]) serveurs[message.guild.id] = {
+        queue: []
+      }
+
+      var serveur = servers[message.guild.id];
+
+      if (!message.member.voice.channel) message.member.voice.channel.join().then(function(connection) {
+        play(connection, message);
+      });
+
+
+    };
+
+    if command === "ASCII") {
+      message.channel.send(`
+        ________/\\\\\\\\\________________________________________________________________________/\\\\\\_______________/\\\\\\\\\\\\\\\______________________________________________________________
+         _____/\\\////////________________________________________________________________________\////\\\______________\///////\\\/////_______________________________________________________________
+          ___/\\\/___________________________________________/\\\_____________________________________\/\\\____________________\/\\\____________________________________________________________________
+           __/\\\_________________/\\\\\_____/\\/\\\\\\____/\\\\\\\\\\\__/\\/\\\\\\\______/\\\\\_______\/\\\____________________\/\\\___________/\\\\\_____/\\____/\\___/\\_____/\\\\\\\\___/\\/\\\\\\\__
+            _\/\\\_______________/\\\///\\\__\/\\\////\\\__\////\\\////__\/\\\/////\\\___/\\\///\\\_____\/\\\____________________\/\\\_________/\\\///\\\__\/\\\__/\\\\_/\\\___/\\\/////\\\_\/\\\/////\\\_
+             _\//\\\_____________/\\\__\//\\\_\/\\\__\//\\\____\/\\\______\/\\\___\///___/\\\__\//\\\____\/\\\____________________\/\\\________/\\\__\//\\\_\//\\\/\\\\\/\\\___/\\\\\\\\\\\__\/\\\___\///__
+              __\///\\\__________\//\\\__/\\\__\/\\\___\/\\\____\/\\\_/\\__\/\\\_________\//\\\__/\\\_____\/\\\____________________\/\\\_______\//\\\__/\\\___\//\\\\\/\\\\\___\//\\///////___\/\\\_________
+               ____\////\\\\\\\\\__\///\\\\\/___\/\\\___\/\\\____\//\\\\\___\/\\\__________\///\\\\\/____/\\\\\\\\\_________________\/\\\________\///\\\\\/_____\//\\\\//\\\_____\//\\\\\\\\\\_\/\\\_________
+                _______\/////////_____\/////_____\///____\///______\/////____\///_____________\/////_____\/////////__________________\///___________\/////________\///__\///_______\//////////__\///__________
+        `)};
+
 
     if (command === "channel_infos") {
         var timestampCreate = [];

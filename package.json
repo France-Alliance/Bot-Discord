@@ -1,11 +1,13 @@
 {
-    "name": "Bot-Discord",
-    "version": "1.0.0",
-    "dependencies": {
-        "discord": "^0.8.2",
-        "nodemon": "^2.0.3",
-        "ytdl-core": "^2.1.1",
-        "sqlite3": "^4.2.0"
-
+  "name": "Bot-Discord",
+  "version": "1.0.0",
+  "dependencies": {
+      "@discordjs/opus": "^0.3.2",
+      "discord.js": "^12.2.0",
+      "ffmpeg-static": "^4.2.1",
+      "libsodium": "^0.7.6",
+      "nodemon": "^2.0.4",
+      "sqlite3": "^4.2.0",
+      "ytdl-core": "^2.1.2"
     }
 }
