@@ -40,7 +40,7 @@ console.log(`
 | |       / _ \\  | '_ \\  | __| | '__|  / _ \\  | |      | |     / _ \\  \\ \\ /\\ / /  / _ \\ | '__|
 | |____  | (_) | | | | | | |_  | |    | (_) | | |      | |    | (_) |  \\ V  V /  |  __/ | |
  \\_____|  \\___/  |_| |_|  \\__| |_|     \\___/  |_|      |_|     \\___/    \\_/\\_/    \\___| |_|
- _____________________________________________________________________________________________
+______________________________________________________________________________________________
 `);
 
 if (fs.existsSync(`./Bot.db3`)) {
@@ -79,7 +79,8 @@ client.on("ready", () => {
     // Example of changing the bot`s playing game to something useful. `client.user` is what the
     // docs refer to as the "ClientUser".
     client.user.setActivity(`${state} for ${client.guilds.cache.size} servers`);
-
+    console.log(`----------------------------------------------------------------------------------------------`);
+    console.log(`----------------------------------------`);
 });
 
 //Say hello to every new user
@@ -149,90 +150,98 @@ client.on("message", async message => {
         .setFooter(`Have a good day !`);
 
         message.channel.send(help)
-
+      console.log(`----------------------------------------`);
     };
     //if !info, answer with the username, the guild name and the number of user in the guild
     if (command === "infos") {
-        message.channel.send(`Your username: ${message.author.username}\\\\rChannel name: ${message.channel.name}\\\\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`);
+      message.channel.send(`Your username: ${message.author.username}\\\\rChannel name: ${message.channel.name}\\\\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`);
+      console.log(`----------------------------------------`);
     };
 
     if (command === "say") {
-        // makes the bot say something and delete the message. As an example, it`s open to anyone to use.
-        // To get the "message" itself we join the `args` back into a string with spaces:
-        const sayMessage = args.join(" ");
-        // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-        message.delete().catch(O_o => {});
-        // And we get the bot to say the thing:
-        message.channel.send(sayMessage);
+      // makes the bot say something and delete the message. As an example, it`s open to anyone to use.
+      // To get the "message" itself we join the `args` back into a string with spaces:
+      const sayMessage = args.join(" ");
+      // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+      message.delete().catch(O_o => {});
+      // And we get the bot to say the thing:
+      message.channel.send(sayMessage);
+      console.log(`----------------------------------------`);
     };
 
     if (command === "ping") {
-        // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
-        // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
-        const m = await message.channel.send("Pong!");
-        m.channel.send(`For real, latency is ${m.createdTimestamp - message.createdTimestamp}ms`);
+      // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
+      // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
+      const m = await message.channel.send("Pong!");
+      m.channel.send(`For real, latency is ${m.createdTimestamp - message.createdTimestamp}ms`);
+      console.log(`----------------------------------------`);
 
     };
 
     if (command === "token") {
-        message.channel.send(`Really ${message.author.username} ?! Did you actually think i would put my token in a command?`);
+      message.channel.send(`Really ${message.author.username} ?! Did you actually think i would put my token in a command?`);
+      console.log(`----------------------------------------`);
     };
 
     if (command === "serveur_infos") {
-        // unix timestamp
-        var ts = message.guild.createdTimestamp;
+      // unix timestamp
+      var ts = message.guild.createdTimestamp;
 
-        // initialize new Date object
-        var date_ob = new Date(ts);
+      // initialize new Date object
+      var date_ob = new Date(ts);
 
-        // year as 4 digits (YYYY)
-        var year = date_ob.getFullYear();
+      // year as 4 digits (YYYY)
+      var year = date_ob.getFullYear();
 
-        // month as 2 digits (MM)
-        var month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+      // month as 2 digits (MM)
+      var month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
 
-        // date as 2 digits (DD)
-        var date = ("0" + date_ob.getDate()).slice(-2);
+      // date as 2 digits (DD)
+      var date = ("0" + date_ob.getDate()).slice(-2);
 
-        // hours as 2 digits (hh)
-        var hours = ("0" + date_ob.getHours()).slice(-2);
+      // hours as 2 digits (hh)
+      var hours = ("0" + date_ob.getHours()).slice(-2);
 
-        // minutes as 2 digits (mm)
-        var minutes = ("0" + date_ob.getMinutes()).slice(-2);
+      // minutes as 2 digits (mm)
+      var minutes = ("0" + date_ob.getMinutes()).slice(-2);
 
-        // seconds as 2 digits (ss)
-        var seconds = ("0" + date_ob.getSeconds()).slice(-2);
+      // seconds as 2 digits (ss)
+      var seconds = ("0" + date_ob.getSeconds()).slice(-2);
 
-        var dte = year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
+      var dte = year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
 
-        console.log("Date as YYYY-MM-DD hh:mm:ss Format: " + year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
-        console.log(message.guild.owner)
+      console.log("Date as YYYY-MM-DD hh:mm:ss Format: " + year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
+      console.log(message.guild.owner)
 
-        message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\\\\rServer Region: ${message.guild.region}\\\\rOwner: ${message.guild.owner}\\\\rCreated: ${dte}\\\\rServer Icon: ${message.guild.iconURL("jpg", true, 2048)}`);
+      message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\\\\rServer Region: ${message.guild.region}\\\\rOwner: ${message.guild.owner}\\\\rCreated: ${dte}\\\\rServer Icon: ${message.guild.iconURL("jpg", true, 2048)}`);
+      console.log(`----------------------------------------`);
     };
 
-    if (command === "id") {
-        var userm = message.mentions;
 
-        if (userm.users.size === 0) {
-            message.channel.send(`Your ID is ${message.author.id} `);
-        };
-        if (userm.users.size != 0) {
-            message.channel.send(`His ID is ${userm.users.map(user => user.id)} `);
-        };
+    if (command === "id") {
+      var userm = message.mentions;
+
+      if (userm.users.size === 0) {
+          message.channel.send(`Your ID is ${message.author.id} `);
+      };
+      if (userm.users.size != 0) {
+          message.channel.send(`His ID is ${userm.users.map(user => user.id)} `);
+      };
+      console.log(`----------------------------------------`);
     };
 
     if (command === "master") {
-        console.log("IS THIS A MASTER ?");
-        console.log("        ||        ");
+      console.log("IS THIS A MASTER ?");
+      console.log("        ||        ");
 
-        if (message.author.id === "331778741917319168" || message.author.id === "145525624939741184") {
-            console.log("HE IS A MASTER !");
-            message.channel.send("What can I do for you, Master ?");
-        } else {
-            console.log("HE`S NOT A MASTER! BURN HIM!");
-            message.channel.send("Sorry your not a dev (CHEH)");
-        };
+      if (message.author.id === "331778741917319168" || message.author.id === "145525624939741184") {
+          console.log("HE IS A MASTER !");
+          message.channel.send("What can I do for you, Master ?");
+      } else {
+          console.log("HE`S NOT A MASTER! BURN HIM!");
+          message.channel.send("Sorry your not a dev (CHEH)");
+      };
+      console.log(`----------------------------------------`);
     };
 
     if (command === "audio") {
@@ -268,7 +277,7 @@ client.on("message", async message => {
       } else {
           message.reply(`you need to join a voice channel first!`);
         };
-
+      console.log(`----------------------------------------`);
     };
 
     if (command === "play") {
@@ -298,32 +307,33 @@ client.on("message", async message => {
         play(connection, message);
       });
 
-
+      console.log(`----------------------------------------`);
     };
 
 
     if (command === "channel_infos") {
-        var timestampCreate = [];
-        var argsc = message.content.split(" ");
-        var date = argsc[1];
-        date = date.split("/");
-        var ndate = date[1] + "/" + date[0] + "/" + date[2];
-        var tdate = new Date(ndate).getTime();
-        var nndate = new Date().getTime();
-        var gdate = [];
-        var i = 0;
+      var timestampCreate = [];
+      var argsc = message.content.split(" ");
+      var date = argsc[1];
+      date = date.split("/");
+      var ndate = date[1] + "/" + date[0] + "/" + date[2];
+      var tdate = new Date(ndate).getTime();
+      var nndate = new Date().getTime();
+      var gdate = [];
+      var i = 0;
 
-        message.guild.channels.cache.map((obj) => {
-            timestampCreate.push(obj.createdTimestamp)
-        });
+      message.guild.channels.cache.map((obj) => {
+          timestampCreate.push(obj.createdTimestamp)
+      });
 
-        timestampCreate.forEach(ttc => {
-            if (ttc > tdate && ttc < nndate) {
-                gdate.push(ttc);
-            };
-        });
+      timestampCreate.forEach(ttc => {
+          if (ttc > tdate && ttc < nndate) {
+              gdate.push(ttc);
+          };
+      });
 
-        message.channel.send(`Channel & Category created since ${ndate} : ${gdate.length}`);
+      message.channel.send(`Channel & Category created since ${ndate} : ${gdate.length}`);
+      console.log(`----------------------------------------`);
     };
 
     if (command === "meet") {
