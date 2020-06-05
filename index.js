@@ -33,7 +33,14 @@ function play(connection, message) {
 
 
 
-
+console.log(`
+  _____                   _                    _     _______
+ / ____|                 | |                  | |   |__   __|
+| |        ___    _ __   | |_   _ __    ___   | |      | |      ___   __      __   ___   _ __
+| |       / _ \\  | '_ \\  | __| | '__|  / _ \\  | |      | |     / _ \\  \\ \\ /\\ / /  / _ \\ | '__|
+| |____  | (_) | | | | | | |_  | |    | (_) | | |      | |    | (_) |  \\ V  V /  |  __/ | |
+ \\_____|  \\___/  |_| |_|  \\__| |_|     \\___/  |_|      |_|     \\___/    \\_/\\_/    \\___| |_|
+`);
 
 if (fs.existsSync(`./Bot.db3`)) {
     var db = new sqlite.Database(`Bot.db3`, sqlite.OPEN_READWRITE, (err) => {
@@ -65,11 +72,30 @@ if (fs.existsSync(`./Bot.db3`)) {
 };
 
 client.on("ready", () => {
+
     // This event will run if the bot starts, and logs in, successfully.
-    console.log(`Bot is ready.\nHe has started in ${client.guilds.cache.size} guilds,  with ${client.users.cache.size} users in ${client.channels.cache.size} channels`);
+    console.log(`Bot is ready.\rHe has started in ${client.guilds.cache.size} guilds, with ${client.users.cache.size} users in ${client.channels.cache.size} channels`);
     // Example of changing the bot`s playing game to something useful. `client.user` is what the
     // docs refer to as the "ClientUser".
     client.user.setActivity(`${state} for ${client.guilds.cache.size} servers`);
+    console.log(`
+                      /((((((/
+                     /((((((/
+                    /((((((/
+                   /((((((/
+                  /((((((/
+ /((\\            /((((((/
+/(((((\\         /((((((/
+ \\((((((\\      /((((((/
+   \\(((((((\\  /((((((/
+     \\((((((((((((((/
+       \\(((((((((((/
+         \\((((((((/
+           \\(((((/
+             \\((/
+
+                                 `)
+
 });
 
 //Say hello to every new user
@@ -82,7 +108,7 @@ client.on("ready", () => {
 //
 //    if (newUsers[guild.id] > 10) {
 //        const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
-//        guild.channels.find(channel => channel.name === "general").send("Welcome our new users!\n" + userlist);
+//        guild.channels.find(channel => channel.name === "general").send("Welcome our new users!\\\\r" + userlist);
 //        newUsers[guild.id].clear();
 //    };
 //});
@@ -125,16 +151,16 @@ client.on("message", async message => {
         .setAuthor(`Control Tower`)
         .setDescription(`This a list of all the command available now`)
         .setThumbnail(`https://i.imgur.com/Vjx3EOm.jpg`)
-        .addField(`\u200b`, "`!!infos`\rShow info about you", false)
-        .addField(`\u200b`, "`!!say`\rSay what you want", false)
-        .addField(`\u200b`, "`!!ping`\rShow the ping", false)
-        .addField(`\u200b`, "`!!token`\rShow the token", false)
-        .addField(`\u200b`, "`!!serveur_infos`\rShow the ping", false)
-        .addField(`\u200b`, "`!!id (optional tag)`\rShows ID of you choice", false)
-        .addField(`\u200b`, "`!!master`\r this one is secret but powerful...", false)
-        .addField(`\u200b`, "`!!nbrchannel (DD/MM/YY)`\rShow the number of channel and category created since the date in the server", false)
-        .addField(`\u200b`,`\u200b`, false)
-        .addField(`And now, a message from our sponsor:`, `-----------------------------------\rYou should join us to play Airline Manager 2 !\r We accept everyone, with every level !! (discord.gg/ZGWHpfm) !\r----------------\rYou have question or problem with the bot ?\r Send a message on this server: (discord.gg/HaTSNyA)\r----------------\rThis bot has been built by ${nameDev[0]}\rand with the M-A-S-S-I-V-E help of ${nameDev[1]} !\r-----------------------------------`, false)
+        .addField(`\\\\u200b`, "`!!infos`\\\\rShow info about you", false)
+        .addField(`\\\\u200b`, "`!!say`\\\\rSay what you want", false)
+        .addField(`\\\\u200b`, "`!!ping`\\\\rShow the ping", false)
+        .addField(`\\\\u200b`, "`!!token`\\\\rShow the token", false)
+        .addField(`\\\\u200b`, "`!!serveur_infos`\\\\rShow the ping", false)
+        .addField(`\\\\u200b`, "`!!id (optional tag)`\\\\rShows ID of you choice", false)
+        .addField(`\\\\u200b`, "`!!master`\\\\r this one is secret but powerful...", false)
+        .addField(`\\\\u200b`, "`!!nbrchannel (DD/MM/YY)`\\\\rShow the number of channel and category created since the date in the server", false)
+        .addField(`\\\\u200b`,`\\\\u200b`, false)
+        .addField(`And now, a message from our sponsor:`, `-----------------------------------\\\\rYou should join us to play Airline Manager 2 !\\\\r We accept everyone, with every level !! (discord.gg/ZGWHpfm) !\\\\r----------------\\\\rYou have question or problem with the bot ?\\\\r Send a message on this server: (discord.gg/HaTSNyA)\\\\r----------------\\\\rThis bot has been built by ${nameDev[0]}\\\\rand with the M-A-S-S-I-V-E help of ${nameDev[1]} !\\\\r-----------------------------------`, false)
         .setTimestamp()
         .setFooter(`Have a good day !`);
 
@@ -143,7 +169,7 @@ client.on("message", async message => {
     };
     //if !info, answer with the username, the guild name and the number of user in the guild
     if (command === "infos") {
-        message.channel.send(`Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`);
+        message.channel.send(`Your username: ${message.author.username}\\\\rChannel name: ${message.channel.name}\\\\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`);
     };
 
     if (command === "say") {
@@ -198,7 +224,7 @@ client.on("message", async message => {
         console.log("Date as YYYY-MM-DD hh:mm:ss Format: " + year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
         console.log(message.guild.owner)
 
-        message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner}\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL("jpg", true, 2048)}`);
+        message.channel.send(` ${message.guild.name}: ${message.guild.memberCount} total members\\\\rServer Region: ${message.guild.region}\\\\rOwner: ${message.guild.owner}\\\\rCreated: ${dte}\\\\rServer Icon: ${message.guild.iconURL("jpg", true, 2048)}`);
     };
 
     if (command === "id") {
@@ -290,19 +316,6 @@ client.on("message", async message => {
 
 
     };
-
-    if command === "ascii") {
-      message.channel.send(`
-        ________/\\\\\\\\\________________________________________________________________________/\\\\\\_______________/\\\\\\\\\\\\\\\______________________________________________________________
-         _____/\\\////////________________________________________________________________________\////\\\______________\///////\\\/////_______________________________________________________________
-          ___/\\\/___________________________________________/\\\_____________________________________\/\\\____________________\/\\\____________________________________________________________________
-           __/\\\_________________/\\\\\_____/\\/\\\\\\____/\\\\\\\\\\\__/\\/\\\\\\\______/\\\\\_______\/\\\____________________\/\\\___________/\\\\\_____/\\____/\\___/\\_____/\\\\\\\\___/\\/\\\\\\\__
-            _\/\\\_______________/\\\///\\\__\/\\\////\\\__\////\\\////__\/\\\/////\\\___/\\\///\\\_____\/\\\____________________\/\\\_________/\\\///\\\__\/\\\__/\\\\_/\\\___/\\\/////\\\_\/\\\/////\\\_
-             _\//\\\_____________/\\\__\//\\\_\/\\\__\//\\\____\/\\\______\/\\\___\///___/\\\__\//\\\____\/\\\____________________\/\\\________/\\\__\//\\\_\//\\\/\\\\\/\\\___/\\\\\\\\\\\__\/\\\___\///__
-              __\///\\\__________\//\\\__/\\\__\/\\\___\/\\\____\/\\\_/\\__\/\\\_________\//\\\__/\\\_____\/\\\____________________\/\\\_______\//\\\__/\\\___\//\\\\\/\\\\\___\//\\///////___\/\\\_________
-               ____\////\\\\\\\\\__\///\\\\\/___\/\\\___\/\\\____\//\\\\\___\/\\\__________\///\\\\\/____/\\\\\\\\\_________________\/\\\________\///\\\\\/_____\//\\\\//\\\_____\//\\\\\\\\\\_\/\\\_________
-                _______\/////////_____\/////_____\///____\///______\/////____\///_____________\/////_____\/////////__________________\///___________\/////________\///__\///_______\//////////__\///__________
-        `)};
 
 
     if (command === "channel_infos") {
