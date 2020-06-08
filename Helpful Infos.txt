@@ -4,6 +4,12 @@ nodemon --inspect index.js
 App ID:
 697747694017314817
 
+Token:
+Njk3NzQ3Njk0MDE3MzE0ODE3.Xo8wuQ.N3hAjqeFWM68D5eQXrmKDGLs3Hk
+
+Test Token:
+NzE4ODAxMzEzMTQzNzE3OTUw.XtuKOg.7kgnpihrVDEjaAHYFJ6aZ1GY7us
+
 Bot link:
 https://discordapp.com/oauth2/authorize?client_id=697747694017314817&scope=bot
 

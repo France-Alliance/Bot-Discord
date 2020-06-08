@@ -154,7 +154,7 @@ client.on("message", async message => {
     };
     //if !info, answer with the username, the guild name and the number of user in the guild
     if (command === "infos") {
-      message.channel.send(`Your username: ${message.author.username}\\\\rChannel name: ${message.channel.name}\\\\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`);
+      message.channel.send(`Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`);
       console.log(`----------------------------------------`);
     };
 
