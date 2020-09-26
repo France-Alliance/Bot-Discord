@@ -3,7 +3,7 @@
 const discord = require(`discord.js`);
 const ytdl = require(`ytdl-core`);
 const sqlite = require(`sqlite3`);
-const { prefix, state } = require(`./config.json`);
+const { prefix, state, loglogo } = require(`./config.json`);
 const { token } = require(`./token.json`);
 const client = new discord.Client();
 const fs = require(`fs`);
@@ -41,13 +41,7 @@ function play(connection, message) {
 }
 
 console.log(`
-  _____               _                _         _______                         
- / ____|             | |              | |       |__   __|                        
-| |      ___   _ __  | |_  _ __  ___  | |  ___     | |  ___ __      __ ___  _ __ 
-| |     / _ \\ | '_ \\ | __|| '__|/ _ \\ | | / _ \\    | | / _ \\\\ \\ /\\ / // _ \\| '__|
-| |____| (_) || | | || |_ | |  | (_) || ||  __/    | || (_) |\\ V  V /|  __/| |   
- \\_____|\\___/ |_| |_| \\__||_|   \\___/ |_| \\___|    |_| \\___/  \\_/\\_/  \\___||_| 
-______________________________________________________________________________________________
+
 `);
 
 if (fs.existsSync(`./Bot.db3`)) {

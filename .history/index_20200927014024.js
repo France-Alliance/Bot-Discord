@@ -48,6 +48,17 @@ console.log(`
 | |____| (_) || | | || |_ | |  | (_) || ||  __/    | || (_) |\\ V  V /|  __/| |   
  \\_____|\\___/ |_| |_| \\__||_|   \\___/ |_| \\___|    |_| \\___/  \\_/\\_/  \\___||_| 
 ______________________________________________________________________________________________
+
+
+/\\\\\\\\\\\\__/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\__/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_____/\\\\\\\\\\\\\\\\\\\\\\____/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\___/\\\\\\\\\\\\_
+\\/\\\\\\//__\\///////\\\\\\/////__\\/\\\\\\///////////____/\\\\\\/////////\\\\\\_\\///////\\\\\\/////___\\///\\\\\\_
+_\\/\\\\\\__________\\/\\\\\\_______\\/\\\\\\______________\\//\\\\\\______\\///________\\/\\\\\\__________\\/\\\\\\_
+ _\\/\\\\\\__________\\/\\\\\\_______\\/\\\\\\\\\\\\\\\\\\\\\\_______\\////\\\\\\_______________\\/\\\\\\__________\\/\\\\\\_
+  _\\/\\\\\\__________\\/\\\\\\_______\\/\\\\\\///////___________\\////\\\\\\____________\\/\\\\\\__________\\/\\\\\\_
+   _\\/\\\\\\__________\\/\\\\\\_______\\/\\\\\\_____________________\\////\\\\\\_________\\/\\\\\\__________\\/\\\\\\_
+    _\\/\\\\\\__________\\/\\\\\\_______\\/\\\\\\______________/\\\\\\______\\//\\\\\\________\\/\\\\\\__________\\/\\\\\\_
+     _\\/\\\\\\\\\\\\_______\\/\\\\\\_______\\/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_\\///\\\\\\\\\\\\\\\\\\\\\\/_________\\/\\\\\\________/\\\\\\\\\\\\_
+      _\\//////________\\///________\\///////////////____\\///////////___________\\///________\\//////__
 `);
 
 if (fs.existsSync(`./Bot.db3`)) {
@@ -80,6 +91,17 @@ if (fs.existsSync(`./Bot.db3`)) {
 }
 
 client.on("ready", () => {
+  // This event will run if the bot starts, and logs in, successfully.
+  console.log(
+    `Bot is ready.\rHe has started in ${client.guilds.cache.size} guilds, with ${client.users.cache.size} users in ${client.channels.cache.size} channels`
+  );
+  // Example of changing the bot`s playing game to something useful. `client.user` is what the
+  // docs refer to as the "ClientUser".
+  client.user.setActivity(`${state} for ${client.guilds.cache.size} servers`);
+  console.log(
+    `----------------------------------------------------------------------------------------------`
+  );
+
   console.log(
     `----------------------------------------------------------------------------------------------`
   );
@@ -92,6 +114,7 @@ client.on("ready", () => {
   console.log(
     `----------------------------------------------------------------------------------------------`
   );
+  });
 });
 
 //Say hello to every new user
@@ -199,7 +222,7 @@ client.on("message", async (message) => {
   //if !info, answer with the username, the guild name and the number of user in the guild
   if (command === "infos") {
     message.channel.send(
-      `Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members in ${client.guilds.cache.size} servers)`
+      `Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`
     );
     console.log(`----------------------------------------`);
   }
@@ -288,8 +311,8 @@ client.on("message", async (message) => {
 
     message.channel.send(
       ` ${message.guild.name}: ${message.guild.memberCount
-      } total members\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner
-      }\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL(
+      } total members\\\\rServer Region: ${message.guild.region}\\\\rOwner: ${message.guild.owner
+      }\\\\rCreated: ${dte}\\\\rServer Icon: ${message.guild.iconURL(
         "jpg",
         true,
         2048
