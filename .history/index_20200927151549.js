@@ -100,7 +100,7 @@ cron.schedule("00 03 * * *", () => {
   console.log(
     `Control Tower is updating ! @ ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
   )
-  shell.exec('./RP4U')
+  shell.exec('./RPI4UP')
   console.log(
     `Control Tower has updated ! @ ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
   )

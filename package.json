@@ -6,7 +6,9 @@
         "discord.js": "^12.3.1",
         "ffmpeg-static": "^4.2.7",
         "libsodium": "^0.7.8",
+        "node-cron": "^2.0.3",
         "nodemon": "^2.0.4",
+        "shelljs": "^0.8.4",
         "sqlite3": "^4.2.0",
         "ytdl-core": "^2.1.7"
     }

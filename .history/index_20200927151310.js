@@ -98,12 +98,26 @@ client.on("ready", () => {
 shell.exec('./path_to_your_file')
 cron.schedule("00 03 * * *", () => {
   console.log(
-    `Control Tower is updating ! @ ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
-  )
-  shell.exec('./RP4U')
-  console.log(
-    `Control Tower has updated ! @ ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
-  )
+    `Le collége va ouvrir ! @ ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
+  );
+  if (`${autokey}` === "true") {
+    client.guilds.cache
+      .get(`${server_ID}`)
+      .roles.cache.get(`${student_ID}`)
+      .setPermissions(104189504);
+    client.channels.cache
+      .get(`${channel_info_ID}`)
+      .send(
+        `**Le collége est ouvert !** Nous somme le ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()} et il est ${new Date().getHours()}h${new Date().getMinutes()} et ${new Date().getSeconds()}s `
+      );
+    console.log(
+      `Le collége est ouvert ! @ ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
+    );
+  } else {
+    console.log(
+      `Le collége n'a pas étè ouvert automatiquement ! @  ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
+    );
+  }
 });
 
 //Say hello to every new user
