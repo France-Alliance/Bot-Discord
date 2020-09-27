@@ -7,7 +7,7 @@ const { prefix, state } = require(`./config.json`);
 const { token } = require(`./token.json`);
 const client = new discord.Client();
 const fs = require(`fs`);
-const shell = require("shelljs");
+const shell = require('shelljs')
 const cron = require("node-cron");
 const Anniv = require(`./Function/Anniversaire`);
 const meet = require(`./Function/Meet`);
@@ -87,26 +87,24 @@ client.on("ready", () => {
   console.log(
     `Bot is ready.\nHe has started at ${timeHServer}:${timeMServer}:${timeSServer}\n\nHe has started in ${client.guilds.cache.size} guilds, with ${client.users.cache.size} users in ${client.channels.cache.size} channels`
   );
-  client.user.setActivity(
-    `${client.guilds.cache.size} servers | ${prefix} help | ${state}`,
-    {
-      type: "WATCHING",
-    }
-  );
+  client.user.setActivity(`${client.guilds.cache.size} servers | ${prefix} help | ${state}`, {
+    type: "WATCHING",
+  });
   console.log(
     `----------------------------------------------------------------------------------------------`
   );
 });
 
+
 cron.schedule("00 03 * * *", () => {
   console.log(
     `Control Tower is updating ! @ ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
-  );
-  shell.exec("sudo git fetch --all");
-  shell.exec("sudo git reset --hard origin/master");
+  )
+  shell.exec('sudo git fetch --all')
+  shell.exec('sudo git reset --hard origin/master')
   console.log(
     `Control Tower has updated ! @ ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
-  );
+  )
 });
 
 //Say hello to every new user
@@ -126,7 +124,7 @@ client.on("guildMemberAdd", (member) => {
       .find((channel) => channel.name === "entry")
       .send(
         `Welcome our new users ! @[${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}]\r` +
-          userlist
+        userlist
       );
     console.log(`Welcome message was sent`);
     newUsers[guild.id].clear();
@@ -135,7 +133,7 @@ client.on("guildMemberAdd", (member) => {
 
 client.on("guildMemberRemove", (member) => {
   const guild = member.guild;
-  if (newUsers[guild.id] == member.id) newUsers.delete(member.id);
+  if (newUsers[guild.id] == (member.id)) newUsers.delete(member.id);
   console.log(`Goodbye message will be send`);
   client.channels.cache
     .find((channel) => channel.name === "exit")
@@ -224,7 +222,7 @@ client.on("message", async (message) => {
     // To get the "message" itself we join the `args` back into a string with spaces:
     const sayMessage = args.join(" ");
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-    message.delete().catch((O_o) => {});
+    message.delete().catch((O_o) => { });
     // And we get the bot to say the thing:
     message.channel.send(sayMessage);
     console.log(`----------------------------------------`);
@@ -287,25 +285,23 @@ client.on("message", async (message) => {
 
     console.log(
       "Date as YYYY-MM-DD hh:mm:ss Format: " +
-        year +
-        "-" +
-        month +
-        "-" +
-        date +
-        " " +
-        hours +
-        ":" +
-        minutes +
-        ":" +
-        seconds
+      year +
+      "-" +
+      month +
+      "-" +
+      date +
+      " " +
+      hours +
+      ":" +
+      minutes +
+      ":" +
+      seconds
     );
     console.log(message.guild.owner);
 
     message.channel.send(
-      ` ${message.guild.name}: ${
-        message.guild.memberCount
-      } total members\rServer Region: ${message.guild.region}\rOwner: ${
-        message.guild.owner
+      ` ${message.guild.name}: ${message.guild.memberCount
+      } total members\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner
       }\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL(
         "jpg",
         true,
