@@ -110,7 +110,7 @@ client.on("guildMemberAdd", (member) => {
     client.channels.cache
       .find((channel) => channel.name === "entry")
       .send(
-        `Welcome our new users ! @[${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}]\r` +
+        `Welcome our new users ! [${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}]\r` +
         userlist
       );
     console.log(`Welcome message was sent`);
