@@ -86,7 +86,7 @@ client.on("ready", () => {
   console.log(
     `Bot is ready.\nHe has started at ${timeHServer}:${timeMServer}:${timeSServer}\n\nHe has started in ${client.guilds.cache.size} guilds, with ${client.users.cache.size} users in ${client.channels.cache.size} channels`
   );
-  client.user.setActivity(`${client.guilds.cache.size} servers | ${prefix} help | ${state}`, {
+  client.user.setActivity(`Discord | ${prefix} help | ${state}`, {
     type: "WATCHING",
   });
   console.log(
