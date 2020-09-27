@@ -327,6 +327,73 @@ client.on("message", async (message) => {
     console.log(`----------------------------------------`);
   }
 
+  if (command === "audio") {
+    var argsc = message.content.split(" ");
+    if (message.member.voice.channel) {
+      if (argsc[1] != "") {
+        message.reply(`I'm coming!`);
+        console.log("audio is coming");
+      }
+
+      const connection = await message.member.voice.channel.join();
+      if (argsc[1] === "music") {
+        console.log("audio is now playing");
+        const dispatcher = connection.play(
+          ytdl(array, { filter: `audioonly` })
+        ); //music is { 1 A.M Study Session 📚 - [lofi hip hop/chill beats] }
+        console.log(array);
+      }
+      if (argsc[2] === "resume") {
+        dispatcher.resume("resume", () => {
+          console.log("audios now resume");
+        });
+      }
+      if (argsc[2] === "pause") {
+        dispatcher.pause("pause", () => {
+          console.log("audio is now paused");
+        });
+      }
+      if (argsc[2] === "stop") {
+        console.log("audio is now stopped");
+        dispatcher.destroy();
+      }
+    } else {
+      message.reply(`you need to join a voice channel first!`);
+    }
+    console.log(`----------------------------------------`);
+  }
+
+  if (command === "play") {
+    var arg = message.content.split(" ");
+
+    if (!arg[1]) {
+      message.reply(`I need a link to play music...`);
+    }
+
+    if (message.member.voice.channel) {
+      message.reply(`I'm coming!`);
+      console.log("audio is coming");
+      message.member.voice.channel.join();
+    } else {
+      message.reply(`You need to be in a voice channel !`);
+      console.log("audio isn't coming");
+    }
+
+    if (!servers[message.guild.id])
+      serveurs[message.guild.id] = {
+        queue: [],
+      };
+
+    var serveur = servers[message.guild.id];
+
+    if (!message.member.voice.channel)
+      message.member.voice.channel.join().then(function (connection) {
+        play(connection, message);
+      });
+
+    console.log(`----------------------------------------`);
+  }
+
   if (command === "channel_infos") {
     var timestampCreate = [];
     var argsc = message.content.split(" ");
