@@ -137,13 +137,13 @@ cron.schedule("00 03 * * *", () => {
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
   if (newUsers[guild.id] == member.id) newUsers.delete(member.id);
-  console.log(`Welcome message will be send`);
+  console.log(`Goodbye message will be send`);
   client.channels.cache
     .find((channel) => channel.name === "entry")
     .send(
       `Welcome to ${member}... @ [${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}]`
     );
-  console.log(`Welcome message was sent`);
+  console.log(`Goodbye message was sent`);
 });
 
 client.on("guildMemberRemove", (member) => {
