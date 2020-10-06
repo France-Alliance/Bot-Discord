@@ -99,8 +99,8 @@ client.on("ready", () => {
   console.log(chalk.green(
     `                                            COMMAND LOG                                           `
   ));
-}
-,cron.schedule("00 03 * * *", () => {
+
+cron.schedule("00 03 * * *", () => {
   console.log(
     `Control Tower is updating ! @ ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
   );
@@ -110,7 +110,7 @@ client.on("ready", () => {
     `Control Tower has updated ! @ ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
     );
     console.log(`------------`)
-}),
+});
 
 //Say hello to every new user
 client.on("guildMemberAdd", (member) => {
@@ -124,7 +124,7 @@ client.on("guildMemberAdd", (member) => {
     );
   console.log(`Welcome message was sent`);
   console.log(`------------`)
-}));
+});
 
 
 client.on("guildMemberRemove", (member) => {
@@ -207,7 +207,7 @@ client.on("message", async (message) => {
     message.channel.send(help);
 
   }
-  
+  //if !info, answer with the username, the guild name and the number of user in the guild
   if (command === "infos") {
     message.channel.send(
       `Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`

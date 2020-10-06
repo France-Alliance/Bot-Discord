@@ -124,7 +124,7 @@ client.on("guildMemberAdd", (member) => {
     );
   console.log(`Welcome message was sent`);
   console.log(`------------`)
-}));
+});
 
 
 client.on("guildMemberRemove", (member) => {
