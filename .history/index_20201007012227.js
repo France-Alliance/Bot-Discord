@@ -456,7 +456,7 @@ client.on("message", async (message) => {
 
     if (userm.users.size === 0) {
       function findID() {
-        var IDarray = message.author.lastMessageID
+        var IDarray = message.author.lastMessageID)
         console.log("IDarray: ", IDarray)
         var ID = IDarray[0]
         console.log("ID: ", ID)
