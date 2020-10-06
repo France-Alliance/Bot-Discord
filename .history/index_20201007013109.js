@@ -112,7 +112,8 @@ cron.schedule("00 03 * * *", () => {
     console.log(`------------`)
 });
 
-//Say hello to every new user
+
+
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
   if (newUsers[guild.id] == member.id) newUsers.delete(member.id);
@@ -158,7 +159,6 @@ client.on("message", async (message) => {
   // args = ["Is", "this", "the", "real", "life?"]
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  console.log(chalk.green(`--------------------------------------------------------------------------------------------------`));
 
   if (command === "help") {
     var nameDev = [];
@@ -205,14 +205,14 @@ client.on("message", async (message) => {
       .setFooter(`Have a good day !`);
 
     message.channel.send(help);
-
+    console.log(`----------------------------------------`);
   }
   //if !info, answer with the username, the guild name and the number of user in the guild
   if (command === "infos") {
     message.channel.send(
       `Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`
     );
-
+    console.log(`----------------------------------------`);
   }
 
   if (command === "say") {
@@ -223,7 +223,7 @@ client.on("message", async (message) => {
     message.delete().catch((O_o) => {});
     // And we get the bot to say the thing:
     message.channel.send(sayMessage);
-  
+    console.log(`----------------------------------------`);
   }
 
   if (command === "ping") {
@@ -233,14 +233,14 @@ client.on("message", async (message) => {
     m.channel.send(
       `For real, latency is ${m.createdTimestamp - message.createdTimestamp}ms`
     );
-    
+    console.log(`----------------------------------------`);
   }
 
   if (command === "token") {
     message.channel.send(
       `Really ${message.author.username} ?! Did you actually think i would put my token in a command?`
     );
-    
+    console.log(`----------------------------------------`);
   }
 
   if (command === "serveur_infos") {
@@ -308,7 +308,7 @@ client.on("message", async (message) => {
         2048
       )}`
     );
-
+    console.log(`----------------------------------------`);
   }
 
   if (command === "id") {
@@ -320,7 +320,7 @@ client.on("message", async (message) => {
     if (userm.users.size != 0) {
       message.channel.send(`His ID is ${userm.users.map((user) => user.id)} `);
     }
-
+    console.log(`----------------------------------------`);
   }
 
   if (command === "master") {
@@ -337,7 +337,7 @@ client.on("message", async (message) => {
       console.log("HE`S NOT A MASTER! BURN HIM!");
       message.channel.send("Sorry your not a dev (CHEH)");
     }
-
+    console.log(`----------------------------------------`);
   }
 
   if (command === "channel_infos") {
@@ -364,7 +364,7 @@ client.on("message", async (message) => {
     message.channel.send(
       `Channel & Category created since ${ndate} : ${gdate.length}`
     );
-
+    console.log(`----------------------------------------`);
   }
 
   if (command === "meet") {
@@ -445,6 +445,10 @@ client.on("message", async (message) => {
     }
   }
 
+  let commandUsed = Anniv.parse(message, prefix, db); // || meet.parse(message, prefix, db);
+
+  console.log(`------------`)
+
   if (command === "lastmsg") {
     //console.log(message.mentions.users.map((user))),
     //message.channel.send(message.mentions.users.map((user))),
@@ -454,7 +458,9 @@ client.on("message", async (message) => {
 
     if (userm.users.size === 0) {
       function findID() {
-        var ID = message.author.lastMessageID       
+        var IDarray = message.author.lastMessageID
+        console.log("IDarray: ", IDarray)
+        var ID = IDarray[0]
         console.log("ID: ", ID)
         msg(ID)
       }
@@ -539,8 +545,7 @@ client.on("message", async (message) => {
     }
     
   }
-  
-  let commandUsed = Anniv.parse(message, prefix, db); // || meet.parse(message, prefix, db);
+
 });
 
 client.login(token);

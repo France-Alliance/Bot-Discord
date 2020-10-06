@@ -112,7 +112,8 @@ cron.schedule("00 03 * * *", () => {
     console.log(`------------`)
 });
 
-//Say hello to every new user
+
+
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
   if (newUsers[guild.id] == member.id) newUsers.delete(member.id);
@@ -240,7 +241,7 @@ client.on("message", async (message) => {
     message.channel.send(
       `Really ${message.author.username} ?! Did you actually think i would put my token in a command?`
     );
-    
+    console.log(`----------------------------------------`);
   }
 
   if (command === "serveur_infos") {
@@ -308,7 +309,7 @@ client.on("message", async (message) => {
         2048
       )}`
     );
-
+    console.log(`----------------------------------------`);
   }
 
   if (command === "id") {
@@ -320,7 +321,7 @@ client.on("message", async (message) => {
     if (userm.users.size != 0) {
       message.channel.send(`His ID is ${userm.users.map((user) => user.id)} `);
     }
-
+    console.log(`----------------------------------------`);
   }
 
   if (command === "master") {
@@ -337,7 +338,7 @@ client.on("message", async (message) => {
       console.log("HE`S NOT A MASTER! BURN HIM!");
       message.channel.send("Sorry your not a dev (CHEH)");
     }
-
+    console.log(`----------------------------------------`);
   }
 
   if (command === "channel_infos") {
@@ -364,7 +365,7 @@ client.on("message", async (message) => {
     message.channel.send(
       `Channel & Category created since ${ndate} : ${gdate.length}`
     );
-
+    console.log(`----------------------------------------`);
   }
 
   if (command === "meet") {
@@ -454,7 +455,9 @@ client.on("message", async (message) => {
 
     if (userm.users.size === 0) {
       function findID() {
-        var ID = message.author.lastMessageID       
+        var IDarray = message.author.lastMessageID
+        console.log("IDarray: ", IDarray)
+        var ID = IDarray[0]
         console.log("ID: ", ID)
         msg(ID)
       }
