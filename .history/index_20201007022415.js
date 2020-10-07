@@ -499,7 +499,7 @@ client.on("message", async (message) => {
         console.log("ID: ", ID)
         if (ID == null) {
 
-          message.channel.send("Sorry, I didn't find any messages")  
+          message.channel.send("I didn't find messages")  
 
         } else {
 
