@@ -83,15 +83,16 @@ if (fs.existsSync(`./Bot.db3`)) {
 
 client.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
-  console.log(chalk.green(
-    `--------------------------------------------------------------------------------------------------`
-  ));
+
   console.log(
-    `Bot is ready.\nHe has started at ${timeHServer}:${timeMServer}:${timeSServer}`
+    `Bot is ready.\nHe has started at ${timeHServer}:${timeMServer}:${timeSServer}\n\nHe has started in ${client.guilds.cache.size} guilds, with ${client.users.cache.size} users in ${client.channels.cache.size} channels`
   );
-  client.user.setActivity(`Discord | ${prefix} help | ${state}`, {
-    type: "WATCHING",
-  });
+  client.user.setActivity(
+    `${client.guilds.cache.size} servers | ${prefix} help | ${state}`,
+    {
+      type: "WATCHING",
+    }
+  );
   console.log(chalk.green(
     `--------------------------------------------------------------------------------------------------`
   ));
