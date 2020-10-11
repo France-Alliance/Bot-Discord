@@ -123,7 +123,7 @@ client.on("guildMemberAdd", (member) => {
     );
   console.log(`Welcome message was sent`);
   console.log(`------------`)
-})).catch();
+}));
 
 
 client.on("guildMemberRemove", (member) => {
