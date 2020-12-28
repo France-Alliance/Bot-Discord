@@ -1,4 +1,5 @@
 token.*
 infos.*
+creds/
+.history/.json
 node_modules/
-Bot*
