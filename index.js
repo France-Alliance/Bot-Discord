@@ -5,7 +5,7 @@ const launch = require(`./Function/Startup`);
 const flux = require(`./Function/Userflux`);
 const time = require(`./Function/Time`);
 
-const {token} = require(`./creds/token.json`);
+const {token} = require(`./token.json`);
 const {prefix, state} = require(`./config.json`);
 
 const client = new discord.Client();
