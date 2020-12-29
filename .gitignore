@@ -1,5 +1,4 @@
 token.*
 infos.*
-creds/token.json
 .history/.json
 node_modules/
