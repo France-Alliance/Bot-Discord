@@ -33,6 +33,8 @@ flux.exit(client)
 
 //commands code
 client.on("message", async (message) => {
+  //If there's a command, the statement will turn to true. If there's no command, it will be false
+  cmd = false
   // This event will run on every single message received, from any channel or DM.
 
 
@@ -70,14 +72,13 @@ client.on("message", async (message) => {
       .setAuthor(`Control Tower`)
       .setDescription(`This a list of all the command available now`)
       .setThumbnail(`https://i.imgur.com/Vjx3EOm.jpg`)
-      .addField(`\u200b`, "`!!infos`\rShow info about you", false)
-      .addField(`\u200b`, "`!!say`\rSay what you want", false)
-      .addField(`\u200b`, "`!!ping`\rShow the ping", false)
-      .addField(`\u200b`, "`!!token`\rShow the token", false)
-      .addField(`\u200b`, "`!!serveur_infos`\rShow the ping", false)
-      .addField(`\u200b`, "`!!id (optional tag)`\rShows ID of you choice", false)
-      .addField(`\u200b`, "`!!master`\r this one is secret but powerful...", false)
-      .addField(`\u200b`, "`!!nbrchannel (DD/MM/YY)`\rShow the number of channel and category created since the date in the server", false)
+      .addField(`\u200b`, `\`${prefix}infos\`\rShow info about you`, false)
+      .addField(`\u200b`, `\`${prefix}say\`\rSay what you want`, false)
+      .addField(`\u200b`, `\`${prefix}ping\`\rShow the ping`, false)
+      .addField(`\u200b`, `\`${prefix}token\`\rShow the token`, false)
+      .addField(`\u200b`, `\`${prefix}serveur_infos\`\rShow the ping`, false)
+      .addField(`\u200b`, `\`${prefix}id (optional tag)\`\rShows ID of you choice`, false)
+      .addField(`\u200b`, `\`${prefix}master\`\rThis one is secret but powerful...`, false)
       .addField(`\u200b`, `\u200b`, false)
       .addField(
         `And now, a message from our sponsor:`,
@@ -88,12 +89,14 @@ client.on("message", async (message) => {
       .setFooter(`Have a good day !`);
 
     message.channel.send(help);
+    cmd = true
   }
 
   if (command === "infos") {
     message.channel.send(
       `Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`
     );
+    cmd = true
   }
 
   if (command === "say") {
@@ -104,6 +107,7 @@ client.on("message", async (message) => {
     message.delete().catch((O_o) => { });
     // And we get the bot to say the thing:
     message.channel.send(sayMessage);
+    cmd = true
   }
 
   if (command === "ping") {
@@ -113,12 +117,14 @@ client.on("message", async (message) => {
     m.channel.send(
       `For real, latency is ${m.createdTimestamp - message.createdTimestamp}ms`
     );
+    cmd = true
   }
 
   if (command === "token") {
     message.channel.send(
       `Really ${message.author.username} ?! Did you actually think i would put my token in a command?`
     );
+    cmd = true
   }
 
   if (command === "serveur_infos") {
@@ -184,6 +190,7 @@ client.on("message", async (message) => {
         2048
       )}`
     );
+    cmd = true
   }
 
   if (command === "id") {
@@ -195,6 +202,7 @@ client.on("message", async (message) => {
     if (userm.users.size != 0) {
       message.channel.send(`His ID is ${userm.users.map((user) => user.id)} `);
     }
+    cmd = true
   }
 
   if (command === "master") {
@@ -211,6 +219,7 @@ client.on("message", async (message) => {
       console.log("HE`S NOT A MASTER! BURN HIM!");
       message.channel.send("Sorry your not a dev (CHEH)");
     }
+    cmd = true
   }
 
   if (command === "channel_infos") {
@@ -237,11 +246,18 @@ client.on("message", async (message) => {
     message.channel.send(
       `Channel & Category created since ${ndate} : ${gdate.length}`
     );
+    cmd = true
   }
 
   if (command === "test") {
     console.log("Empty")
     message.channel.send(`Déso fréro, y'a r ici mais tkt, t'est le sang !`);
+    cmd = true
+  }
+
+  if (cmd === false ) {
+    console.log(`no command "${command}"`)
+    message.channel.send(`Sorry but there's no command "${command}"... Try \`\`\`${prefix}help\`\`\` to have a list of available commands `)
   }
 });
 
