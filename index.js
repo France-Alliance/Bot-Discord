@@ -2,6 +2,7 @@ const discord = require(`discord.js`);
 const chalk = require("chalk");
 
 const launch = require(`./Function/Startup`);
+const update = require(`./functions/update`);
 const flux = require(`./Function/Userflux`);
 const time = require(`./Function/Time`);
 
@@ -13,6 +14,7 @@ const client = new discord.Client();
 //------------
 
 launch.art()
+update.update();
 
 //------------
 
