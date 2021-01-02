@@ -1,6 +1,6 @@
 const cron = require("node-cron");
 const shell = require("shelljs");
-const time = require(`./time.js`);
+const time = require(`./Time`);
 
 function update(){
 cron.schedule("00 03 * * *", () => {
