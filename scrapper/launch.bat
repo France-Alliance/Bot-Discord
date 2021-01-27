@@ -1,0 +1,1 @@
+start nodemon main.js

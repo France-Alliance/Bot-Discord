@@ -9,7 +9,7 @@ const time = require(`./functions/Time`);
 const { token } = require(`./token.json`);
 const { prefix, state } = require(`./config.json`);
 
-var AM2S = require(`../scrapper/main`);
+var AM2S = require(`./scrapper/main`);
 
 const client = new discord.Client();
 
@@ -275,7 +275,7 @@ client.on("message", async (message) => {
     AM2S.script().then(() => {
       message.channel.send(
         `Hello! Here is the data from ${AM2DNF}`,
-        { files: [`../scrapper/output/${AM2S.output_file_name()}`] }
+        { files: [`./scrapper/output/${AM2S.output_file_name()}`] }
       );
     });
 

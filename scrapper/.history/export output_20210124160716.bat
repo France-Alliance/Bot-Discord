@@ -1,0 +1,1 @@
+start node --inspect main.js > ./output/text.txt

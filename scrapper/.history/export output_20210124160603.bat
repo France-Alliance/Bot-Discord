@@ -1,0 +1,1 @@
+start nodemon --inspect main.js > ./output/text.txt
