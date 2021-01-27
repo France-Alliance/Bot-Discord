@@ -1,44 +1,51 @@
 const discord = require(`discord.js`);
 const chalk = require("chalk");
 
-const launch = require(`./Function/Startup`);
-const update = require(`./Function/Update`);
-const flux = require(`./Function/Userflux`);
-const time = require(`./Function/Time`);
+const launch = require(`./functions/Startup`);
+const update = require(`./functions/Update`);
+const flux = require(`./functions/Userflux`);
+const time = require(`./functions/Time`);
 
-const {token} = require(`./token.json`);
-const {prefix, state} = require(`./config.json`);
+const { token } = require(`./token.json`);
+const { prefix, state } = require(`./config.json`);
+
+var AM2S = require(`../scrapper/main`);
 
 const client = new discord.Client();
 
 //------------
 
-launch.art()
+launch.art();
 update.update();
 
 //------------
 
 client.on("ready", () => {
-  const clichannelsize = client.channels.cache.size
-  const cliusersize = client.users.cache.size
-  const cliguildsize = client.guilds.cache.size
-  const cliuser = client.user
-  launch.activity(cliuser, cliguildsize, prefix, state)
-  launch.info(time.hours(), time.minutes(), time.secondes(), cliguildsize, cliusersize, clichannelsize)
+  const clichannelsize = client.channels.cache.size;
+  const cliusersize = client.users.cache.size;
+  const cliguildsize = client.guilds.cache.size;
+  const cliuser = client.user;
+  launch.activity(cliuser, cliguildsize, prefix, state);
+  launch.info(
+    time.hours(),
+    time.minutes(),
+    time.secondes(),
+    cliguildsize,
+    cliusersize,
+    clichannelsize
+  );
 });
 
 //Say hello to every new user
-flux.entry(client)
+flux.entry(client);
 //Say hello to every new user
-flux.exit(client)
-
+flux.exit(client);
 
 //commands code
 client.on("message", async (message) => {
   //If there's a command, the statement will turn to true. If there's no command, it will be false
-  cmd = false
+  cmd = false;
   // This event will run on every single message received, from any channel or DM.
-
 
   // Ignore other bots. This also makes your bot ignore itself and not get into a spam loop (we call that "botception").
   if (message.author.bot) return;
@@ -79,8 +86,16 @@ client.on("message", async (message) => {
       .addField(`\u200b`, `\`${prefix}ping\`\rShow the ping`, false)
       .addField(`\u200b`, `\`${prefix}token\`\rShow the token`, false)
       .addField(`\u200b`, `\`${prefix}serveur_infos\`\rShow the ping`, false)
-      .addField(`\u200b`, `\`${prefix}id (optional tag)\`\rShows ID of you choice`, false)
-      .addField(`\u200b`, `\`${prefix}master\`\rThis one is secret but powerful...`, false)
+      .addField(
+        `\u200b`,
+        `\`${prefix}id (optional tag)\`\rShows ID of you choice`,
+        false
+      )
+      .addField(
+        `\u200b`,
+        `\`${prefix}master\`\rThis one is secret but powerful...`,
+        false
+      )
       .addField(`\u200b`, `\u200b`, false)
       .addField(
         `And now, a message from our sponsor:`,
@@ -91,14 +106,14 @@ client.on("message", async (message) => {
       .setFooter(`Have a good day !`);
 
     message.channel.send(help);
-    cmd = true
+    cmd = true;
   }
 
   if (command === "infos") {
     message.channel.send(
       `Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`
     );
-    cmd = true
+    cmd = true;
   }
 
   if (command === "say") {
@@ -106,10 +121,10 @@ client.on("message", async (message) => {
     // To get the "message" itself we join the `args` back into a string with spaces:
     const sayMessage = args.join(" ");
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-    message.delete().catch((O_o) => { });
+    message.delete().catch((O_o) => {});
     // And we get the bot to say the thing:
     message.channel.send(sayMessage);
-    cmd = true
+    cmd = true;
   }
 
   if (command === "ping") {
@@ -119,14 +134,14 @@ client.on("message", async (message) => {
     m.channel.send(
       `For real, latency is ${m.createdTimestamp - message.createdTimestamp}ms`
     );
-    cmd = true
+    cmd = true;
   }
 
   if (command === "token") {
     message.channel.send(
       `Really ${message.author.username} ?! Did you actually think i would put my token in a command?`
     );
-    cmd = true
+    cmd = true;
   }
 
   if (command === "serveur_infos") {
@@ -169,30 +184,32 @@ client.on("message", async (message) => {
 
     console.log(
       "Date as YYYY-MM-DD hh:mm:ss Format: " +
-      year +
-      "-" +
-      month +
-      "-" +
-      date +
-      " " +
-      hours +
-      ":" +
-      minutes +
-      ":" +
-      seconds
+        year +
+        "-" +
+        month +
+        "-" +
+        date +
+        " " +
+        hours +
+        ":" +
+        minutes +
+        ":" +
+        seconds
     );
     console.log(message.guild.owner);
 
     message.channel.send(
-      ` ${message.guild.name}: ${message.guild.memberCount
-      } total members\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner
+      ` ${message.guild.name}: ${
+        message.guild.memberCount
+      } total members\rServer Region: ${message.guild.region}\rOwner: ${
+        message.guild.owner
       }\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL(
         "jpg",
         true,
         2048
       )}`
     );
-    cmd = true
+    cmd = true;
   }
 
   if (command === "id") {
@@ -204,7 +221,7 @@ client.on("message", async (message) => {
     if (userm.users.size != 0) {
       message.channel.send(`His ID is ${userm.users.map((user) => user.id)} `);
     }
-    cmd = true
+    cmd = true;
   }
 
   if (command === "master") {
@@ -221,7 +238,7 @@ client.on("message", async (message) => {
       console.log("HE`S NOT A MASTER! BURN HIM!");
       message.channel.send("Sorry your not a dev (CHEH)");
     }
-    cmd = true
+    cmd = true;
   }
 
   if (command === "channel_infos") {
@@ -248,20 +265,29 @@ client.on("message", async (message) => {
     message.channel.send(
       `Channel & Category created since ${ndate} : ${gdate.length}`
     );
-    cmd = true
+    cmd = true;
   }
 
-  if (command === "test") {
-    console.log("Empty")
-    message.channel.send(`Déso fréro, y'a r ici mais tkt, t'est le sang !`);
-    cmd = true
+  if (command === "am2d") {
+    AM2DNF=AM2S.output_file_name().replace('.txt','')
+    console.log("Beggining the scrap of AM2");
+    message.channel.send(`Please wait. Gathering data...`);
+    AM2S.script().then(() => {
+      message.channel.send(
+        `Hello! Here is the data from ${AM2DNF}`,
+        { files: [`../scrapper/output/${AM2S.output_file_name()}`] }
+      );
+    });
+
+    cmd = true;
   }
 
-  if (cmd === false ) {
-    console.log(`no command "${command}"`)
-    message.channel.send(`Sorry but there's no command "${command}"... Try \`\`\`${prefix}help\`\`\` to have a list of available commands `)
+  if (cmd === false) {
+    console.log(`no command "${command}"`);
+    message.channel.send(
+      `Sorry but there's no command "${command}"... Try \`\`\`${prefix}help\`\`\` to have a list of available commands `
+    );
   }
 });
-
 
 client.login(token);
