@@ -17,15 +17,14 @@ async function script() {
   await FILE.create();
 
   if (IP.MAC()[1] == "rpb4"){
-    browser = await puppeteer.launch({
+    const browser = await puppeteer.launch({
       args: ["--no-sandbox", "--window-size=1920x1080"],
       headless: true,
       executablePath: "/usr/bin/chromium-browser",
     })
   } 
-
   if (IP.MAC()[1] == "windows") {
-    browser = await puppeteer.launch({
+    const browser = await puppeteer.launch({
       args: ["--no-sandbox", "--window-size=1920x1080"],
       headless: true,
     })

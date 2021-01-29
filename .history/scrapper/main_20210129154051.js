@@ -11,25 +11,27 @@ const { username, password } = require(`./data/creds.json`);
 
 async function launch(){
   console.log("MAC ADD: "+IP.MAC()[1])
-}
-
-async function script() {
-  await FILE.create();
-
   if (IP.MAC()[1] == "rpb4"){
     browser = await puppeteer.launch({
       args: ["--no-sandbox", "--window-size=1920x1080"],
       headless: true,
       executablePath: "/usr/bin/chromium-browser",
     })
-  } 
-
-  if (IP.MAC()[1] == "windows") {
+    return browser
+  } else {
     browser = await puppeteer.launch({
       args: ["--no-sandbox", "--window-size=1920x1080"],
       headless: true,
     })
+    return browser
   }
+}
+
+async function script() {
+  await FILE.create();
+
+  browser = launch();
+
 
 
   const page = await browser.newPage();
