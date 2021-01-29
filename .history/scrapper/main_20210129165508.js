@@ -15,20 +15,27 @@ async function launch(){
 
 async function launcharg(){
   if (IP.MAC()[1] == "rpb4"){
-    return  'executablePath: "/usr/bin/chromium-browser"'
+    return '{args: ["--no-sandbox", "--window-size=1920x1080"], headless: true, executablePath: "/usr/bin/chromium-browser"}'
   } 
 
   if (IP.MAC()[1] == "windows") {
-    return ''
+    return '{args: ["--no-sandbox", "--window-size=1920x1080"], headless: true}'
   }
 }
 
 async function script() {
   await FILE.create();
-  await launcharg().then( a => {
-    browser = await puppeteer.launch({args: ["--no-sandbox", "--window-size=1920x1080"], headless: true, a})
+  a=''
+  if (IP.MAC()[1] == "rpb4"){
+    a=''
+  } 
 
-  })
+  if (IP.MAC()[1] == "windows") {
+    a="/usr/bin/chromium-browser"
+  }
+
+  browser = await puppeteer.launch({args: ["--no-sandbox", "--window-size=1920x1080"], headless: true, executablePath: a })
+
 
   const page = await browser.newPage();
   await page.setViewport({ width: 1200, height: 928 });
