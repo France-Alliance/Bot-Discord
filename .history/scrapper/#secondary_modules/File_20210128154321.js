@@ -15,29 +15,24 @@ async function del() {
     if (err) console.log(`${file_name} wasn't found`);
     else console.log(`${file_name} was deleted`);
   });
+  
 }
 
 async function create() {
   console.log("");
-  fs.access(dir, (err) => {
-    if (!err) {
-      console.log(`OUTPUT DIRECTORY ALREADY EXIST`);
-    } else {
-      fs.mkdir(path.join(__dirname, "test"), (err) => {
-        if (err) {
-          return console.error(err);
-        }
-      });
-      console.log(`OUTPUT DIRECTORY CREATED`);
-    }
-  });
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+    console.log(` CREATED`);
+  } else {
+    console.log(`OUTPUT DIRECTORY ALREADY EXIST`);
+  }
 
   try {
     await del();
   } finally {
     fs.writeFile(file_name, "", function (err) {
-      if (err != null) {
-        console.log("ERROR:\n" + err);
+      if (err != null){
+        console.log("ERROR:\n"+err)
       }
       console.log("OUTPUT FILE CREATED");
       fs.rename(file_name, dest, (err) => {
