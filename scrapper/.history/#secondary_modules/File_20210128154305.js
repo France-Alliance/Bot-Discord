@@ -11,11 +11,14 @@ f = path.basename(file_name);
 dest = path.resolve(dir, f);
 
 async function del() {
+  console.log("dest: "+dest)
+  /*
+  fs.truncate('/path/to/file', 0, function(){console.log('done')})
   fs.unlink(dest, (err) => {
     if (err) console.log(`${file_name} wasn't found`);
     else console.log(`${file_name} was deleted`);
   });
-  
+  */
 }
 
 async function create() {

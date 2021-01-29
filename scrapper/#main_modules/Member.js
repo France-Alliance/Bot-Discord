@@ -40,21 +40,20 @@ async function main_member(page) {
         ID = "ID: " + PI[1];
 
         console.log(COMPAGNY);
-        console.log(ID);
-        console.log(STAR);
-        console.log(VALORISATION);
-        console.log(SOLDE);
-        console.log(HUB);
-        console.log(LAST_CO);
-        console.log("");
-        
         await file.write(COMPAGNY);
+        console.log(ID);
         await file.write(ID);
+        console.log(STAR);
         await file.write(STAR);
+        console.log(VALORISATION);
         await file.write(VALORISATION);
+        console.log(SOLDE);
         await file.write(SOLDE);
+        console.log(HUB);
         await file.write(HUB);
+        console.log(LAST_CO);
         await file.write(LAST_CO);
+        console.log("");
         await file.write("\n")
       }
 
@@ -68,21 +67,20 @@ async function main_member(page) {
       ID = "ID: " + PI[1];
 
       console.log(COMPAGNY);
-      console.log(ID);
-      console.log(STAR);
-      console.log(VALORISATION);
-      console.log(SOLDE);
-      console.log(HUB);
-      console.log(LAST_CO);
-      console.log("");
-
       await file.write(COMPAGNY);
+      console.log(ID);
       await file.write(ID);
+      console.log(STAR);
       await file.write(STAR);
+      console.log(VALORISATION);
       await file.write(VALORISATION);
+      console.log(SOLDE);
       await file.write(SOLDE);
+      console.log(HUB);
       await file.write(HUB);
+      console.log(LAST_CO);
       await file.write(LAST_CO);
+      console.log("");
       await file.write("\n")
 
       x++;

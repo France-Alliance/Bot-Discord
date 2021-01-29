@@ -1,1 +1,1 @@
-start nodemon index.js
+nodemon ../index.js

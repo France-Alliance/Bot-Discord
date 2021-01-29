@@ -11,7 +11,7 @@ const { username, password } = require(`./data/creds.json`);
 
 async function script() {
   await FILE.create();
-  if (IP.MAC()[1] == rpb4){
+  if (IP.MAC() == rpb4){
     const browser = await puppeteer.launch({
       args: ["--no-sandbox", "--window-size=1920x1080"],
       headless: true,

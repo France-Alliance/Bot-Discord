@@ -1,1 +1,1 @@
-start nodemon main.js
+start nodemon data/launch.js

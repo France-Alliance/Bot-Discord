@@ -6,16 +6,19 @@ date = ("0" + date_ob.getDate()).slice(-2);
 month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
 year = date_ob.getFullYear();
 file_name = `${date}-${month}-${year}.txt`;
-dir = "../scrapper/output/";
+dir = "../output/";
 f = path.basename(file_name);
 dest = path.resolve(dir, f);
 
 async function del() {
+  console.log("dest: "+dest)
+  /*
+  fs.truncate('/path/to/file', 0, function(){console.log('done')})
   fs.unlink(dest, (err) => {
     if (err) console.log(`${file_name} wasn't found`);
     else console.log(`${file_name} was deleted`);
   });
-  
+  */
 }
 
 async function create() {

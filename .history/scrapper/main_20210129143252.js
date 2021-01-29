@@ -1,5 +1,4 @@
 const puppeteer = require("puppeteer");
-const IP = require(`../functions/IP`);
 
 const TEST = require(`./#main_modules/Test`);
 const SHARED = require(`./#main_modules/Shared`);
@@ -11,19 +10,12 @@ const { username, password } = require(`./data/creds.json`);
 
 async function script() {
   await FILE.create();
-  if (IP.MAC()[1] == rpb4){
-    const browser = await puppeteer.launch({
-      args: ["--no-sandbox", "--window-size=1920x1080"],
-      headless: true,
-      executablePath: "/usr/bin/chromium-browser",
-    });
-  } else {
-    const browser = await puppeteer.launch({
-      args: ["--no-sandbox", "--window-size=1920x1080"],
-      headless: true,
-    });
-  }
 
+  const browser = await puppeteer.launch({
+    args: ["--no-sandbox", "--window-size=1920x1080"],
+    headless: true,
+    executablePath: "/usr/bin/chromium-browser",
+  });
   const page = await browser.newPage();
   await page.setViewport({ width: 1200, height: 928 });
 
