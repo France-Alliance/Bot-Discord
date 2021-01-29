@@ -45,7 +45,7 @@ async function create() {
   }
 }
 async function write(data) {
-  fs.appendFile("/home/pi/git/Bot-Discord/scrapper/output/"+file_name, "\n" + data, (err) => {
+  fs.appendFile(dir+file_name, "\n" + data, (err) => {
     if (err) {
       console.log("Error:\n" + err);
       return "Error:\n" + err;
