@@ -26,7 +26,8 @@ async function main_member(page) {
     x = 1;
     while (x < data.length / 6) {
       console.log("");
-      
+      console.log("ALLIANCE: " + a);
+      await file.write("ALLIANCE: " + a);
       if (x === 1) {
 
         PI = await pi.value(page, data_HTML[5]);
@@ -37,10 +38,7 @@ async function main_member(page) {
         SOLDE = "SOLDE: " + PI[0][3];
         LAST_CO = "LAST_CO: " + PI[0][2];
         ID = "ID: " + PI[1];
-        ALLIANCE = "ALLIANCE: " + a;
 
-        console.log(ALLIANCE);
-        await file.write(ALLIANCE);
         console.log(COMPAGNY);
         await file.write(COMPAGNY);
         console.log(ID);
@@ -67,10 +65,7 @@ async function main_member(page) {
       SOLDE = "SOLDE: " + PI[0][3];
       LAST_CO = "LAST_CO: " + PI[0][2];
       ID = "ID: " + PI[1];
-      ALLIANCE = "ALLIANCE: " + a;
 
-      console.log(ALLIANCE);
-      await file.write(ALLIANCE);
       console.log(COMPAGNY);
       await file.write(COMPAGNY);
       console.log(ID);

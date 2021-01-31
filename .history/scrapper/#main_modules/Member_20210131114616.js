@@ -26,18 +26,19 @@ async function main_member(page) {
     x = 1;
     while (x < data.length / 6) {
       console.log("");
-      
+
+      ALLIANCE = "ALLIANCE: " + a;
+      VALORISATION = "VALORISATION: " + PI[0][1];
+      SOLDE = "SOLDE: " + PI[0][3];
+      LAST_CO = "LAST_CO: " + PI[0][2];
+      ID = "ID: " + PI[1];
+
       if (x === 1) {
 
         PI = await pi.value(page, data_HTML[5]);
         COMPAGNY = "COMPAGNY: " + (await data[0]);
         STAR = "STAR: " + (await sc.star_count_cl(data_HTML[1]));
         HUB = "HUB: " + (await hb.list(data[3]));
-        VALORISATION = "VALORISATION: " + PI[0][1];
-        SOLDE = "SOLDE: " + PI[0][3];
-        LAST_CO = "LAST_CO: " + PI[0][2];
-        ID = "ID: " + PI[1];
-        ALLIANCE = "ALLIANCE: " + a;
 
         console.log(ALLIANCE);
         await file.write(ALLIANCE);
@@ -63,11 +64,6 @@ async function main_member(page) {
       COMPAGNY = "COMPAGNY: " + (await data[x * 6]);
       STAR = "STAR: " + (await sc.star_count_cl(data_HTML[x * 6 + 1]));
       HUB = "HUB: " + (await hb.list(data[x * 6 + 3]));
-      VALORISATION = "VALORISATION: " + PI[0][1];
-      SOLDE = "SOLDE: " + PI[0][3];
-      LAST_CO = "LAST_CO: " + PI[0][2];
-      ID = "ID: " + PI[1];
-      ALLIANCE = "ALLIANCE: " + a;
 
       console.log(ALLIANCE);
       await file.write(ALLIANCE);

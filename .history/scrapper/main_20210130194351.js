@@ -10,7 +10,7 @@ const FILE = require(`./#secondary_modules/File`);
 const { username, password } = require(`./data/creds.json`);
 
 async function script() {
-  await FILE.procedur();
+  await FILE.create();
 
   browser = await puppeteer.launch({
     args: ["--no-sandbox", "--window-size=1920x1080"],

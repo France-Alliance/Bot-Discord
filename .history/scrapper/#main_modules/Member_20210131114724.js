@@ -26,7 +26,14 @@ async function main_member(page) {
     x = 1;
     while (x < data.length / 6) {
       console.log("");
+
       
+      VALORISATION = "VALORISATION: " + PI[0][1];
+      SOLDE = "SOLDE: " + PI[0][3];
+      LAST_CO = "LAST_CO: " + PI[0][2];
+      ID = "ID: " + PI[1];
+      ALLIANCE = "ALLIANCE: " + a;
+
       if (x === 1) {
 
         PI = await pi.value(page, data_HTML[5]);

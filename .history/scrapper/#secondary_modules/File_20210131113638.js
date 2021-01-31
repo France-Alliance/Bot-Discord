@@ -93,7 +93,7 @@ async function write(data) {
       return "Error:\n" + err;
     }
   });
-  await sleep(50)
+  await sleep(175)
 }
 
 async function name() {

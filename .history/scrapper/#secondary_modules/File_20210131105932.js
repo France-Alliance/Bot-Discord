@@ -12,12 +12,6 @@ local_dest = dir + file_name;
 dest_folder = path.resolve(__dirname, dir);
 dest_file = path.resolve(__dirname, local_dest);
 
-async function sleep(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-} 
-
 async function del_file() {
   fs.access(dest_file, (err) => {
     if (err != null) {
@@ -32,37 +26,34 @@ async function del_file() {
       });
     }
   });
-  await sleep(1000)
 }
 
 async function folder() {
   fs.access(dest_folder, (err) => {
     if (err != null) {
-      console.log(`OUTPUT DIRECTORY DON'T EXIST`);
+      console.log(`OUTPUT DIRECTORY ALREADY EXIST`);
+      console.log(err)
+    } else {
       fs.mkdir(dest_folder, (err) => {
         if (err != null) {
-          console.log(`UNABLE TO CREATE OUTPUT DIRECTORY`);
+          console.log(`UNABLE TO procedur OUTPUT DIRECTORY`);
         } else {
           console.log(`OUTPUT DIRECTORY CREATED`);
         }
       });
-      
-    } else {
-      console.log(`OUTPUT DIRECTORY ALREADY EXIST`);
     }
   });
-  await sleep(1000)
 }
 
 async function create_file(){
-  fs.writeFile(dest_file,"", function (err) {
+  fs.writeFile(dest_file, "", function (err) {
     if (err != null) {
-      console.log(`UNABLE TO CREATE OUTPUT FILE`);
+      console.log("ERROR:\n" + err);
     } else {
       console.log("OUTPUT FILE CREATED");
     }
   });
-  await sleep(1000)
+
 }
 
 async function procedur() {
@@ -87,13 +78,14 @@ async function procedur() {
   }
 }
 async function write(data) {
-  fs.appendFile(dest_file, "\n"+data, (err) => {
+  /*
+  fs.appendFile("/home/pi/git/Bot-Discord/scrapper/output/"+file_name, "\n" + data, (err) => {
     if (err) {
       console.log("Error:\n" + err);
       return "Error:\n" + err;
     }
   });
-  await sleep(50)
+  */
 }
 
 async function name() {

@@ -32,7 +32,6 @@ async function del_file() {
       });
     }
   });
-  await sleep(1000)
 }
 
 async function folder() {
@@ -62,7 +61,7 @@ async function create_file(){
       console.log("OUTPUT FILE CREATED");
     }
   });
-  await sleep(1000)
+
 }
 
 async function procedur() {
@@ -87,13 +86,13 @@ async function procedur() {
   }
 }
 async function write(data) {
-  fs.appendFile(dest_file, "\n"+data, (err) => {
+  fs.appendFile("/home/pi/git/Bot-Discord/scrapper/output/"+file_name, "\n" + data, (err) => {
     if (err) {
       console.log("Error:\n" + err);
       return "Error:\n" + err;
     }
   });
-  await sleep(50)
+  await sleep(500)
 }
 
 async function name() {

@@ -87,13 +87,13 @@ async function procedur() {
   }
 }
 async function write(data) {
-  fs.appendFile(dest_file, "\n"+data, (err) => {
+  fs.appendFile(dest_file, data, (err) => {
     if (err) {
       console.log("Error:\n" + err);
       return "Error:\n" + err;
     }
   });
-  await sleep(50)
+  await sleep(500)
 }
 
 async function name() {
