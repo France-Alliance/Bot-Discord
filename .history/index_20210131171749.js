@@ -43,7 +43,7 @@ flux.exit(client);
 
 //commands code
 client.on("message", async (message) => {
-  //If command exist, the statement will turn to true. If there's no command, it will be false
+  //If there's a command, the statement will turn to true. If there's no command, it will be false
   cmd = false;
   // This event will run on every single message received, from any channel or DM.
 
@@ -73,6 +73,8 @@ client.on("message", async (message) => {
         nameDev.push(obj.user);
       }
     });
+    console.log(nameDev);
+
     const help = new discord.MessageEmbed()
       .setColor(`#0099ff`)
       .setTitle(`Command available`)
@@ -86,19 +88,15 @@ client.on("message", async (message) => {
       .addField(`\u200b`, `\`${prefix}serveur_infos\`\rShow the ping`, false)
       .addField(
         `\u200b`,
-        `\`${prefix}id (optional tag)\`\rShows ID of your choice`,
+        `\`${prefix}id (optional tag)\`\rShows ID of you choice`,
         false
       )
       .addField(
         `\u200b`,
-        `\`${prefix}master\`\rThis one is secret but yet powerful...`,
+        `\`${prefix}master\`\rThis one is secret but powerful...`,
         false
       )
-      .addField(
-        `\u200b`,
-        `\`${prefix}am2d\`\rSummmon a file with all France Alliance AM2 Data (take ≈ 10mn)`,
-        false
-      )
+      .addField(`\u200b`, `\`${prefix}am2d\`\rSummmon a file with all France Alliance AM2 Data (take ≈ 10mn)`, false)
       .addField(`\u200b`, `\u200b`, false)
       .addField(
         `And now, a message from our sponsor:`,
@@ -124,7 +122,7 @@ client.on("message", async (message) => {
     // To get the "message" itself we join the `args` back into a string with spaces:
     const sayMessage = args.join(" ");
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-    message.delete().catch((O_o) => { });
+    message.delete().catch((O_o) => {});
     // And we get the bot to say the thing:
     message.channel.send(sayMessage);
     cmd = true;
@@ -187,23 +185,25 @@ client.on("message", async (message) => {
 
     console.log(
       "Date as YYYY-MM-DD hh:mm:ss Format: " +
-      year +
-      "-" +
-      month +
-      "-" +
-      date +
-      " " +
-      hours +
-      ":" +
-      minutes +
-      ":" +
-      seconds
+        year +
+        "-" +
+        month +
+        "-" +
+        date +
+        " " +
+        hours +
+        ":" +
+        minutes +
+        ":" +
+        seconds
     );
     console.log(message.guild.owner);
 
     message.channel.send(
-      ` ${message.guild.name}: ${message.guild.memberCount
-      } total members\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner
+      ` ${message.guild.name}: ${
+        message.guild.memberCount
+      } total members\rServer Region: ${message.guild.region}\rOwner: ${
+        message.guild.owner
       }\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL(
         "jpg",
         true,
@@ -243,13 +243,14 @@ client.on("message", async (message) => {
   }
 
   if (command === "am2d") {
-    AM2DNF = AM2S.output_file_name()[0].replace(".txt", "");
+    AM2DNF=AM2S.output_file_name()[0].replace('.txt','')
     console.log("Beggining the scrap of AM2");
     message.channel.send(`Please wait. Gathering data...`);
     AM2S.script().then(() => {
-      message.channel.send(`Hello! Here is the data from ${AM2DNF}`, {
-        files: [AM2S.output_file_name()[1]],
-      });
+      message.channel.send(
+        `Hello! Here is the data from ${AM2DNF}`,
+        { files: [AM2S.output_file_name()[1]] }
+      );
     });
 
     cmd = true;

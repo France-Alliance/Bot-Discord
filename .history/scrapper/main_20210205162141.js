@@ -15,7 +15,7 @@ async function script() {
   browser = await puppeteer.launch({
     args: ["--no-sandbox", "--window-size=1920x1080"],
     headless: true,
-    executablePath: "/usr/bin/chromium-browser"
+   
   });
 
   const page = await browser.newPage();

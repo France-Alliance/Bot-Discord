@@ -4,7 +4,7 @@ const sc = require(`../#secondary_modules/Stars_count`);
 const hb = require(`../#secondary_modules/Hubs`);
 const pi = require(`../#secondary_modules/Profile_infos`);
 const file = require(`../#secondary_modules/File`);
-const id = require(path.join(__dirname, "../", `data/Alliance_IDs.json`));
+const id = require(`../data/IDs.json`);
 
 async function main_member(page) {
   for (i in id) {

@@ -43,7 +43,7 @@ flux.exit(client);
 
 //commands code
 client.on("message", async (message) => {
-  //If command exist, the statement will turn to true. If there's no command, it will be false
+  //If there's a command, the statement will turn to true. If there's no command, it will be false
   cmd = false;
   // This event will run on every single message received, from any channel or DM.
 
@@ -73,6 +73,8 @@ client.on("message", async (message) => {
         nameDev.push(obj.user);
       }
     });
+    console.log(nameDev);
+
     const help = new discord.MessageEmbed()
       .setColor(`#0099ff`)
       .setTitle(`Command available`)
@@ -86,7 +88,7 @@ client.on("message", async (message) => {
       .addField(`\u200b`, `\`${prefix}serveur_infos\`\rShow the ping`, false)
       .addField(
         `\u200b`,
-        `\`${prefix}id (optional tag)\`\rShows ID of your choice`,
+        `\`${prefix}id (optional tag)\`\rShows ID of you choice`,
         false
       )
       .addField(
