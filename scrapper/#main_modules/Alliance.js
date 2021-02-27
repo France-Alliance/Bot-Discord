@@ -1,4 +1,4 @@
-const id = require(path.join(__dirname, "../../", `data/Alliance_IDs.json`));
+const id = require(path.join(__dirname, "../", `data/Alliance_IDs.json`));
 const file = require(path.join(__dirname, "../", `#secondary_modules/File`));
 const hb = require(`../#secondary_modules/Hubs`);
 
