@@ -5,7 +5,7 @@ const MEMBER = require(`./#main_modules/Member`);
 const ALLIANCE = require(`./#main_modules/Alliance`);
 const DS = require(`./#main_modules/Datasheet`);
 const FILE = require(`./#secondary_modules/File`);
-const ID = require(path.join(__dirname, "./", `scrapper/data/Alliance_IDs.json`));
+const ID = require(path.join(__dirname, "./", `data/Alliance_IDs.json`));
 const { username, password } = require(path.join(__dirname, "./", `data/Creds.json`));
 const PARAM = require(path.join(__dirname, "./", `data/Browser_parameter.json`));
 
