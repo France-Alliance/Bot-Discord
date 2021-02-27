@@ -12,7 +12,7 @@ const PARAM = require(path.join(__dirname, "./", `data/Browser_parameter.json`))
 
 
 
-(async function () {
+async function script () {
   await FILE.procedur();
   await file.write("\r");
 
@@ -103,9 +103,13 @@ const PARAM = require(path.join(__dirname, "./", `data/Browser_parameter.json`))
   await browser.close();
   console.log("");
   console.log("Browser closed");
-})
-  ()
+}
+function output_file_name() {
+  return FILE.file_name;
+}
 
+
+module.exports = { script, output_file_name };
 /*
 Player:
   |per Member|
