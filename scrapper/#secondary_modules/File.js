@@ -16,66 +16,65 @@ async function sleep(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
-} 
+}
 
-async function del_file() {
-  fs.access(dest_file, (err) => {
-    if (err != null) {
-      console.log(`OUTPUT FILE (${file_name}) DON'T EXIST\n@[${dest_file}]`);
-    } else {
-      fs.unlink(dest_file, (err) => {
-        if (err != null) {
-          console.log(`UNABLE TO DELETE OUTPUT FILE (${file_name})`);
-        } else {
+async function del_file(desti_file) {
+  fs.access(desti_file, (err) => {
+    if (err == null) {
+      fs.unlink(desti_file, (err) => {
+        if (err == null) {
           console.log(`OUTPUT FILE (${file_name}) WAS DELETED`);
-        }
-      });
-    }
-  });
-  await sleep(1000)
-}
-
-async function folder() {
-  fs.access(dest_folder, (err) => {
-    if (err != null) {
-      console.log(`OUTPUT DIRECTORY DON'T EXIST`);
-      fs.mkdir(dest_folder, (err) => {
-        if (err != null) {
-          console.log(`UNABLE TO CREATE OUTPUT DIRECTORY`);
         } else {
-          console.log(`OUTPUT DIRECTORY CREATED`);
+          console.log(`UNABLE TO DELETE OUTPUT FILE (${file_name})`);
         }
       });
-      
     } else {
-      console.log(`OUTPUT DIRECTORY ALREADY EXIST`);
+      console.log(`OUTPUT FILE (${file_name}) DON'T EXIST\n@[${desti_file}]`);
     }
   });
-  await sleep(1000)
+  await sleep(1000);
 }
 
-async function create_file(){
-  fs.writeFile(dest_file,"", function (err) {
-    if (err != null) {
-      console.log(`UNABLE TO CREATE OUTPUT FILE`);
+async function folder(desti_folder) {
+  fs.access(desti_folder, (err) => {
+    if (err == null) {
+      console.log(`OUTPUT DIRECTORY ALREADY EXIST`);
     } else {
-      console.log("OUTPUT FILE CREATED");
+      console.log(`OUTPUT DIRECTORY DON'T EXIST`);
+      fs.mkdir(desti_folder, (err) => {
+        if (err == null) {
+          console.log(`OUTPUT DIRECTORY CREATED`);
+        } else {
+          console.log(`UNABLE TO CREATE OUTPUT DIRECTORY`);
+        }
+      });
     }
   });
-  await sleep(1000)
+  await sleep(1000);
+}
+
+async function create_file() {
+  fs.writeFile(dest_file, "", function (err) {
+    if (err == null) {
+      console.log(`OUTPUT FILE (${file_name}) WAS CREATED`);
+    } else {
+      console.log(`UNABLE TO CREATE OUTPUT FILE (${file_name})`);
+    }
+  });
+  await sleep(1000);
 }
 
 async function procedur() {
   console.log("");
 
   try {
-    await folder();
+    await folder(dest_folder);
   } catch (e) {
     console.log(e);
   }
 
   try {
-    await del_file();
+    await del_file(dest_file);
   } catch (e) {
     console.log(e);
   }
@@ -87,17 +86,17 @@ async function procedur() {
   }
 }
 async function write(data) {
-  console.log(data)
-  fs.appendFile(dest_file, "\n"+data, (err) => {
+  console.log(data);
+  fs.appendFile(dest_file, "\n" + data, (err) => {
     if (err) {
       console.log("Error:\n" + err);
       return "Error:\n" + err;
     }
   });
-  await sleep(50)
+  await sleep(50);
 }
 
 async function name() {
   return file_name;
 }
-module.exports = { write, procedur, name, file_name, dest_file };
+module.exports = { folder, write, procedur, name, file_name, dest_file };

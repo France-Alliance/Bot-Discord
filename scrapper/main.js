@@ -1,32 +1,32 @@
 const puppeteer = require("puppeteer");
-const IP = require(`../functions/IP`);
 
-const TEST = require(`./#main_modules/Test`);
-const SHARED = require(`./#main_modules/Shared`);
-const MEMBER = require(`./#main_modules/Member`);
-const AG = require(`./#main_modules/AG`);
-const ALLIANCE = require(`./#main_modules/Alliance`);
-const FILE = require(`./#secondary_modules/File`);
-const { username, password } = require(`./data/creds.json`);
+const TEST = require(`./#Player/#main_modules/Test`);
+const MEMBER = require(`./#Player/#main_modules/Member`);
+const ALLIANCE = require(`./#Player/#main_modules/Alliance`);
+const DS = require(`./#Player/#main_modules/Datasheet`);
+const FILE = require(`./#Player/#secondary_modules/File`);
+const ID = require(path.join(__dirname, "./", `data/Alliance_IDs.json`));
+const { username, password } = require(path.join(__dirname, "./", `data/Creds.json`));
+const PARAM = require(path.join(__dirname, "./", `data/Browser_parameter.json`));
 
-async function script() {
+
+
+
+(async function () {
   await FILE.procedur();
+  await file.write("\r");
 
-  browser = await puppeteer.launch({
-    args: ["--no-sandbox", "--window-size=1920x1080"],
-    headless: true,
-    executablePath: "/usr/bin/chromium-browser"
-  });
+  browser = await puppeteer.launch(PARAM);
 
   const page = await browser.newPage();
+  console.log("Browser launched");
   await page.setViewport({ width: 1200, height: 928 });
-  await page.setDefaultNavigationTimeout(0); 
+  await page.setDefaultNavigationTimeout(0);
 
   // Where page manipulation start
   console.log("");
   console.log("start of page manipluation");
   console.log("----");
-  console.log("");
 
   // Instructs the blank page to navigate a URL
   await page.goto("https://www.airlines-manager.com/login");
@@ -55,55 +55,94 @@ async function script() {
   //Execute the TEST module
   //await TEST.prelaunch_test(page);
 
-  //console.log("")
+  //getting the data from files
+  i_l = []
+  id_l = []
+  for (i in ID) {
+    i_l.push(i)
+    id_l.push(ID[i])
+  }
 
-  //Execute the MEMBER module
-  await MEMBER.main_member(page);
+  y = 0
+  while (y < id_l.length) {
+    a = i_l[y]
+    b = id_l[y]
+    await file.write("\r");
+    await file.write("ALLIANCE: " + a);
+    await file.write("\r");
+    //Execute the Datasheet module
+    //await DS.tss(page)
 
-  //Execute the SHARED module
-  //await SHARED.main_shared(page);
+    //Execute the MEMBER module
+    await MEMBER.main_member(page, a, b);
 
-  //Execute the AG module
-  //await AG.main_AG(page);
+    //Execute the SHARED module
+    //await SHARED.main_shared(page);
 
-  //Execute the ALLIANCE module
-  await ALLIANCE.main_alliance(page);
+    //Execute the AG module
+    //await AG.main_AG(page);
+
+    //Execute the ALLIANCE module
+    await ALLIANCE.main_alliance(page, a, b);
+
+    if (a != "Cygnus") {
+      await file.write("\r");
+      await file.write("--");
+      await file.write("\r");
+    } else {
+      await file.write("\r");
+    }
+    y++;
+  }
 
   // Where page manipulation end
   console.log("----");
   console.log("end of page manipulation");
 
   // Closing the browser
-  //await browser.close();
-}
-
-function output_file_name() {
-  return [FILE.file_name, FILE.dest_file]
-
-}
-
-module.exports = { script, output_file_name, };
+  await browser.close();
+  console.log("");
+  console.log("Browser closed");
+})
+  ()
 
 /*
-Member:
+Player:
+  |per Member|
   - Member Alliance ✅
+  - Member ID ✅
   - Member star ✅
-  - Member value
-  - Member revenue
+  - Member value ✅
+  - Member revenue ✅
+  - Member list of hub ✅
 
-  - List of hub ✅
-  - Number of shared hub 
-  - Number of shared line
-  - KM of shared line
+  |per Alliance|
+  - Alliance list of shared hub ✅
+  - Alliance number of shared hub ✅
+  - Alliance number of shared line ✅
+  - Alliance KM of shared line ✅
+  - AG number plane ❌
+  - AG type plane ❌
+  - AG reduction ❌
 
-  - AG number plane
-  - AG type plane
-  - AG reduction
-
-
-  CEO:
+  +|CEO|+
   - Alliance rank
-  - Alliance taxes
-  - Alliance solde
-  - Alliance R&D spend 
+  - Alliance taxes -
+  - Alliance solde -
+  - Alliance R&D spend
+
+Game:
+  |Plane|
+  - Compagny
+  - Name
+  - Price
+  - Range
+  -
+  -
+  -
+  -
+
+
+
+
   */
