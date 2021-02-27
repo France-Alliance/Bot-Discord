@@ -9,9 +9,6 @@ const ID = require(path.join(__dirname, "./", `data/Alliance_IDs.json`));
 const { username, password } = require(path.join(__dirname, "./", `data/Creds.json`));
 const PARAM = require(path.join(__dirname, "./", `data/Browser_parameter.json`));
 
-
-
-
 async function script () {
   await FILE.procedur();
   await file.write("\r");
@@ -105,7 +102,7 @@ async function script () {
   console.log("Browser closed");
 }
 function output_file_name() {
-  return FILE.file_name;
+  return path.join(__dirname, "../", `scrapper/output/${FILE.file_name}`);
 }
 
 

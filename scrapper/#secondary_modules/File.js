@@ -1,12 +1,15 @@
 var fs = require("fs");
 var path = require("path");
 
-date_ob = new Date();
-date = ("0" + date_ob.getDate()).slice(-2);
-month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
-year = date_ob.getFullYear();
+function file_name() {
+  date_ob = new Date();
+  date = ("0" + date_ob.getDate()).slice(-2);
+  month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+  year = date_ob.getFullYear();
+  return `${month}-${date}-${year}.txt`;
+}
 
-file_name = `${date}-${month}-${year}.txt`;
+file_name = file_name()
 dir = "../output/";
 local_dest = dir + file_name;
 dest_folder = path.resolve(__dirname, dir);
