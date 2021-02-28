@@ -243,13 +243,11 @@ client.on("message", async (message) => {
   }
 
   if (command === "am2d") {
-    AM2DNF = AM2S.output_file_name().replace(".txt", "");
     console.log("Beggining the scrap of AM2");
     message.channel.send(`Please wait. Gathering data...`);
     AM2S.script().then(() => {
-      console.log("1")
-      message.channel.send(`Hello! Here is the data from ${AM2DNF}`, {
-        files: [AM2S.output_file_name()],
+      message.channel.send(`Hello! Here is the data from ${AM2S.output_file_name()[1]}`, {
+        files: [AM2S.output_file_name()[0]],
       });
     });
 

@@ -102,7 +102,7 @@ async function script () {
   console.log("Browser closed");
 }
 function output_file_name() {
-  return path.join(__dirname, "../", `scrapper/output/${FILE.file_name}`);
+  return [path.join(__dirname, "../", `scrapper/output/${FILE.file_name}`),FILE.file_name];
 }
 
 
