@@ -4,4 +4,4 @@ infos.*
 node_modules/
 
 !token.js
-!info.js
+!infos.js
