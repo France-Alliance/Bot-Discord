@@ -1,39 +1,42 @@
 const discord = require(`discord.js`);
 const chalk = require("chalk");
+const fs = require("fs");
 
-const launch = require(`./functions/Startup`);
-const update = require(`./functions/Update`);
-const flux = require(`./functions/Userflux`);
-const time = require(`./functions/Time`);
+const functions = require(`./functions_manager`);
 
 const { token } = require(`./token.json`);
 const { prefix, state } = require(`./config.json`);
 
-var AM2S = require(`./scrapper/main`);
-
 const client = new discord.Client();
+client.commands = new discord.Collection();
+
+const commandFiles = fs
+  .readdirSync("../commands")
+  .filter((file) => file.endsWith(".js"));
+
+for (const file of commandFiles) {
+  const command = require(`./commands/${file}`);
+  client.commands.set(command.name, command);
+}
+
+const launch = functions.launch;
+const update = functions.update;
+const flux = functions.flux;
+const time = functions.time;
+const msg = functions.message;
 
 //------------
 
 launch.art();
 update.update();
+msg.am2d(client);
 
 //------------
 
 client.on("ready", () => {
-  const clichannelsize = client.channels.cache.size;
-  const cliusersize = client.users.cache.size;
-  const cliguildsize = client.guilds.cache.size;
-  const cliuser = client.user;
-  launch.activity(cliuser, cliguildsize, prefix, state);
-  launch.info(
-    time.hours(),
-    time.minutes(),
-    time.secondes(),
-    cliguildsize,
-    cliusersize,
-    clichannelsize
-  );
+  launch.activity(client, state, prefix);
+  launch.info(client, time);
+  console.log("\r\r");
 });
 
 //Say hello to every new user
@@ -43,10 +46,7 @@ flux.exit(client);
 
 //commands code
 client.on("message", async (message) => {
-  //If command exist, the statement will turn to true. If there's no command, it will be false
-  cmd = false;
   // This event will run on every single message received, from any channel or DM.
-
   // Ignore other bots. This also makes your bot ignore itself and not get into a spam loop (we call that "botception").
   if (message.author.bot) return;
 
@@ -58,208 +58,45 @@ client.on("message", async (message) => {
   // command = say
   // args = ["Is", "this", "the", "real", "life?"]
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
+  const commandName = args.shift().toLowerCase();
 
   console.log(
     chalk.green(
       `--------------------------------------------------------------------------------------------------`
     )
   );
+  const command = client.commands.get(commandName);
 
-  if (command === "help") {
-    var nameDev = [];
-    message.guild.members.cache.map((obj) => {
-      if (obj.id === "331778741917319168" || obj.id === "145525624939741184") {
-        nameDev.push(obj.user);
-      }
-    });
-    const help = new discord.MessageEmbed()
-      .setColor(`#0099ff`)
-      .setTitle(`Command available`)
-      .setAuthor(`Control Tower`)
-      .setDescription(`This a list of all the command available now`)
-      .setThumbnail(`https://i.imgur.com/Vjx3EOm.jpg`)
-      .addField(`\u200b`, `\`${prefix}infos\`\rShow info about you`, false)
-      .addField(`\u200b`, `\`${prefix}say\`\rSay what you want`, false)
-      .addField(`\u200b`, `\`${prefix}ping\`\rShow the ping`, false)
-      .addField(`\u200b`, `\`${prefix}token\`\rShow the token`, false)
-      .addField(`\u200b`, `\`${prefix}serveur_infos\`\rShow the ping`, false)
-      .addField(
-        `\u200b`,
-        `\`${prefix}id (optional tag)\`\rShows ID of your choice`,
-        false
-      )
-      .addField(
-        `\u200b`,
-        `\`${prefix}master\`\rThis one is secret but yet powerful...`,
-        false
-      )
-      .addField(
-        `\u200b`,
-        `\`${prefix}am2d\`\rSummmon a file with all France Alliance AM2 Data (take ≈ 10mn)`,
-        false
-      )
-      .addField(`\u200b`, `\u200b`, false)
-      .addField(
-        `And now, a message from our sponsor:`,
-        `-----------------------------------\rYou should join us to play Airline Manager 2 !\r We accept everyone, with every level !! (discord.gg/ZGWHpfm) !\r----------------\rYou have question or problem with the bot ?\r Send a message on this server: (discord.gg/HaTSNyA)\r----------------\rThis bot has been built by ${nameDev[0]}\rand with the M-A-S-S-I-V-E help of ${nameDev[1]} !\r-----------------------------------`,
-        false
-      )
-      .setTimestamp()
-      .setFooter(`Have a good day !`);
-
-    message.channel.send(help);
-    cmd = true;
-  }
-
-  if (command === "infos") {
-    message.channel.send(
-      `Your username: ${message.author.username}\rChannel name: ${message.channel.name}\rServer name: ${message.guild.name} (with ${message.guild.memberCount} total members)`
+  if (!client.commands.has(commandName)) {
+    message.reply(
+      `sorry but there's no command "${commandName}"... Try \`\`\`${prefix}help\`\`\` to have a list of available commands`
     );
-    cmd = true;
+    console.log(
+      `${message.author.username}#${message.author.discriminator} (${message.author}) tried non-existing command "${commandName}"`
+    );
+    return;
   }
 
-  if (command === "say") {
-    // makes the bot say something and delete the message. As an example, it`s open to anyone to use.
-    // To get the "message" itself we join the `args` back into a string with spaces:
-    const sayMessage = args.join(" ");
-    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-    message.delete().catch((O_o) => { });
-    // And we get the bot to say the thing:
-    message.channel.send(sayMessage);
-    cmd = true;
+  try {
+    command.execute(message, args);
+    console.log(
+      `${message.author.username}#${message.author.discriminator} (${message.author}) succesfully used command "${commandName}"`
+    );
+  } catch (error) {
+    console.log(
+      `There was an error trying to execute that command!\r${message.author.username}#${message.author.discriminator} (${message.author}) unsuccesfully used command "${commandName}"`
+    );
+    console.error(error);
   }
 
-  if (command === "ping") {
+  if (commandName === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
+    // Multiply by 2 to have an approximation of the round-trip latency
     const m = await message.channel.send("Pong!");
     m.channel.send(
       `For real, latency is ${m.createdTimestamp - message.createdTimestamp}ms`
     );
-    cmd = true;
-  }
-
-  if (command === "token") {
-    message.channel.send(
-      `Really ${message.author.username} ?! Did you actually think i would put my token in a command?`
-    );
-    cmd = true;
-  }
-
-  if (command === "serveur_infos") {
-    // unix timestamp
-    var ts = message.guild.createdTimestamp;
-
-    // initialize new Date object
-    var date_ob = new Date(ts);
-
-    // year as 4 digits (YYYY)
-    var year = date_ob.getFullYear();
-
-    // month as 2 digits (MM)
-    var month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
-
-    // date as 2 digits (DD)
-    var date = ("0" + date_ob.getDate()).slice(-2);
-
-    // hours as 2 digits (hh)
-    var hours = ("0" + date_ob.getHours()).slice(-2);
-
-    // minutes as 2 digits (mm)
-    var minutes = ("0" + date_ob.getMinutes()).slice(-2);
-
-    // seconds as 2 digits (ss)
-    var seconds = ("0" + date_ob.getSeconds()).slice(-2);
-
-    var dte =
-      year +
-      "-" +
-      month +
-      "-" +
-      date +
-      " " +
-      hours +
-      ":" +
-      minutes +
-      ":" +
-      seconds;
-
-    console.log(
-      "Date as YYYY-MM-DD hh:mm:ss Format: " +
-      year +
-      "-" +
-      month +
-      "-" +
-      date +
-      " " +
-      hours +
-      ":" +
-      minutes +
-      ":" +
-      seconds
-    );
-    console.log(message.guild.owner);
-
-    message.channel.send(
-      ` ${message.guild.name}: ${message.guild.memberCount
-      } total members\rServer Region: ${message.guild.region}\rOwner: ${message.guild.owner
-      }\rCreated: ${dte}\rServer Icon: ${message.guild.iconURL(
-        "jpg",
-        true,
-        2048
-      )}`
-    );
-    cmd = true;
-  }
-
-  if (command === "id") {
-    var userm = message.mentions;
-
-    if (userm.users.size === 0) {
-      message.channel.send(`Your ID is ${message.author.id} `);
-    }
-    if (userm.users.size != 0) {
-      message.channel.send(`His ID is ${userm.users.map((user) => user.id)} `);
-    }
-    cmd = true;
-  }
-
-  if (command === "master") {
-    console.log("IS THIS A MASTER ?");
-    console.log("        ||        ");
-
-    if (
-      message.author.id === "331778741917319168" ||
-      message.author.id === "145525624939741184"
-    ) {
-      console.log("HE IS A MASTER !");
-      message.channel.send("What can I do for you, Master ?");
-    } else {
-      console.log("HE`S NOT A MASTER! BURN HIM!");
-      message.channel.send("Sorry your not a dev (CHEH)");
-    }
-    cmd = true;
-  }
-
-  if (command === "am2d") {
-    console.log("Beggining the scrap of AM2");
-    message.channel.send(`Please wait. Gathering data...`);
-    AM2S.script().then(() => {
-      message.channel.send(`Hello! Here is the data from ${AM2S.output_file_name()[1]}`, {
-        files: [AM2S.output_file_name()[0]],
-      });
-    });
-
-    cmd = true;
-  }
-
-  if (cmd === false) {
-    console.log(`no command "${command}"`);
-    message.channel.send(
-      `Sorry but there's no command "${command}"... Try \`\`\`${prefix}help\`\`\` to have a list of available commands `
-    );
   }
 });
-
 client.login(token);

@@ -16,14 +16,14 @@ async function script () {
   browser = await puppeteer.launch(PARAM);
 
   const page = await browser.newPage();
-  console.log("Browser launched");
+  FILE.log("Browser launched");
   await page.setViewport({ width: 1200, height: 928 });
   await page.setDefaultNavigationTimeout(0);
 
   // Where page manipulation start
-  console.log("");
-  console.log("start of page manipluation");
-  console.log("----");
+  FILE.log("");
+  FILE.log("start of page manipluation");
+  FILE.log("----");
 
   // Instructs the blank page to navigate a URL
   await page.goto("https://www.airlines-manager.com/login");
@@ -42,11 +42,11 @@ async function script () {
   // Close the pop-up if it exist
   try {
     await page.click("#popupContainer > .popup-workshop-special > .closeMe");
-    console.log("pop up: closed");
+    FILE.log("pop up: closed");
   } catch (error) {
-    console.log("pop up: null");
+    FILE.log("pop up: null");
   } finally {
-    console.log("");
+    FILE.log("");
   }
 
   //Execute the TEST module
@@ -93,13 +93,13 @@ async function script () {
   }
 
   // Where page manipulation end
-  console.log("----");
-  console.log("end of page manipulation");
+  FILE.log("----");
+  FILE.log("end of page manipulation");
 
   // Closing the browser
   await browser.close();
-  console.log("");
-  console.log("Browser closed");
+  FILE.log("");
+  FILE.log("Browser closed");
 }
 function output_file_name() {
   return [path.join(__dirname, "../", `scrapper/output/${FILE.file_name}`),FILE.file_name];

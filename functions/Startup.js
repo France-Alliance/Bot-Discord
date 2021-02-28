@@ -1,4 +1,13 @@
 const chalk = require("chalk");
+const functions = require(`../functions_manager`);
+
+/*
+  const clichannelsize = client.channels.cache.size;
+  const cliusersize = client.users.cache.size;
+  const cliguildsize = client.guilds.cache.size;
+  const cliuser = client.user;
+*/
+
 
 function art() {
   console.log(`
@@ -12,14 +21,14 @@ ________________________________________________________________________________
 `);
 }
 
-function info(timeHServer, timeMServer, timeSServer, cliguildsize, cliusersize, clichannelsize) {
+function info(client, time) {
   console.log(
     chalk.green(
       `--------------------------------------------------------------------------------------------------`
     )
   );
   console.log(
-    `Bot is ready @ ${timeHServer}:${timeMServer}:${timeSServer}\nHe has started in ${cliguildsize} guilds, with ${cliusersize} users in ${clichannelsize} channels`
+    `Bot is ready @ ${time.hours()}:${time.minutes()}:${time.secondes()}\nHe has started in ${client.guilds.cache.size} guilds, with ${client.users.cache.size} users in ${client.channels.cache.size} channels`
   );
   console.log(
     chalk.green(
@@ -33,9 +42,9 @@ function info(timeHServer, timeMServer, timeSServer, cliguildsize, cliusersize, 
   );
 }
 
-function activity(cliuser, cliguildsize, prefix, state){
-  cliuser.setActivity(
-    `${cliguildsize} servers | ${prefix} help | ${state}`,
+function activity(client,state,prefix){
+  client.user.setActivity(
+    `${client.guilds.cache.size} servers | ${prefix} help | ${state}`,
     {
       type: "WATCHING",
     }
