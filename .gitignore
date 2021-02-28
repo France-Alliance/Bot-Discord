@@ -2,3 +2,6 @@ token.*
 infos.*
 .history/.json
 node_modules/
+
+!token.js
+!info.js
