@@ -1,8 +1,4 @@
 # Bot-Discord
-C'est un projet sympa.
-Long, chiant, compliqué et dur mais c'est un projet sympa.  
-Y'a même un webhook !
-___
-It's a cool project.  
-It's time consuming, it's a pain in the ass and it's hard but it's a sympathic project.  
-There's even a webhook !
+This project is Discord bot design around the needs of an Airline Manager 2 Alliance, France Alliance.
+It is something a project where we learn about coding and it will improve over time !
+If you have any question, join the dev's Discord server. It is just about code (discord.gg/w5ZZVhBRK2) !
