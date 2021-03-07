@@ -3,7 +3,7 @@ const cron = require("node-cron");
 const chalk = require("chalk");
 
 async function am2d(client) {
-  cron.schedule("00 17 * * 6", () => {
+  cron.schedule("00 17 * * 5", () => {
     console.log(
       chalk.green(
         `--------------------------------------------------------------------------------------------------`
