@@ -1,4 +1,5 @@
 token.*
+creds.*
 Creds.*
 infos.*
 .history/.json
