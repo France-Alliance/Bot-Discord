@@ -1,4 +1,5 @@
 token.*
+Creds.*
 infos.*
 .history/.json
 node_modules/
