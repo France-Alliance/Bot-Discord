@@ -1,9 +1,8 @@
 token.*
-creds.*
-Creds.*
 infos.*
 .history/.json
 node_modules/
+scrapper/data/Creds.json
 
 !token.js
 !infos.js
