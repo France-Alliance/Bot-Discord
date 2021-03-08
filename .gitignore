@@ -3,6 +3,7 @@ infos.*
 .history/.json
 node_modules/
 scrapper/data/Creds.json
+.env
 
 !token.js
 !infos.js

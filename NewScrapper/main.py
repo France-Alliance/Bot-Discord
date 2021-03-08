@@ -1,13 +1,20 @@
 from datetime import datetime
-import math
-import statistics
 import json
-import pandas
+import dotenv
+import platform
+import os
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+
+SYSTEM_ENV = dotenv.dotenv_values('../.env')
 
 URL = 'https://www.airlines-manager.com/'
 # 2 Arguments (Tabs of Alliance (profile|members|network)/ ID Alliance)
@@ -21,10 +28,18 @@ ALLIANCE_TABS = ["profile", "members", "network"]
 ALLIANCE_LIST = [{"Name": "Aquila", "ID": 74365}, {
     "Name": "Pyxis", "ID": 88492}, {"Name": "Cygnus", "ID": 92914}]
 
-email = 'irspace.pro@gmail.com'
-password = 'Mardi2015'
+print(SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"], SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"])
+email = SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"]
+password = SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"]
 
-with webdriver.Chrome() as driver:
+starType = ["no", "bronze", "silver", "gold"]
+
+path = "chromedriver"
+
+if platform.system() != "Windows":
+    path=os.path.abspath("chromedriver-v9.4.4-linux-x64/chromedriver")
+    
+with webdriver.Chrome(executable_path=path, options=options) as driver:
     def connect():
         driver.find_element_by_id('username').send_keys(email)
         driver.find_element_by_id('password').send_keys(password)
@@ -63,6 +78,8 @@ with webdriver.Chrome() as driver:
                             "Owner": None, "Hubs": [], "Role": None}
             patternHubs = {"IATA": None, "DemandPartage": None, "NbLigne": None,
                         "KmLigne": None, "NbKmAutoriser": None, "KmRestant": None, "Benefices": None}
+            star = {"Nombre": None, "Type": None}
+            
             for tabs in ALLIANCE_TABS:
                 driver.get(f"{URL_ALLIANCE_PROFIL}/{tabs}/{id['ID']}")
                 if tabs == "profile":
@@ -111,6 +128,20 @@ with webdriver.Chrome() as driver:
                             patternMembersCopy = patternMembers.copy()
                             patternMembersCopy["Name"] = driver.find_element_by_xpath(
                                 f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[1]').text
+                            starCopy = star.copy()
+                            
+                            for j in range(1, 6):
+                                print(f"{patternMembersCopy['Name']} : {starCopy}")
+                                typestar = str(driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[2]/span[{j}]').get_attribute('class').split(" ")[2].replace("StarSmall", ""))
+                                if starCopy == star:
+                                    starCopy["Nombre"] = j
+                                    starCopy["Type"] = typestar
+                                elif typestar == starCopy["Type"]:
+                                    starCopy["Nombre"] = j
+                                else:
+                                    break
+                                    
+                            patternMembersCopy["Star"] = starCopy
                             patternMembersCopy["Owner"] = driver.find_element_by_xpath(
                                 f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[3]').text
                             patternMembersCopy["Hubs"] = driver.find_element_by_xpath(
@@ -152,7 +183,7 @@ with webdriver.Chrome() as driver:
                                 result["Networks"]["Hubs"].append(patternHubsCopy)
 
             AllResult["Alliance"].append(result)
-        print(json.dumps(AllResult))
+        # print(json.dumps(AllResult))
 
         with open(f"./data/{date}.json", "w", encoding='utf8') as f:
             f.write(json.dumps(AllResult))

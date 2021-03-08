@@ -1,0 +1,596 @@
+{
+    "Alliance": [{
+            "Name": "France Aquila",
+            "ID": 74365,
+            "Classement": 87,
+            "Profile": {
+                "General": {
+                    "Created": "06/11/2019",
+                    "nbCompanies": 10,
+                    "Solde": 3961086492,
+                    "BeneficeHebdo": 121670514,
+                    "TaxeHebdo": 0.25
+                },
+                "Hub": {
+                    "HubsDispo": 95,
+                    "KmPartage": 4991361,
+                    "TaxeLigne": 0.0,
+                    "TaxeCompanies": null,
+                    "TaxeCompagnies": 5.0
+                },
+                "AG": {
+                    "nbAvionProposer": "-",
+                    "ReducMax": 10.0,
+                    "Reduc30j": 10229193000,
+                    "nbAvionAcheter": null,
+                    "AideAchatMax": 0.0,
+                    "AideAchat30j": "-",
+                    "nbAvionAchter": 3592
+                },
+                "R&D": 76
+            },
+            "Members": [{
+                    "Name": "Fly Toulouse",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Enzo",
+                    "Hubs": [
+                        "MEL",
+                        "ORD",
+                        "ORY",
+                        "DXB",
+                        "TLS",
+                        "GRU",
+                        "NRT",
+                        "JFK",
+                        "CDG",
+                        "CUN",
+                        "ISL",
+                        "MAD",
+                        "LHR",
+                        "LAX"
+                    ],
+                    "Role": "Fondateur"
+                },
+                {
+                    "Name": "OVALIE 69",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Poetanen",
+                    "Hubs": [
+                        "HAN",
+                        "AKL",
+                        "SKB",
+                        "ICN",
+                        "DRW",
+                        "MEM",
+                        "BAH",
+                        "YOW",
+                        "DSS",
+                        "LYS"
+                    ],
+                    "Role": "Directeur Commercial"
+                },
+                {
+                    "Name": "AIRMONDIAL Group",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Paul",
+                    "Hubs": [
+                        "ADD",
+                        "MPM",
+                        "CDG"
+                    ],
+                    "Role": "Directeur Communication"
+                },
+                {
+                    "Name": "FranceJetAir",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "RyanLateb",
+                    "Hubs": [
+                        "MKE",
+                        "PPT",
+                        "PKX",
+                        "SFO",
+                        "LTT",
+                        "OSL",
+                        "ICN",
+                        "NCE",
+                        "MRU",
+                        "YYZ",
+                        "AKL",
+                        "MEX",
+                        "MPL",
+                        "HKG",
+                        "CDG",
+                        "ORY",
+                        "PVG",
+                        "LHR",
+                        "LAX",
+                        "ATL",
+                        "SIN",
+                        "GIG",
+                        "SYD",
+                        "LOS",
+                        "JFK",
+                        "NRT",
+                        "JNB",
+                        "DME",
+                        "DXB"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "PED Airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "PED",
+                    "Hubs": [
+                        "FCO",
+                        "DXB",
+                        "MEM",
+                        "AMS",
+                        "MEX",
+                        "JFK",
+                        "CDG",
+                        "LAX"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Houston&Co",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Henri",
+                    "Hubs": [
+                        "NTE"
+                    ],
+                    "Role": "Bras droit"
+                },
+                {
+                    "Name": "SPAIN Airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Michael",
+                    "Hubs": [
+                        "DXB",
+                        "MAD",
+                        "DME",
+                        "YYZ",
+                        "ORY"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "France B Air",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Franck",
+                    "Hubs": [
+                        "FRA",
+                        "HKG",
+                        "IAH",
+                        "DXB",
+                        "GRU",
+                        "CDG"
+                    ],
+                    "Role": "Directeur D\u00e9veloppement"
+                },
+                {
+                    "Name": "Mikebasosky Air",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Michele_2045158",
+                    "Hubs": [
+                        "ZRH",
+                        "ORD",
+                        "SYD",
+                        "HNL",
+                        "FRA",
+                        "AMS",
+                        "NRT",
+                        "FCO",
+                        "JNB",
+                        "PEK",
+                        "DXB",
+                        "SIN",
+                        "MXP",
+                        "ATL",
+                        "GMP",
+                        "LHR"
+                    ],
+                    "Role": ""
+                }
+            ],
+            "Networks": {
+                "Statistique": {
+                    "NbrHub": 57,
+                    "NbrLigne": 605,
+                    "KmLigne": 4991361
+                },
+                "Hubs": []
+            }
+        },
+        {
+            "Name": "France Pyxis",
+            "ID": 88492,
+            "Classement": 131,
+            "Profile": {
+                "General": {
+                    "Created": "22/02/2020",
+                    "nbCompanies": 9,
+                    "Solde": 553965306,
+                    "BeneficeHebdo": 101839347,
+                    "TaxeHebdo": 1.0
+                },
+                "Hub": {
+                    "HubsDispo": 32,
+                    "KmPartage": 137610,
+                    "TaxeLigne": 0.0,
+                    "TaxeCompanies": null,
+                    "TaxeCompagnies": 5.0
+                },
+                "AG": {
+                    "nbAvionProposer": "-",
+                    "ReducMax": 10.0,
+                    "Reduc30j": 4152465149,
+                    "nbAvionAcheter": null,
+                    "AideAchatMax": 0.0,
+                    "AideAchat30j": "-",
+                    "nbAvionAchter": 1167
+                },
+                "R&D": 58
+            },
+            "Members": [{
+                    "Name": "Fiji Airways \u00ae",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Thomas MUZELLEC",
+                    "Hubs": [
+                        "DYR",
+                        "MPM"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Fr_Space",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "gold"
+                    },
+                    "Owner": "Bryan blanchard",
+                    "Hubs": [
+                        "LAX",
+                        "SVO",
+                        "ORY"
+                    ],
+                    "Role": "Bras droit"
+                },
+                {
+                    "Name": "Celtic-Airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Mr White",
+                    "Hubs": [
+                        "LHR",
+                        "BFH",
+                        "CDG"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Vsoul'Air",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Narjoz",
+                    "Hubs": [
+                        "GMP",
+                        "LOS",
+                        "DLE",
+                        "DXB",
+                        "MEX",
+                        "SIN",
+                        "LYS",
+                        "YQB"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Scarface air_4595773",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "silver"
+                    },
+                    "Owner": "Scarface",
+                    "Hubs": [
+                        "LHR",
+                        "LAX"
+                    ],
+                    "Role": "Directeur Commercial"
+                },
+                {
+                    "Name": "TNT \u00ae",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "bronze"
+                    },
+                    "Owner": "David Binks",
+                    "Hubs": [
+                        "HKG"
+                    ],
+                    "Role": "Directeur D\u00e9veloppement"
+                },
+                {
+                    "Name": "Air Austrasie",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Mozza",
+                    "Hubs": [
+                        "LHR",
+                        "FRA",
+                        "JNB",
+                        "MPM",
+                        "DMK",
+                        "CDG"
+                    ],
+                    "Role": "Directeur Marketing"
+                },
+                {
+                    "Name": "Torrens Airline",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "Torrens",
+                    "Hubs": [
+                        "HKG",
+                        "DXB",
+                        "CDG",
+                        "ATL",
+                        "HND",
+                        "SFO"
+                    ],
+                    "Role": "Fondateur"
+                }
+            ],
+            "Networks": {
+                "Statistique": {
+                    "NbrHub": 24,
+                    "NbrLigne": 13,
+                    "KmLigne": 137610
+                },
+                "Hubs": [{
+                    "IATA": "HKG",
+                    "DemandPartage": 50.0,
+                    "NbLigne": 13,
+                    "KmLigne": 137610,
+                    "NbKmAutoriser": 0,
+                    "KmRestant": 0.0,
+                    "Benefices": 0
+                }]
+            }
+        },
+        {
+            "Name": "France Cygnus",
+            "ID": 92914,
+            "Classement": 136,
+            "Profile": {
+                "General": {
+                    "Created": "25/03/2020",
+                    "nbCompanies": 12,
+                    "Solde": 1176469795,
+                    "BeneficeHebdo": 231267410,
+                    "TaxeHebdo": 2.25
+                },
+                "Hub": {
+                    "HubsDispo": 36,
+                    "KmPartage": 900855,
+                    "TaxeLigne": 0.0,
+                    "TaxeCompanies": null,
+                    "TaxeCompagnies": 5.0
+                },
+                "AG": {
+                    "nbAvionProposer": "-",
+                    "ReducMax": 10.0,
+                    "Reduc30j": 3727255799,
+                    "nbAvionAcheter": null,
+                    "AideAchatMax": 0.0,
+                    "AideAchat30j": "-",
+                    "nbAvionAchter": 1380
+                },
+                "R&D": 57
+            },
+            "Members": [{
+                    "Name": "-Ad Airlines-",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "silver"
+                    },
+                    "Owner": "Adrouche",
+                    "Hubs": [
+                        "NBO",
+                        "CDG"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Nice Clouds",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "silver"
+                    },
+                    "Owner": "Darzzake",
+                    "Hubs": [
+                        "DRW",
+                        "VIE",
+                        "DFW",
+                        "NCE"
+                    ],
+                    "Role": "Bras droit"
+                },
+                {
+                    "Name": "Glenn Airliners",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Glenn",
+                    "Hubs": [
+                        "MEX",
+                        "ICN",
+                        "LBV",
+                        "LYS"
+                    ],
+                    "Role": "Fondateur"
+                },
+                {
+                    "Name": "Air Meridian",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "gold"
+                    },
+                    "Owner": "Diajerz",
+                    "Hubs": [
+                        "PEK",
+                        "LAX",
+                        "VIE"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Air_France_Cygnus",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "gold"
+                    },
+                    "Owner": "Matthieu_1434623",
+                    "Hubs": [
+                        "DOH",
+                        "LAX",
+                        "CDG"
+                    ],
+                    "Role": "Directeur Ressources Humaines"
+                },
+                {
+                    "Name": "Dutch Air'ways",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "silver"
+                    },
+                    "Owner": "Sam",
+                    "Hubs": [
+                        "AMS"
+                    ],
+                    "Role": "Directeur Marketing"
+                },
+                {
+                    "Name": "Makwa Air",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Makwa07",
+                    "Hubs": [
+                        "NBO",
+                        "DXB",
+                        "DEN"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Skarface Airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Skatface",
+                    "Hubs": [
+                        "FRA",
+                        "GVA",
+                        "DXB",
+                        "LAX",
+                        "SMR",
+                        "ZRH"
+                    ],
+                    "Role": "Directeur Commercial"
+                },
+                {
+                    "Name": "Fulmetal",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "Axel Ardan",
+                    "Hubs": [
+                        "CDG",
+                        "DEN",
+                        "BNE",
+                        "GRU",
+                        "NGO"
+                    ],
+                    "Role": "Bras droit"
+                },
+                {
+                    "Name": "Air France_4261063",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "silver"
+                    },
+                    "Owner": "James",
+                    "Hubs": [
+                        "ATL",
+                        "CDG"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "France air_2429257",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Charles",
+                    "Hubs": [
+                        "CDG"
+                    ],
+                    "Role": ""
+                }
+            ],
+            "Networks": {
+                "Statistique": {
+                    "NbrHub": 25,
+                    "NbrLigne": 152,
+                    "KmLigne": 900855
+                },
+                "Hubs": []
+            }
+        }
+    ]
+}
