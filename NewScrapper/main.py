@@ -37,8 +37,8 @@ starType = ["no", "bronze", "silver", "gold"]
 path = "chromedriver"
 
 if platform.system() != "Windows":
-    path=os.path.abspath("chromedriver-v9.4.4-linux-x64/chromedriver")
-    
+    path = os.path.abspath("chromedriver-v9.4.4-linux-x64/chromedriver")
+
 with webdriver.Chrome(executable_path=path, options=options) as driver:
     def connect():
         driver.find_element_by_id('username').send_keys(email)
@@ -53,33 +53,33 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
     if (wait.until(presence_of_element_located((By.XPATH, '//*[@id="mainHeader"]/div[2]')))):
         for id in ALLIANCE_LIST:
             result = {"Name": None, "ID": None, "Classement": None,
-                    "Profile": {
-                        "General": {"Created": None, "nbCompanies": None, "Solde": None, "BeneficeHebdo": None, "TaxeHebdo": None},
-                        "Hub": {"HubsDispo": None, "KmPartage": None, "TaxeLigne": None, "TaxeCompanies": None},
-                        "AG": {"nbAvionProposer": None, "ReducMax": None, "Reduc30j": None, "nbAvionAcheter": None, "AideAchatMax": None, "AideAchat30j": None},
-                        "R&D": None
-                    },
-                    "Members": [
-                        # PatternMembers Here
-                    ],
-                    "Networks": {
-                        "Statistique": {
-                            "NbrHub": None,
-                            "NbrLigne": None,
-                            "KmLigne": None,
-                        },
-                        "Hubs": [
+                      "Profile": {
+                          "General": {"Created": None, "nbCompanies": None, "Solde": None, "BeneficeHebdo": None, "TaxeHebdo": None},
+                          "Hub": {"HubsDispo": None, "KmPartage": None, "TaxeLigne": None, "TaxeCompanies": None},
+                          "AG": {"nbAvionProposer": None, "ReducMax": None, "Reduc30j": None, "nbAvionAcheter": None, "AideAchatMax": None, "AideAchat30j": None},
+                          "R&D": None
+                      },
+                      "Members": [
+                          # PatternMembers Here
+                      ],
+                      "Networks": {
+                          "Statistique": {
+                              "NbrHub": None,
+                              "NbrLigne": None,
+                              "KmLigne": None,
+                          },
+                          "Hubs": [
 
-                        ]
-                    }
-                    }
+                          ]
+                      }
+                      }
 
             patternMembers = {"Name": None, "Star": "Hard Work in Here !!! (Soon)",
-                            "Owner": None, "Hubs": [], "Role": None}
+                              "Owner": None, "Hubs": [], "Role": None}
             patternHubs = {"IATA": None, "DemandPartage": None, "NbLigne": None,
-                        "KmLigne": None, "NbKmAutoriser": None, "KmRestant": None, "Benefices": None}
+                           "KmLigne": None, "NbKmAutoriser": None, "KmRestant": None, "Benefices": None}
             star = {"Nombre": None, "Type": None}
-            
+
             for tabs in ALLIANCE_TABS:
                 driver.get(f"{URL_ALLIANCE_PROFIL}/{tabs}/{id['ID']}")
                 if tabs == "profile":
@@ -129,10 +129,11 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
                             patternMembersCopy["Name"] = driver.find_element_by_xpath(
                                 f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[1]').text
                             starCopy = star.copy()
-                            
+
                             for j in range(1, 6):
-                                print(f"{patternMembersCopy['Name']} : {starCopy}")
-                                typestar = str(driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[2]/span[{j}]').get_attribute('class').split(" ")[2].replace("StarSmall", ""))
+                                # print(f"{patternMembersCopy['Name']} : {starCopy}")
+                                typestar = str(driver.find_element_by_xpath(
+                                    f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[2]/span[{j}]').get_attribute('class').split(" ")[2].replace("StarSmall", ""))
                                 if starCopy == star:
                                     starCopy["Nombre"] = j
                                     starCopy["Type"] = typestar
@@ -140,7 +141,7 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
                                     starCopy["Nombre"] = j
                                 else:
                                     break
-                                    
+
                             patternMembersCopy["Star"] = starCopy
                             patternMembersCopy["Owner"] = driver.find_element_by_xpath(
                                 f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[3]').text
@@ -180,7 +181,8 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
                                     f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[5]').text.replace(" ", "").replace("%", "").replace(",", "."))
                                 patternHubsCopy["Benefices"] = int(driver.find_element_by_xpath(
                                     f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[6]').text.replace(" ", "").replace("$", ""))
-                                result["Networks"]["Hubs"].append(patternHubsCopy)
+                                result["Networks"]["Hubs"].append(
+                                    patternHubsCopy)
 
             AllResult["Alliance"].append(result)
         # print(json.dumps(AllResult))

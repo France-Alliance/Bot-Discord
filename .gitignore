@@ -4,6 +4,7 @@ infos.*
 node_modules/
 scrapper/data/Creds.json
 .env
+NewScrapper/data/*.json
 
 !token.js
 !infos.js
