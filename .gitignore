@@ -5,6 +5,7 @@ node_modules/
 scrapper/data/Creds.json
 .env
 NewScrapper/data/*.json
+NewScrapper/__pycache__/*
 
 !token.js
 !infos.js

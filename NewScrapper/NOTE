@@ -1,26 +1,26 @@
 Player:
   |per Member|
-  - Member Alliance
-  - Member ID
-  - Member star 
+  - Member Alliance ✔️ 
+  - Member ID ✔️
+  - Member star ✔️
   - Member value 
   - Member revenue 
-  - Member list of hub 
+  - Member list of hub ✔️
 
   |per Alliance|
-  - Alliance list of shared hub 
-  - Alliance number of shared hub 
-  - Alliance number of shared line 
-  - Alliance KM of shared line 
-  - AG number plane 
-  - AG type plane 
-  - AG reduction 
+  - Alliance list of shared hub ✔️
+  - Alliance number of shared hub ✔️
+  - Alliance number of shared line ✔️
+  - Alliance KM of shared line ✔️
+  - AG number plane 〽️
+  - AG type plane 〽️
+  - AG reduction 〽️
 
   +|CEO|+
-  - Alliance rank
-  - Alliance taxes -
-  - Alliance solde -
-  - Alliance R&D spend
+  - Alliance rank ✔️
+  - Alliance taxes ✔️
+  - Alliance solde ✔️
+  - Alliance R&D spend 〽️
 
 Game:
   |Plane|
