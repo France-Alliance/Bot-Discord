@@ -1,1 +1,1523 @@
-{"Alliance": [{"Name": "France Aquila", "ID": "74365", "Classement": "79", "Profile": {"General": {"Created": "06/11/2019", "nbCompanies": "10", "Solde": "3,913,478,657", "BeneficeHebdo": "113,032,165", "TaxeHebdo": "0.00"}, "Hub": {"HubsDispo": "98", "KmPartage": "5.101.266", "TaxeLigne": "0.00", "TaxeCompanies": null, "TaxeCompagnies": "5"}, "AG": {"nbAvionProposer": "-", "ReducMax": "10.00", "Reduc30j": "11,243,943,000", "nbAvionAcheter": null, "AideAchatMax": "0.00", "AideAchat30j": "-", "nbAvionAchter": "3693"}, "R&D": "79"}, "Members": [{"Name": "Houston&Co", "Star": {"Nombre": 5, "Type": "gold"}, "Owner": "Henri", "Hubs": ["NTE"], "Role": "Right-hand man"}, {"Name": "Fly Toulouse", "Star": {"Nombre": 5, "Type": "gold"}, "Owner": "Enzo", "Hubs": ["MEL", "ORD", "ORY", "DXB", "TLS", "GRU", "NRT", "JFK", "CDG", "CUN", "ISL", "MAD", "LHR", "LAX"], "Role": "Founder"}, {"Name": "OVALIE 69", "Star": {"Nombre": 5, "Type": "gold"}, "Owner": "Poetanen", "Hubs": ["GVA", "HAN", "AKL", "SKB", "ICN", "DRW", "MEM", "BAH", "YOW", "DSS", "LYS"], "Role": "Sales director"}, {"Name": "SPAIN Airlines", "Star": {"Nombre": 5, "Type": "gold"}, "Owner": "Michael", "Hubs": ["DXB", "MAD", "DME", "YYZ", "ORY"], "Role": ""}, {"Name": "FranceJetAir", "Star": {"Nombre": 5, "Type": "gold"}, "Owner": "RyanLateb", "Hubs": ["MKE", "PPT", "PKX", "SFO", "LTT", "OSL", "ICN", "NCE", "MRU", "YYZ", "AKL", "MEX", "MPL", "HKG", "CDG", "ORY", "PVG", "LHR", "LAX", "ATL", "SIN", "GIG", "SYD", "LOS", "JFK", "NRT", "JNB", "DME", "DXB"], "Role": ""}, {"Name": "France B Air", "Star": {"Nombre": 5, "Type": "gold"}, "Owner": "Franck", "Hubs": ["BOM", "FRA", "HKG", "IAH", "DXB", "GRU", "CDG"], "Role": "R&D director"}, {"Name": "PED Airlines", "Star": {"Nombre": 5, "Type": "gold"}, "Owner": "PED", "Hubs": ["FCO", "DXB", "MEM", "AMS", "MEX", "JFK", "CDG", "LAX"], "Role": ""}, {"Name": "Volorama", "Star": {"Nombre": 1, "Type": "silver"}, "Owner": "Marcus White", "Hubs": ["TLS", "EZE", "HKG", "CDG"], "Role": ""}, {"Name": "AIRMONDIAL Group", "Star": {"Nombre": 4, "Type": "gold"}, "Owner": "Paul", "Hubs": ["ADD", "MPM", "CDG"], "Role": "Communication director"}], "Networks": {"Statistique": {"NbrHub": "59", "NbrLigne": "616", "KmLigne": "5,101,266"}, "Hubs": [{"IATA": "ADD", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "AKL", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "AMS", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "ATL", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "BAH", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "BOM", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "CDG", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "CUN", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DME", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DRW", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DSS", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DXB", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "EZE", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "FCO", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "FRA", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "GIG", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "GMP", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "GRU", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "GVA", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "HAN", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "HKG", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "HNL", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "IAH", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "ICN", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "ISL", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "JFK", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "JNB", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "LAX", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "LHR", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "LOS", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "LTT", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "LYS", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "MAD", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "MEL", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "MEM", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "MEX", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "MKE", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "MPL", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "MPM", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "MRU", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "MXP", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "NCE", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "NRT", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "NTE", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "ORD", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "ORY", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "OSL", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "PEK", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "PKX", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "PPT", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "PVG", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "SFO", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "SIN", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "SKB", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "SYD", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "TLS", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "YOW", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "YYZ", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}]}}, {"Name": "France Pyxis", "ID": "88492", "Classement": "127", "Profile": {"General": {"Created": "22/02/2020", "nbCompanies": "9", "Solde": "570,413,089", "BeneficeHebdo": "106,447,783", "TaxeHebdo": "1.00"}, "Hub": {"HubsDispo": "32", "KmPartage": "137.610", "TaxeLigne": "0.00", "TaxeCompanies": null, "TaxeCompagnies": "5"}, "AG": {"nbAvionProposer": "-", "ReducMax": "10.00", "Reduc30j": "4,050,416,449", "nbAvionAcheter": null, "AideAchatMax": "0.00", "AideAchat30j": "-", "nbAvionAchter": "1192"}, "R&D": "58"}, "Members": [{"Name": "Air Austrasie", "Star": {"Nombre": 5, "Type": "gold"}, "Owner": "Mozza", "Hubs": ["LHR", "FRA", "JNB", "MPM", "DMK", "CDG"], "Role": "Marketing director"}, {"Name": "Fr_Space", "Star": {"Nombre": 2, "Type": "gold"}, "Owner": "Bryan blanchard", "Hubs": ["LAX", "SVO", "ORY"], "Role": "Right-hand man"}, {"Name": "Celtic-Airlines", "Star": {"Nombre": 5, "Type": "gold"}, "Owner": "Mr White", "Hubs": ["LHR", "BFH", "CDG"], "Role": ""}, {"Name": "Fiji Airways \u00ae", "Star": {"Nombre": 1, "Type": "gold"}, "Owner": "Thomas MUZELLEC", "Hubs": ["DYR", "MPM"], "Role": "Sales director"}, {"Name": "TNT \u00ae", "Star": {"Nombre": 1, "Type": "silver"}, "Owner": "David Binks", "Hubs": ["HKG"], "Role": "R&D director"}, {"Name": "Scarface air_4595773", "Star": {"Nombre": 3, "Type": "silver"}, "Owner": "Scarface", "Hubs": ["LHR", "LAX"], "Role": ""}, {"Name": "Vsoul'Air", "Star": {"Nombre": 3, "Type": "gold"}, "Owner": "Narjoz", "Hubs": ["GMP", "LOS", "DLE", "DXB", "MEX", "SIN", "LYS", "YQB"], "Role": ""}, {"Name": "Torrens Airline", "Star": {"Nombre": 3, "Type": "gold"}, "Owner": "Torrens", "Hubs": ["HKG", "DXB", "CDG", "ATL", "HND", "SFO"], "Role": "Founder"}], "Networks": {"Statistique": {"NbrHub": "24", "NbrLigne": "13", "KmLigne": "137,610"}, "Hubs": [{"IATA": "ATL", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "BFH", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "CDG", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DLE", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DMK", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DXB", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DYR", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "FRA", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "GMP", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "HKG", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "HND", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "JNB", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "LAX", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "LHR", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "LOS", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "LYS", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "MEX", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "MPM", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "ORY", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "SFO", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "SIN", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "SVO", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "YQB", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}]}}, {"Name": "France Cygnus", "ID": "92914", "Classement": "135", "Profile": {"General": {"Created": "25/03/2020", "nbCompanies": "12", "Solde": "1,052,746,707", "BeneficeHebdo": "236,276,912", "TaxeHebdo": "2.25"}, "Hub": {"HubsDispo": "36", "KmPartage": "916.102", "TaxeLigne": "0.00", "TaxeCompanies": null, "TaxeCompagnies": "5"}, "AG": {"nbAvionProposer": "-", "ReducMax": "10.00", "Reduc30j": "3,485,280,599", "nbAvionAcheter": null, "AideAchatMax": "0.00", "AideAchat30j": "-", "nbAvionAchter": "1400"}, "R&D": "58"}, "Members": [{"Name": "Skarface Airlines", "Star": {"Nombre": 5, "Type": "gold"}, "Owner": "Skatface", "Hubs": ["FRA", "GVA", "DXB", "LAX", "SMR", "ZRH"], "Role": "Sales director"}, {"Name": "Nice Clouds", "Star": {"Nombre": 3, "Type": "silver"}, "Owner": "Darzzake", "Hubs": ["DRW", "VIE", "DFW", "NCE"], "Role": "Right-hand man"}, {"Name": "Air Meridian", "Star": {"Nombre": 2, "Type": "gold"}, "Owner": "Diajerz", "Hubs": ["PEK", "LAX", "VIE"], "Role": ""}, {"Name": "-Ad Airlines-", "Star": {"Nombre": 2, "Type": "silver"}, "Owner": "Adrouche", "Hubs": ["NBO", "CDG"], "Role": ""}, {"Name": "Dutch Air'ways", "Star": {"Nombre": 2, "Type": "silver"}, "Owner": "Sam", "Hubs": ["AMS"], "Role": "Marketing director"}, {"Name": "Glenn Airliners", "Star": {"Nombre": 4, "Type": "gold"}, "Owner": "Glenn", "Hubs": ["MEX", "ICN", "LBV", "LYS"], "Role": "Founder"}, {"Name": "Makwa Air", "Star": {"Nombre": 3, "Type": "gold"}, "Owner": "Makwa07", "Hubs": ["NBO", "DXB", "DEN"], "Role": ""}, {"Name": "France air_2429257", "Star": {"Nombre": 5, "Type": "bronze"}, "Owner": "Charles", "Hubs": ["CDG"], "Role": ""}, {"Name": "Air_France_Cygnus", "Star": {"Nombre": 3, "Type": "gold"}, "Owner": "Matthieu_1434623", "Hubs": ["DOH", "LAX", "CDG"], "Role": "Human Resources director"}, {"Name": "Fulmetal", "Star": {"Nombre": 4, "Type": "gold"}, "Owner": "Axel Ardan", "Hubs": ["CDG", "DEN", "BNE", "GRU", "NGO"], "Role": "Right-hand man"}, {"Name": "Air France Yamaha", "Star": {"Nombre": 1, "Type": "gold"}, "Owner": "Staniswag", "Hubs": ["HNL", "CDG"], "Role": ""}], "Networks": {"Statistique": {"NbrHub": "25", "NbrLigne": "156", "KmLigne": "916,102"}, "Hubs": [{"IATA": "AMS", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "ATL", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "BNE", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "CDG", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DEN", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DFW", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DOH", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DRW", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "DXB", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "FRA", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "GRU", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "GVA", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "HNL", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "ICN", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "LAX", "DemandPartage": "50", "NbLigne": "3", "KmLigne": "28,564", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "LBV", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "LYS", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "MEX", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "NBO", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "NCE", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "NGO", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "PEK", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "SMR", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}, {"IATA": "VIE", "DemandPartage": "50", "NbLigne": "0", "KmLigne": "0", "NbKmAutoriser": "0", "KmRestant": "0.00", "Benefices": "0"}]}}]}
+{
+    "Alliance": [{
+            "Name": "France Aquila",
+            "ID": "74365",
+            "Classement": "79",
+            "Profile": {
+                "General": {
+                    "Created": "06/11/2019",
+                    "nbCompanies": "10",
+                    "Solde": "3,913,478,657",
+                    "BeneficeHebdo": "113,032,165",
+                    "TaxeHebdo": "0.00"
+                },
+                "Hub": {
+                    "HubsDispo": "98",
+                    "KmPartage": "5.101.266",
+                    "TaxeLigne": "0.00",
+                    "TaxeCompanies": null,
+                    "TaxeCompagnies": "5"
+                },
+                "AG": {
+                    "nbAvionProposer": "-",
+                    "ReducMax": "10.00",
+                    "Reduc30j": "11,243,943,000",
+                    "nbAvionAcheter": null,
+                    "AideAchatMax": "0.00",
+                    "AideAchat30j": "-",
+                    "nbAvionAchter": "3693"
+                },
+                "R&D": "79"
+            },
+            "Members": [{
+                    "Name": "Houston&Co",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Henri",
+                    "Hubs": [
+                        "NTE"
+                    ],
+                    "Role": "Right-hand man"
+                },
+                {
+                    "Name": "Fly Toulouse",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Enzo",
+                    "Hubs": [
+                        "MEL",
+                        "ORD",
+                        "ORY",
+                        "DXB",
+                        "TLS",
+                        "GRU",
+                        "NRT",
+                        "JFK",
+                        "CDG",
+                        "CUN",
+                        "ISL",
+                        "MAD",
+                        "LHR",
+                        "LAX"
+                    ],
+                    "Role": "Founder"
+                },
+                {
+                    "Name": "OVALIE 69",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Poetanen",
+                    "Hubs": [
+                        "GVA",
+                        "HAN",
+                        "AKL",
+                        "SKB",
+                        "ICN",
+                        "DRW",
+                        "MEM",
+                        "BAH",
+                        "YOW",
+                        "DSS",
+                        "LYS"
+                    ],
+                    "Role": "Sales director"
+                },
+                {
+                    "Name": "SPAIN Airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Michael",
+                    "Hubs": [
+                        "DXB",
+                        "MAD",
+                        "DME",
+                        "YYZ",
+                        "ORY"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "FranceJetAir",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "RyanLateb",
+                    "Hubs": [
+                        "MKE",
+                        "PPT",
+                        "PKX",
+                        "SFO",
+                        "LTT",
+                        "OSL",
+                        "ICN",
+                        "NCE",
+                        "MRU",
+                        "YYZ",
+                        "AKL",
+                        "MEX",
+                        "MPL",
+                        "HKG",
+                        "CDG",
+                        "ORY",
+                        "PVG",
+                        "LHR",
+                        "LAX",
+                        "ATL",
+                        "SIN",
+                        "GIG",
+                        "SYD",
+                        "LOS",
+                        "JFK",
+                        "NRT",
+                        "JNB",
+                        "DME",
+                        "DXB"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "France B Air",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Franck",
+                    "Hubs": [
+                        "BOM",
+                        "FRA",
+                        "HKG",
+                        "IAH",
+                        "DXB",
+                        "GRU",
+                        "CDG"
+                    ],
+                    "Role": "R&D director"
+                },
+                {
+                    "Name": "PED Airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "PED",
+                    "Hubs": [
+                        "FCO",
+                        "DXB",
+                        "MEM",
+                        "AMS",
+                        "MEX",
+                        "JFK",
+                        "CDG",
+                        "LAX"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Volorama",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "silver"
+                    },
+                    "Owner": "Marcus White",
+                    "Hubs": [
+                        "TLS",
+                        "EZE",
+                        "HKG",
+                        "CDG"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "AIRMONDIAL Group",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "Paul",
+                    "Hubs": [
+                        "ADD",
+                        "MPM",
+                        "CDG"
+                    ],
+                    "Role": "Communication director"
+                }
+            ],
+            "Networks": {
+                "Statistique": {
+                    "NbrHub": "59",
+                    "NbrLigne": "616",
+                    "KmLigne": "5,101,266"
+                },
+                "Hubs": [{
+                        "IATA": "ADD",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "AKL",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "AMS",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "ATL",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "BAH",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "BOM",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "CDG",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "CUN",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DME",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DRW",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DSS",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DXB",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "EZE",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "FCO",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "FRA",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "GIG",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "GMP",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "GRU",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "GVA",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "HAN",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "HKG",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "HNL",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "IAH",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "ICN",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "ISL",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "JFK",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "JNB",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "LAX",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "LHR",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "LOS",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "LTT",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "LYS",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "MAD",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "MEL",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "MEM",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "MEX",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "MKE",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "MPL",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "MPM",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "MRU",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "MXP",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "NCE",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "NRT",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "NTE",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "ORD",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "ORY",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "OSL",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "PEK",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "PKX",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "PPT",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "PVG",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "SFO",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "SIN",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "SKB",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "SYD",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "TLS",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "YOW",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "YYZ",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "France Pyxis",
+            "ID": "88492",
+            "Classement": "127",
+            "Profile": {
+                "General": {
+                    "Created": "22/02/2020",
+                    "nbCompanies": "9",
+                    "Solde": "570,413,089",
+                    "BeneficeHebdo": "106,447,783",
+                    "TaxeHebdo": "1.00"
+                },
+                "Hub": {
+                    "HubsDispo": "32",
+                    "KmPartage": "137.610",
+                    "TaxeLigne": "0.00",
+                    "TaxeCompanies": null,
+                    "TaxeCompagnies": "5"
+                },
+                "AG": {
+                    "nbAvionProposer": "-",
+                    "ReducMax": "10.00",
+                    "Reduc30j": "4,050,416,449",
+                    "nbAvionAcheter": null,
+                    "AideAchatMax": "0.00",
+                    "AideAchat30j": "-",
+                    "nbAvionAchter": "1192"
+                },
+                "R&D": "58"
+            },
+            "Members": [{
+                    "Name": "Air Austrasie",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Mozza",
+                    "Hubs": [
+                        "LHR",
+                        "FRA",
+                        "JNB",
+                        "MPM",
+                        "DMK",
+                        "CDG"
+                    ],
+                    "Role": "Marketing director"
+                },
+                {
+                    "Name": "Fr_Space",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "gold"
+                    },
+                    "Owner": "Bryan blanchard",
+                    "Hubs": [
+                        "LAX",
+                        "SVO",
+                        "ORY"
+                    ],
+                    "Role": "Right-hand man"
+                },
+                {
+                    "Name": "Celtic-Airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Mr White",
+                    "Hubs": [
+                        "LHR",
+                        "BFH",
+                        "CDG"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Fiji Airways \u00ae",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "gold"
+                    },
+                    "Owner": "Thomas MUZELLEC",
+                    "Hubs": [
+                        "DYR",
+                        "MPM"
+                    ],
+                    "Role": "Sales director"
+                },
+                {
+                    "Name": "TNT \u00ae",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "silver"
+                    },
+                    "Owner": "David Binks",
+                    "Hubs": [
+                        "HKG"
+                    ],
+                    "Role": "R&D director"
+                },
+                {
+                    "Name": "Scarface air_4595773",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "silver"
+                    },
+                    "Owner": "Scarface",
+                    "Hubs": [
+                        "LHR",
+                        "LAX"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Vsoul'Air",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Narjoz",
+                    "Hubs": [
+                        "GMP",
+                        "LOS",
+                        "DLE",
+                        "DXB",
+                        "MEX",
+                        "SIN",
+                        "LYS",
+                        "YQB"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Torrens Airline",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Torrens",
+                    "Hubs": [
+                        "HKG",
+                        "DXB",
+                        "CDG",
+                        "ATL",
+                        "HND",
+                        "SFO"
+                    ],
+                    "Role": "Founder"
+                }
+            ],
+            "Networks": {
+                "Statistique": {
+                    "NbrHub": "24",
+                    "NbrLigne": "13",
+                    "KmLigne": "137,610"
+                },
+                "Hubs": [{
+                        "IATA": "ATL",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "BFH",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "CDG",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DLE",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DMK",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DXB",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DYR",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "FRA",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "GMP",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "HKG",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "HND",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "JNB",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "LAX",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "LHR",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "LOS",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "LYS",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "MEX",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "MPM",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "ORY",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "SFO",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "SIN",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "SVO",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "YQB",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "France Cygnus",
+            "ID": "92914",
+            "Classement": "135",
+            "Profile": {
+                "General": {
+                    "Created": "25/03/2020",
+                    "nbCompanies": "12",
+                    "Solde": "1,052,746,707",
+                    "BeneficeHebdo": "236,276,912",
+                    "TaxeHebdo": "2.25"
+                },
+                "Hub": {
+                    "HubsDispo": "36",
+                    "KmPartage": "916.102",
+                    "TaxeLigne": "0.00",
+                    "TaxeCompanies": null,
+                    "TaxeCompagnies": "5"
+                },
+                "AG": {
+                    "nbAvionProposer": "-",
+                    "ReducMax": "10.00",
+                    "Reduc30j": "3,485,280,599",
+                    "nbAvionAcheter": null,
+                    "AideAchatMax": "0.00",
+                    "AideAchat30j": "-",
+                    "nbAvionAchter": "1400"
+                },
+                "R&D": "58"
+            },
+            "Members": [{
+                    "Name": "Skarface Airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Skatface",
+                    "Hubs": [
+                        "FRA",
+                        "GVA",
+                        "DXB",
+                        "LAX",
+                        "SMR",
+                        "ZRH"
+                    ],
+                    "Role": "Sales director"
+                },
+                {
+                    "Name": "Nice Clouds",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "silver"
+                    },
+                    "Owner": "Darzzake",
+                    "Hubs": [
+                        "DRW",
+                        "VIE",
+                        "DFW",
+                        "NCE"
+                    ],
+                    "Role": "Right-hand man"
+                },
+                {
+                    "Name": "Air Meridian",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "gold"
+                    },
+                    "Owner": "Diajerz",
+                    "Hubs": [
+                        "PEK",
+                        "LAX",
+                        "VIE"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "-Ad Airlines-",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "silver"
+                    },
+                    "Owner": "Adrouche",
+                    "Hubs": [
+                        "NBO",
+                        "CDG"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Dutch Air'ways",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "silver"
+                    },
+                    "Owner": "Sam",
+                    "Hubs": [
+                        "AMS"
+                    ],
+                    "Role": "Marketing director"
+                },
+                {
+                    "Name": "Glenn Airliners",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "Glenn",
+                    "Hubs": [
+                        "MEX",
+                        "ICN",
+                        "LBV",
+                        "LYS"
+                    ],
+                    "Role": "Founder"
+                },
+                {
+                    "Name": "Makwa Air",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Makwa07",
+                    "Hubs": [
+                        "NBO",
+                        "DXB",
+                        "DEN"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "France air_2429257",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Charles",
+                    "Hubs": [
+                        "CDG"
+                    ],
+                    "Role": ""
+                },
+                {
+                    "Name": "Air_France_Cygnus",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Matthieu_1434623",
+                    "Hubs": [
+                        "DOH",
+                        "LAX",
+                        "CDG"
+                    ],
+                    "Role": "Human Resources director"
+                },
+                {
+                    "Name": "Fulmetal",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "Axel Ardan",
+                    "Hubs": [
+                        "CDG",
+                        "DEN",
+                        "BNE",
+                        "GRU",
+                        "NGO"
+                    ],
+                    "Role": "Right-hand man"
+                },
+                {
+                    "Name": "Air France Yamaha",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "gold"
+                    },
+                    "Owner": "Staniswag",
+                    "Hubs": [
+                        "HNL",
+                        "CDG"
+                    ],
+                    "Role": ""
+                }
+            ],
+            "Networks": {
+                "Statistique": {
+                    "NbrHub": "25",
+                    "NbrLigne": "156",
+                    "KmLigne": "916,102"
+                },
+                "Hubs": [{
+                        "IATA": "AMS",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "ATL",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "BNE",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "CDG",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DEN",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DFW",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DOH",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DRW",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "DXB",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "FRA",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "GRU",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "GVA",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "HNL",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "ICN",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "LAX",
+                        "DemandPartage": "50",
+                        "NbLigne": "3",
+                        "KmLigne": "28,564",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "LBV",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "LYS",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "MEX",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "NBO",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "NCE",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "NGO",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "PEK",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "SMR",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    },
+                    {
+                        "IATA": "VIE",
+                        "DemandPartage": "50",
+                        "NbLigne": "0",
+                        "KmLigne": "0",
+                        "NbKmAutoriser": "0",
+                        "KmRestant": "0.00",
+                        "Benefices": "0"
+                    }
+                ]
+            }
+        }
+    ]
+}
