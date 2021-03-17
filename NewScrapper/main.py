@@ -30,7 +30,6 @@ date = datetime.now().strftime("%d-%m-%Y")
 ALLIANCE_TABS = ["profile", "members", "network"]
 ALLIANCE_LIST = [{"Name": "Aquila", "ID": 74365}, {
     "Name": "Pyxis", "ID": 88492}, {"Name": "Cygnus", "ID": 92914}]
-#ALLIANCE_LIST = [{"Name": "Pyxis", "ID": 88492}]
 
 email = SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"]
 password = SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"]
