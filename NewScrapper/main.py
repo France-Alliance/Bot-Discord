@@ -16,6 +16,7 @@ from Network import Network
 options = Options()
 options.add_argument("--headless")
 options.add_argument("--no-sandbox")
+options.add_argument('log-level=2')
 
 SYSTEM_ENV = dotenv.dotenv_values('../.env')
 
@@ -36,7 +37,7 @@ password = SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"]
 
 starType = ["no", "bronze", "silver", "gold"]
 
-path = "chromedriver"
+path = SYSTEM_ENV["CHROMEDRIVER_PATH"]
 
 if platform.system() != "Windows":
     path = os.path.abspath("chromedriver-v9.4.4-linux-x64/chromedriver")
@@ -76,6 +77,12 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
                       }
                       }
 
+            patternMembers = {"Name": None, "Star": "Hard Work in Here !!! (Soon)",
+                              "Owner": None, "Hubs": [], "Role": None}
+            patternHubs = {"IATA": None, "DemandPartage": None, "NbLigne": None,
+                           "KmLigne": None, "NbKmAutoriser": None, "KmRestant": None, "Benefices": None}
+            star = {"Nombre": None, "Type": None}
+
             for tabs in ALLIANCE_TABS:
                 driver.get(f"{URL_ALLIANCE_PROFIL}/{tabs}/{id['ID']}")
                 if tabs == "profile":
@@ -86,7 +93,32 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
                         result = Member(driver, result)
                 elif tabs == "network":
                     if (wait.until(presence_of_element_located((By.CSS_SELECTOR, 'div#map_canvas')))):
-                        result = Network(driver, result)
+                        for i in range(2, len(driver.find_elements_by_css_selector('#alliance_profile > table > tbody > tr'))):
+                            patternHubsCopy = patternHubs.copy()
+                            result["Networks"]["Statistique"]["NbrHub"] = str(driver.find_element_by_xpath(
+                                f'//*[@id="alliance_profile"]/div[4]/div[1]/div[1]/span[2]/span').text)
+                            result["Networks"]["Statistique"]["NbrLigne"] = str(driver.find_element_by_xpath(
+                                f'//*[@id="alliance_profile"]/div[4]/div[1]/div[2]/span[2]/span').text)
+                            result["Networks"]["Statistique"]["KmLigne"] = str(driver.find_element_by_xpath(
+                                f'//*[@id="alliance_profile"]/div[4]/div[1]/div[3]/span[2]/span').text.replace(" ", "").replace("km", ""))
+                            if (str(driver.find_element_by_xpath(f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[3]/div[2]').text.replace(" ", "").replace("\n", "").replace("km", "")) != 0):
+                                patternHubsCopy["IATA"] = driver.find_element_by_xpath(
+                                    f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[1]').text.replace(" ", "").replace("\n", "").replace("/", "")
+                                patternHubsCopy["DemandPartage"] = str(driver.find_element_by_xpath(
+                                    f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[2]').text.replace(" ", "").replace("%", "").replace(",", "."))
+                                patternHubsCopy["KmLigne"] = str(driver.find_element_by_xpath(
+                                    f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[3]/div[2]').text.replace(" ", "").replace("\n", "").replace("km", ""))
+                                patternHubsCopy["NbLigne"] = str(driver.find_element_by_xpath(
+                                    f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[3]/div[1]').text.replace(" ", "").replace("\n", ""))
+                                patternHubsCopy["NbKmAutoriser"] = str(driver.find_element_by_xpath(
+                                    f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[4]').text.replace(" ", "").replace("km", ""))
+                                patternHubsCopy["KmRestant"] = str(driver.find_element_by_xpath(
+                                    f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[5]').text.replace(" ", "").replace("%", "").replace(",", "."))
+                                patternHubsCopy["Benefices"] = str(driver.find_element_by_xpath(
+                                    f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[6]').text.replace(" ", "").replace("$", ""))
+                                result["Networks"]["Hubs"].append(
+                                    patternHubsCopy)
+
             AllResult["Alliance"].append(result)
 
         with open(f"./data/{date}.json", "w", encoding='utf8') as f:
