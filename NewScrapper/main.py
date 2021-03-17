@@ -88,9 +88,6 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
                         result = Member(driver, result)
                 elif tabs == "network":
                     if (wait.until(presence_of_element_located((By.CSS_SELECTOR, 'div#map_canvas')))):
-<<<<<<< Updated upstream
-                        result = Network(driver, result)
-=======
                         for i in range(2, len(driver.find_elements_by_css_selector('#alliance_profile > table > tbody > tr'))):
                             patternHubsCopy = patternHubs.copy()
                             result["Networks"]["Statistique"]["NbrHub"] = str(driver.find_element_by_xpath(
@@ -117,7 +114,6 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
                                 result["Networks"]["Hubs"].append(
                                     patternHubsCopy)
 
->>>>>>> Stashed changes
             AllResult["Alliance"].append(result)
 
         with open(f"./data/{date}.json", "w", encoding='utf8') as f:
