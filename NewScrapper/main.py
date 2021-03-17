@@ -77,6 +77,12 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
                           ]
                       }
                       }
+                      
+            patternMembers = {"Name": None, "Star": "Hard Work in Here !!! (Soon)",
+                              "Owner": None, "Hubs": [], "Role": None}
+            patternHubs = {"IATA": None, "DemandPartage": None, "NbLigne": None,
+                           "KmLigne": None, "NbKmAutoriser": None, "KmRestant": None, "Benefices": None}
+            star = {"Nombre": None, "Type": None}
 
             for tabs in ALLIANCE_TABS:
                 driver.get(f"{URL_ALLIANCE_PROFIL}/{tabs}/{id['ID']}")
@@ -95,8 +101,8 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
                             result["Networks"]["Statistique"]["NbrLigne"] = str(driver.find_element_by_xpath(
                                 f'//*[@id="alliance_profile"]/div[4]/div[1]/div[2]/span[2]/span').text)
                             result["Networks"]["Statistique"]["KmLigne"] = str(driver.find_element_by_xpath(
-                                f'//*[@id="alliance_profile"]/div[4]/div[1]/div[3]/span[2]/span').text.replace(" ", "").replace("km", ""))                          
-                            if  (str(driver.find_element_by_xpath(f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[3]/div[2]').text.replace(" ", "").replace("\n", "").replace("km", "")) != 0):
+                                f'//*[@id="alliance_profile"]/div[4]/div[1]/div[3]/span[2]/span').text.replace(" ", "").replace("km", ""))
+                            if (str(driver.find_element_by_xpath(f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[3]/div[2]').text.replace(" ", "").replace("\n", "").replace("km", "")) != 0):
                                 patternHubsCopy["IATA"] = driver.find_element_by_xpath(
                                     f'//*[@id="alliance_profile"]/table/tbody/tr[{i}]/td[1]').text.replace(" ", "").replace("\n", "").replace("/", "")
                                 patternHubsCopy["DemandPartage"] = str(driver.find_element_by_xpath(
