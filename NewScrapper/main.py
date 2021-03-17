@@ -16,7 +16,7 @@ from Network import Network
 options = Options()
 options.add_argument("--headless")
 options.add_argument("--no-sandbox")
-options.add_argument('log-level=3')
+options.add_argument('log-level=2')
 
 SYSTEM_ENV = dotenv.dotenv_values('../.env')
 
@@ -38,7 +38,7 @@ password = SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"]
 
 starType = ["no", "bronze", "silver", "gold"]
 
-path = "chromedriver"
+path = SYSTEM_ENV["CHROMEDRIVER_PATH"]
 
 if platform.system() != "Windows":
     path = os.path.abspath("chromedriver-v9.4.4-linux-x64/chromedriver")
@@ -77,7 +77,7 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
                           ]
                       }
                       }
-                      
+
             patternMembers = {"Name": None, "Star": "Hard Work in Here !!! (Soon)",
                               "Owner": None, "Hubs": [], "Role": None}
             patternHubs = {"IATA": None, "DemandPartage": None, "NbLigne": None,
