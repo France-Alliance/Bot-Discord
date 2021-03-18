@@ -12,7 +12,7 @@ from selenium.webdriver.chrome.options import Options
 from Members import Member
 from Profile import Profile
 from Network import Network
-from getmac import get_mac_address
+import platform
 
 options = Options()
 options.add_argument("--headless")
@@ -42,7 +42,7 @@ starType = ["no", "bronze", "silver", "gold"]
 
 path = "chromedriver"
 
-if get_mac_address() == "c0:b5:d7:8c:59:b1":
+if platform.node() == "OSchell-Laptop":
     path = SYSTEM_ENV["CHROMEDRIVER_PATH"]
 
 if platform.system() != "Windows":
