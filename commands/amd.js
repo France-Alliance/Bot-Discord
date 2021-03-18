@@ -7,7 +7,7 @@ module.exports = {
   execute(message) {
     message.channel.send("Gathering the data...\rPlease wait")
 
-    let pyshell = new PythonShell('../NewScrapper/main.py');
+    let pyshell = new PythonShell('NewScrapper/main.py');
  
     // sends a message to the Python script via stdin
     // pyshell.send('hello');
