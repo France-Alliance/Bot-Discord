@@ -19,7 +19,7 @@ def Profile(driver, result):
     Profile["Hub"]["HubsDispo"] = int(driver.find_element_by_xpath(
         '//*[@id="alliance_profile_statistiques_general_hubs"]/tbody/tr[1]/td[1]/div/span[2]/span').text)
     Profile["Hub"]["KmPartage"] = int(driver.find_element_by_xpath(
-        '//*[@id="alliance_profile_statistiques_general_hubs"]/tbody/tr[2]/td[1]/div/span[2]').text.replace(" ", "").replace("km", "").replace(",", "."))
+        '//*[@id="alliance_profile_statistiques_general_hubs"]/tbody/tr[2]/td[1]/div/span[2]').text.replace(" ", "").replace("km", "").replace(",", ""))
     Profile["Hub"]["TaxeLigne"] = float(driver.find_element_by_xpath(
         '//*[@id="alliance_profile_statistiques_general_hubs"]/tbody/tr[1]/td[2]/div/span[2]').text.split(" ")[0].replace("%", "").replace(",", "."))
     Profile["Hub"]["TaxeCompagnies"] = float(driver.find_element_by_xpath(
