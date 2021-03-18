@@ -12,10 +12,14 @@ from selenium.webdriver.chrome.options import Options
 from Members import Member
 from Profile import Profile
 from Network import Network
+from getmac import get_mac_address
 
 options = Options()
 options.add_argument("--headless")
 options.add_argument("--no-sandbox")
+options.add_argument("--disable-gpu")
+options.add_argument("--log-level=3")
+
 
 SYSTEM_ENV = dotenv.dotenv_values('../.env')
 
@@ -37,6 +41,9 @@ password = SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"]
 starType = ["no", "bronze", "silver", "gold"]
 
 path = "chromedriver"
+
+if get_mac_address() == "c0:b5:d7:8c:59:b1":
+    path = SYSTEM_ENV["CHROMEDRIVER_PATH"]
 
 if platform.system() != "Windows":
     path = os.path.abspath("chromedriver-v9.4.4-linux-x64/chromedriver")
