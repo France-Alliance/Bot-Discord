@@ -6,6 +6,7 @@ module.exports = {
   description: "Ping!",
   execute(message) {
     message.channel.send("Gathering the data...\rPlease wait")
+
     let pyshell = new PythonShell('../NewScrapper/main.py');
  
     // sends a message to the Python script via stdin
@@ -29,7 +30,7 @@ module.exports = {
         ` :arrow_right: data of ${date.date()}-${date.month()}-${date.year()} is ready !`,
         {
           files: [
-            `../NewScrapper/data/${date.date()}-${date.month()}-${date.year()}.json`,
+            `NewScrapper/data/${date.date()}-${date.month()}-${date.year()}.json`,
           ],
         }
       );
