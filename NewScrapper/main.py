@@ -48,7 +48,7 @@ starType = ["no", "bronze", "silver", "gold"]
 
 path = "chromedriver"
 
-if platform.node() != "LAPTOP-KRONOSDEV":
+if platform.node() == "OSchell-Laptop":
     path = SYSTEM_ENV["CHROMEDRIVER_PATH"]
 
 # if platform.system() != "Windows":
