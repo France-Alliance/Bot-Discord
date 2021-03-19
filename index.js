@@ -78,7 +78,7 @@ client.on("message", async (message) => {
   }
 
   try {
-    command.execute(message, args);
+    command.execute(message, args)
     console.log(
       `${message.author.username}#${message.author.discriminator} (${message.author}) succesfully used command "${commandName}"`
     );

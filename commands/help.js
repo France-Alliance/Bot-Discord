@@ -33,7 +33,7 @@ module.exports = {
       )
       .addField(
         `\u200b`,
-        `\`${prefix}am2d\`\rSummmon a file with all France Alliance AM2 Data (take ≈ 10mn)`,
+        `\`${prefix}amd\`\rSummmon a file with all France Alliance AM2 Data (take ≈ 10mn)`,
         false
       )
       .addField(`\u200b`, `\u200b`, false)

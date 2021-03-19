@@ -1,1 +1,2 @@
-start nodemon ../index.js
+cd ../
+start nodemon index.js

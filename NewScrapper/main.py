@@ -12,7 +12,6 @@ from selenium.webdriver.chrome.options import Options
 from Members import Member
 from Profile import Profile
 from Network import Network
-import platform
 
 options = Options()
 options.add_argument("--headless")
@@ -20,8 +19,6 @@ options.add_argument("--no-sandbox")
 options.add_argument("--disable-gpu")
 options.add_argument("--log-level=3")
 
-
-SYSTEM_ENV = dotenv.dotenv_values('../.env')
 
 URL = 'https://www.airlines-manager.com/'
 # 2 Arguments (Tabs of Alliance (profile|members|network)/ ID Alliance)
@@ -35,18 +32,22 @@ ALLIANCE_TABS = ["profile", "members", "network"]
 ALLIANCE_LIST = [{"Name": "Aquila", "ID": 74365}, {
     "Name": "Pyxis", "ID": 88492}, {"Name": "Cygnus", "ID": 92914}]
 
+SYSTEM_ENV = dotenv.dotenv_values(os.path.abspath('./.env'))
+#print(SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"], SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"])
+
 email = SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"]
 password = SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"]
+
 
 starType = ["no", "bronze", "silver", "gold"]
 
 path = "chromedriver"
 
-if platform.node() == "OSchell-Laptop":
+if platform.node() != "LAPTOP-KRONOSDEV":
     path = SYSTEM_ENV["CHROMEDRIVER_PATH"]
 
-if platform.system() != "Windows":
-    path = os.path.abspath("chromedriver-v9.4.4-linux-x64/chromedriver")
+#if platform.system() != "Windows":
+#    path = os.path.abspath("chromedriver-v9.4.4-linux-x64/chromedriver")
 
 with webdriver.Chrome(executable_path=path, options=options) as driver:
     def connect():
