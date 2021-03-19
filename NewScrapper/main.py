@@ -32,7 +32,11 @@ ALLIANCE_TABS = ["profile", "members", "network"]
 ALLIANCE_LIST = [{"Name": "Aquila", "ID": 74365}, {
     "Name": "Pyxis", "ID": 88492}, {"Name": "Cygnus", "ID": 92914}]
 
-SYSTEM_ENV = dotenv.dotenv_values(os.path.abspath('./.env'))
+
+a=os.path.abspath('../.env')
+SYSTEM_ENV = dotenv.dotenv_values(a)
+print(a)
+print(SYSTEM_ENV)
 #print(SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"], SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"])
 
 email = SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"]
