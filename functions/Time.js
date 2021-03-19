@@ -5,7 +5,7 @@ function year(){
 }
 
 function month(){
-    var dateMServer = new Date().getMonth();
+    var dateMServer = "0"+(new Date().getMonth()+1);
     return dateMServer
 }
 
