@@ -33,7 +33,8 @@ ALLIANCE_LIST = [{"Name": "Aquila", "ID": 74365}, {
     "Name": "Pyxis", "ID": 88492}, {"Name": "Cygnus", "ID": 92914}]
 
 
-a=os.path.abspath('../.env')
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+a = os.path.abspath('../.env')
 SYSTEM_ENV = dotenv.dotenv_values(a)
 print(a)
 print(SYSTEM_ENV)
@@ -50,7 +51,7 @@ path = "chromedriver"
 if platform.node() != "LAPTOP-KRONOSDEV":
     path = SYSTEM_ENV["CHROMEDRIVER_PATH"]
 
-#if platform.system() != "Windows":
+# if platform.system() != "Windows":
 #    path = os.path.abspath("chromedriver-v9.4.4-linux-x64/chromedriver")
 
 with webdriver.Chrome(executable_path=path, options=options) as driver:
