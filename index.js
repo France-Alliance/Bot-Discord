@@ -1,5 +1,6 @@
 const discord = require(`discord.js`);
 const chalk = require("chalk");
+const path = require('path');
 const fs = require("fs");
 
 const functions = require(`./functions_manager`);
@@ -23,13 +24,12 @@ const launch = functions.launch;
 const update = functions.update;
 const flux = functions.flux;
 const time = functions.time;
-const msg = functions.message;
 
 //------------
 
 launch.art();
-update.update();
-msg.am2d(client);
+update.update_bot();
+update.data_feed(client);
 
 //------------
 

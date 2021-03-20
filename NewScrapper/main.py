@@ -19,6 +19,10 @@ options.add_argument("--no-sandbox")
 options.add_argument("--disable-gpu")
 options.add_argument("--log-level=3")
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+a = os.path.abspath('../.env')
+SYSTEM_ENV = dotenv.dotenv_values(a)
+#print(SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"], SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"])
 
 URL = 'https://www.airlines-manager.com/'
 # 2 Arguments (Tabs of Alliance (profile|members|network)/ ID Alliance)
@@ -31,14 +35,6 @@ date = datetime.now().strftime("%d-%m-%Y")
 ALLIANCE_TABS = ["profile", "members", "network"]
 ALLIANCE_LIST = [{"Name": "Aquila", "ID": 74365}, {
     "Name": "Pyxis", "ID": 88492}, {"Name": "Cygnus", "ID": 92914}]
-
-
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-a = os.path.abspath('../.env')
-SYSTEM_ENV = dotenv.dotenv_values(a)
-print(a)
-print(SYSTEM_ENV)
-#print(SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"], SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"])
 
 email = SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"]
 password = SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"]
@@ -58,6 +54,7 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
     def connect():
         driver.find_element_by_id('username').send_keys(email)
         driver.find_element_by_id('password').send_keys(password)
+        print(driver.find_element_by_id('loginSubmit').text)
         driver.find_element_by_id('loginSubmit').click()
 
     driver.get(URL)
@@ -65,6 +62,7 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
     connect()
     driver.get("https://www.airlines-manager.com/home")
     AllResult = {"Alliance": []}
+    print(presence_of_element_located((By.XPATH, '//*[@id="mainHeader"]/div[2]')))
     if (wait.until(presence_of_element_located((By.XPATH, '//*[@id="mainHeader"]/div[2]')))):
         for id in ALLIANCE_LIST:
             result = {"Name": None, "ID": None, "Classement": None,
