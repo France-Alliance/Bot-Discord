@@ -18,6 +18,7 @@ options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-gpu")
 options.add_argument("--log-level=3")
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 a = os.path.abspath('../.env')
@@ -44,7 +45,7 @@ starType = ["no", "bronze", "silver", "gold"]
 
 path = "chromedriver"
 
-if platform.node() == "OSchell-Laptop":
+if platform.node() != "LAPTOP-KRONOSDEV":
     path = SYSTEM_ENV["CHROMEDRIVER_PATH"]
 
 # if platform.system() != "Windows":
@@ -54,7 +55,6 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
     def connect():
         driver.find_element_by_id('username').send_keys(email)
         driver.find_element_by_id('password').send_keys(password)
-        print(driver.find_element_by_id('loginSubmit').text)
         driver.find_element_by_id('loginSubmit').click()
 
     driver.get(URL)

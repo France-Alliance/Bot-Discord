@@ -1,2 +1,3 @@
 cd ../
-start nodemon index.js
+start nodemon --config nodemon.json index.js
+

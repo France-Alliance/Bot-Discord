@@ -30,7 +30,7 @@ URL = 'https://www.airlines-manager.com/'
 # 2 Arguments (Tabs of Alliance (profile|members|network)/ ID Alliance)
 URL_WHEEL_GAME = 'https://www.airlines-manager.com/home/wheeltcgame'
 # 2ARguments (Tabs of Members (airline | network) / ID Members)
-URL_MEMBERS_PROFIL = 'https://www.airlines-manager.com/company/profile'
+URL_CARDHOLDER = 'https://www.airlines-manager.com/shop/cardholder'
 
 
 email = SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"]
@@ -47,28 +47,20 @@ if platform.node() == "OSchell-Laptop":
 with webdriver.Chrome(executable_path=path, options=options) as driver:
     def connect():
         driver.find_element_by_id('username').send_keys(email)
-        print("username good")
         driver.find_element_by_id('password').send_keys(password)
-        print("password good")
-        a = "#loginSubmit"
-        b = driver.find_element(By.CSS_SELECTOR, a)
-        print("login button: "+b.text)
-        try:
-            webdriver.ActionChains(driver).move_to_element(b).click(b).perform()
-            #b.click()
-            print("click good")
-        except:
-            print("error")
+        driver.find_element(By.CSS_SELECTOR, "#loginSubmit").click()
 
-    print("go to URL")
     driver.get(URL)
-    print("gone to URL")
-    print("will wait")
     wait = WebDriverWait(driver, 10)
-    print("has waited")
-    print("will connect")
     connect()
-    print("passed connect")
     driver.get(URL_WHEEL_GAME)
     wait.until(presence_of_element_located((By.CLASS_NAME, 'validBtnBlue')))
-    # driver.find_elements_by_class_name('validBtnBlue').click()
+    driver.find_element_by_class_name('validBtnBlue').click()
+    wait.until(presence_of_element_located((By.CLASS_NAME, 'purchaseButton.validateWinPopup')))
+    driver.find_element_by_class_name('purchaseButton.validateWinPopup').click()
+    driver.get(URL_CARDHOLDER)
+    wait.until(presence_of_element_located((By.CLASS_NAME, 'cardholder-cardinfo-button.validBtnBlue')))
+    driver.find_element_by_class_name('cardholder-cardinfo-button.validBtnBlue').click()
+    wait.until(presence_of_element_located((By.ID, 'popAjaxButton')))
+    driver.find_elements_by_id('popAjaxButton').click()
+    wait.until(presence_of_element_located((By.CSS_SELECTOR, 'button#form_purchase.purchaseButton')))
