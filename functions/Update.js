@@ -8,6 +8,11 @@ const chalk = require("chalk");
 function update_bot() {
   cron.schedule("00 03 * * *", () => {
     console.log(
+      chalk.green(
+        `--------------------------------------------------------------------------------------------------`
+      )
+    );
+    console.log(
       `Control Tower is updating ! @ ${time.hours()}:${time.minutes()}:${time.secondes()} - ${time.date()}/${time.month()}/${time.year()}`
     );
     shell.exec("sudo git fetch --all");
@@ -15,7 +20,6 @@ function update_bot() {
     console.log(
       `Control Tower has updated ! @ ${time.hours()}:${time.minutes()}:${time.secondes()} - ${time.date()}/${time.month()}/${time.year()}`
     );
-    console.log(`------------`);
   });
 }
 
