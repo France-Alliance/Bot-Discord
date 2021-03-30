@@ -16,8 +16,8 @@ from selenium.webdriver.support.select import Select
 
 options = Options()
 # options.add_argument("--headless")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-gpu")
+# options.add_argument("--no-sandbox")
+# options.add_argument("--disable-gpu")
 options.add_argument("--log-level=3")
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -62,19 +62,13 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
         driver.find_element_by_class_name('purchaseButton.validateWinPopup').click()
     
     def ch():
-        #wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id='currentTC']/div[1]/div[3]/button")))
-        driver.execute_script("arguments[0].click();", wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id='currentTC']/div[1]/div[3]/button"))))
-        print(1)
-        #driver.execute_script("arguments[0].click();", wait.until(EC.element_to_be_clickable((By.XPATH, "//*[contains(@href, '/shop/buycards/5/0/%C3%89conomique')]"))))
-        driver.find_element_by_xpath("//*[contains(@href, '/shop/buycards/5/0/%C3%89conomique')]").click()   
-        print(2)
-        wait.until(presence_of_element_located((By.ID, 'popAjaxButton')))
-        print(3)
-        driver.find_element_by_id('popAjaxButton').click()
-        print(4)
-        #wait.until(presence_of_element_located((By.CSS_SELECTOR, 'button#form_purchase.purchaseButton')))
+        wait.until(presence_of_element_located((By.XPATH, '//*[@id="currentTC"]/div[1]/div[3]/button')))
+        print("Execute JS : ", driver.execute_script('document.querySelector("#currentTC > div:nth-child(1) > div.cardholder-buttoncontainer > button").click();'))
+        wait.until(presence_of_element_located((By.XPATH, '//*[@id="popAjaxButton"]')))
+        print("Execute JS : ", driver.execute_script('document.querySelector("#popAjaxButton").click();'))
+        wait.until(presence_of_element_located((By.XPATH, '//*[@id="form_purchase"]')))
+        print("Execute JS : ", driver.execute_script('document.querySelector("#form_purchase").click();'))
 
-    # a#popAjaxButton.purchaseButton.useAjax
    
 
 
@@ -95,10 +89,8 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
 
     print("\r")
     driver.get(URL_CARDHOLDER)
-    #time.sleep(100000)
     try:
-        wait.until(presence_of_element_located((By.CLASS_NAME, "cardholder-card")))
-        driver.find_element_by_class_name("cc-btn.cc-dismiss").click()
+        wait.until(presence_of_element_located((By.XPATH, '//*[@id="currentTC"]/div[1]')))
         ch()
         print("cardholder was open" )
     except Exception as e: 
