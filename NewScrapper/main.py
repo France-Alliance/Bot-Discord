@@ -50,57 +50,62 @@ if platform.node() != "LAPTOP-KRONOSDEV":
 
 # if platform.system() != "Windows":
 #    path = os.path.abspath("chromedriver-v9.4.4-linux-x64/chromedriver")
+def Alliance():
+    if not os.path.exists(f"./data/{date}.json"):
+        with webdriver.Chrome(executable_path=path, options=options) as driver:
+            def connect():
+                driver.find_element_by_id('username').send_keys(email)
+                driver.find_element_by_id('password').send_keys(password)
+                driver.find_element_by_id('loginSubmit').click()
 
-with webdriver.Chrome(executable_path=path, options=options) as driver:
-    def connect():
-        driver.find_element_by_id('username').send_keys(email)
-        driver.find_element_by_id('password').send_keys(password)
-        driver.find_element_by_id('loginSubmit').click()
+            driver.get(URL)
+            wait = WebDriverWait(driver, 10)
+            connect()
+            driver.get("https://www.airlines-manager.com/home")
+            AllResult = {"Alliance": []}
+            print(presence_of_element_located((By.XPATH, '//*[@id="mainHeader"]/div[2]')))
+            if (wait.until(presence_of_element_located((By.XPATH, '//*[@id="mainHeader"]/div[2]')))):
+                for id in ALLIANCE_LIST:
+                    result = {"Name": None, "ID": None, "Classement": None,
+                            "Profile": {
+                                "General": {"Created": None, "nbCompanies": None, "Solde": None, "BeneficeHebdo": None, "TaxeHebdo": None},
+                                "Hub": {"HubsDispo": None, "KmPartage": None, "TaxeLigne": None, "TaxeCompanies": None},
+                                "AG": {"nbAvionProposer": None, "ReducMax": None, "Reduc30j": None, "nbAvionAcheter": None, "AideAchatMax": None, "AideAchat30j": None},
+                                "R&D": None
+                            },
+                            "Members": [
+                                # PatternMembers Here
+                            ],
+                            "Networks": {
+                                "Statistique": {
+                                    "NbrHub": None,
+                                    "NbrLigne": None,
+                                    "KmLigne": None,
+                                },
+                                "Hubs": [
 
-    driver.get(URL)
-    wait = WebDriverWait(driver, 10)
-    connect()
-    driver.get("https://www.airlines-manager.com/home")
-    AllResult = {"Alliance": []}
-    print(presence_of_element_located((By.XPATH, '//*[@id="mainHeader"]/div[2]')))
-    if (wait.until(presence_of_element_located((By.XPATH, '//*[@id="mainHeader"]/div[2]')))):
-        for id in ALLIANCE_LIST:
-            result = {"Name": None, "ID": None, "Classement": None,
-                      "Profile": {
-                          "General": {"Created": None, "nbCompanies": None, "Solde": None, "BeneficeHebdo": None, "TaxeHebdo": None},
-                          "Hub": {"HubsDispo": None, "KmPartage": None, "TaxeLigne": None, "TaxeCompanies": None},
-                          "AG": {"nbAvionProposer": None, "ReducMax": None, "Reduc30j": None, "nbAvionAcheter": None, "AideAchatMax": None, "AideAchat30j": None},
-                          "R&D": None
-                      },
-                      "Members": [
-                          # PatternMembers Here
-                      ],
-                      "Networks": {
-                          "Statistique": {
-                              "NbrHub": None,
-                              "NbrLigne": None,
-                              "KmLigne": None,
-                          },
-                          "Hubs": [
+                                ]
+                            }
+                            }
 
-                          ]
-                      }
-                      }
+                    for tabs in ALLIANCE_TABS:
+                        driver.get(f"{URL_ALLIANCE_PROFIL}/{tabs}/{id['ID']}")
+                        if tabs == "profile":
+                            if (wait.until(presence_of_element_located((By.CSS_SELECTOR, 'div#alliance_profile_statistiques')))):
+                                result = Profile(driver, result)
+                        elif tabs == "members":
+                            if (wait.until(presence_of_element_located((By.CSS_SELECTOR, '#allianceMembersList > tbody > tr:nth-child(1) > th:nth-child(2) > span')))):
+                                result = Member(driver, result)
+                        elif tabs == "network":
+                            if (wait.until(presence_of_element_located((By.CSS_SELECTOR, 'div#map_canvas')))):
+                                result = Network(driver, result)
+                    AllResult["Alliance"].append(result)
 
-            for tabs in ALLIANCE_TABS:
-                driver.get(f"{URL_ALLIANCE_PROFIL}/{tabs}/{id['ID']}")
-                if tabs == "profile":
-                    if (wait.until(presence_of_element_located((By.CSS_SELECTOR, 'div#alliance_profile_statistiques')))):
-                        result = Profile(driver, result)
-                elif tabs == "members":
-                    if (wait.until(presence_of_element_located((By.CSS_SELECTOR, '#allianceMembersList > tbody > tr:nth-child(1) > th:nth-child(2) > span')))):
-                        result = Member(driver, result)
-                elif tabs == "network":
-                    if (wait.until(presence_of_element_located((By.CSS_SELECTOR, 'div#map_canvas')))):
-                        result = Network(driver, result)
-            AllResult["Alliance"].append(result)
-
-        with open(f"./data/{date}.json", "w", encoding='utf8') as f:
-            f.write(json.dumps(AllResult))
-
-        # Back previous page : driver.back()
+                with open(f"./data/{date}.json", "w", encoding='utf8') as f:
+                    f.write(json.dumps(AllResult))
+            return AllResult
+                # Back previous page : driver.back()
+    else:
+        return json.load(open(f"./data/{date}.json", "r", encoding='utf8'))
+    
+Alliance()
