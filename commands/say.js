@@ -1,6 +1,9 @@
 module.exports = {
   name: "say",
-  description: "Say want you want him to say",
+  description: "Say what you want",
+  aliases: ['tell'],
+	usage: '<Your sentence>',
+	cooldown: 5,
   execute(message, args) {
     const sayMessage = "" + args.join(" ");
     message.delete().catch((O_o) => {});

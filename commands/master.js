@@ -1,6 +1,9 @@
 module.exports = {
   name: "master",
-  description: "Ping!",
+  description: "This one is secret but yet powerful...",
+  aliases: [''],
+	usage: '<>',
+	cooldown: 5,
   execute(message) {
     if (
       message.author.id === "331778741917319168" ||

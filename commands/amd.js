@@ -4,7 +4,10 @@ let nameFile, finnish = false;
 
 module.exports = {
     name: "amd",
-    description: "Ping!",
+    description: "Summmon a file with all France Alliance AM2 Data (take ≈ 10mn)",
+    aliases: ['am2d'],
+	usage: 'Waiting Fr_Space to fill the part',
+	cooldown: 5,
     execute(message) {
         args = message.content.replace('!!amd ', '')
         console.log(args);

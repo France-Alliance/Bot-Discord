@@ -1,6 +1,6 @@
 const discord = require(`discord.js`);
 const chalk = require("chalk");
-const path = require('path');
+const path = require("path");
 const fs = require("fs");
 
 const functions = require(`./functions_manager`);
@@ -10,9 +10,10 @@ const { prefix, state } = require(`./config.json`);
 
 const client = new discord.Client();
 client.commands = new discord.Collection();
+client.cooldowns = new discord.Collection();
 
 const commandFiles = fs
-  .readdirSync(path.join(__dirname, "./", `commands`)) 
+  .readdirSync(path.join(__dirname, "./", `commands`))
   .filter((file) => file.endsWith(".js"));
 
 for (const file of commandFiles) {
@@ -60,14 +61,19 @@ client.on("message", async (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const commandName = args.shift().toLowerCase();
 
+  const command =
+    client.commands.get(commandName) ||
+    client.commands.find(
+      (cmd) => cmd.aliases && cmd.aliases.includes(commandName)
+    );
+
   console.log(
     chalk.green(
       `--------------------------------------------------------------------------------------------------`
     )
   );
-  const command = client.commands.get(commandName);
 
-  if (!client.commands.has(commandName)) {
+  if (!command) {
     message.reply(
       `sorry but there's no command "${commandName}"... Try \`\`\`${prefix}help\`\`\` to have a list of available commands`
     );
@@ -77,8 +83,31 @@ client.on("message", async (message) => {
     return;
   }
 
+  const { cooldowns } = client;
+
+  if (!cooldowns.has(command.name)) {
+    cooldowns.set(command.name, new discord.Collection());
+  }
+
+  const now = Date.now();
+  const timestamps = cooldowns.get(command.name);
+  const cooldownAmount = (command.cooldown || 5) * 1000;
+
+  if (timestamps.has(message.author.id)) {
+    const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
+
+    if (now < expirationTime) {
+      const timeLeft = (expirationTime - now) / 1000;
+      return message.reply(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
+    }
+  }
+
+  timestamps.set(message.author.id, now);
+  setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+
+
   try {
-    command.execute(message, args)
+    command.execute(message, args);
     console.log(
       `${message.author.username}#${message.author.discriminator} (${message.author}) succesfully used command "${commandName}"`
     );

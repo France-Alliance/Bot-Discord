@@ -3,48 +3,44 @@ const {prefix} = require(`../config.json`);
 module.exports = {
   name: "help",
   description: "Information about the arguments provided.",
-  execute(message) {
-    var nameDev = [];
-    message.guild.members.cache.map((obj) => {
-      if (obj.id === "331778741917319168" || obj.id === "145525624939741184") {
-        nameDev.push(obj.user);
-      }
-    });
-    const help = new discord.MessageEmbed()
-      .setColor(`#0099ff`)
-      .setTitle(`Command available`)
-      .setAuthor(`Control Tower`)
-      .setDescription(`This a list of all the command available now`)
-      .setThumbnail(`https://i.imgur.com/Vjx3EOm.jpg`)
-      .addField(`\u200b`, `\`${prefix}infos\`\rShow info about you`, false)
-      .addField(`\u200b`, `\`${prefix}say\`\rSay what you want`, false)
-      .addField(`\u200b`, `\`${prefix}ping\`\rShow the ping`, false)
-      .addField(`\u200b`, `\`${prefix}token\`\rShow the token`, false)
-      .addField(`\u200b`, `\`${prefix}server_infos\`\rShow the ping`, false)
-      .addField(
-        `\u200b`,
-        `\`${prefix}id (optional tag)\`\rShows ID of your choice`,
-        false
-      )
-      .addField(
-        `\u200b`,
-        `\`${prefix}master\`\rThis one is secret but yet powerful...`,
-        false
-      )
-      .addField(
-        `\u200b`,
-        `\`${prefix}amd\`\rSummmon a file with all France Alliance AM2 Data (take ≈ 10mn)`,
-        false
-      )
-      .addField(`\u200b`, `\u200b`, false)
-      .addField(
-        `And now, a message from our sponsor:`,
-        `-----------------------------------\rYou should join us to play Airline Manager 2 !\r We accept everyone, with every level !! (discord.gg/ZGWHpfm) !\r----------------\rYou have question or problem with the bot ?\r Send a message on this server: (discord.gg/HaTSNyA)\r----------------\rThis bot has been built by ${nameDev[0]}\rand with the M-A-S-S-I-V-E help of ${nameDev[1]} !\r-----------------------------------`,
-        false
-      )
-      .setTimestamp()
-      .setFooter(`Have a good day !`);
+	aliases: [''],
+	usage: '<>',
+	cooldown: 5,
+  execute(message, args) {
+    const data = [];
+		const { commands } = message.client;
 
-    message.channel.send(help);
+		if (!args.length) {
+			data.push('Here\'s a list of all my commands:');
+			data.push(commands.map(command => command.name).join(', '));
+			data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`);
+
+			return message.author.send(data, { split: true })
+				.then(() => {
+					if (message.channel.type === 'dm') return;
+					message.reply('I\'ve sent you a DM with all my commands!');
+				})
+				.catch(error => {
+					console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
+					message.reply('it seems like I can\'t DM you!');
+				});
+		}
+
+		const name = args[0].toLowerCase();
+		const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
+
+		if (!command) {
+			return message.reply('that\'s not a valid command!');
+		}
+
+		data.push(`**Name:** ${command.name}`);
+
+		if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(', ')}`);
+		if (command.description) data.push(`**Description:** ${command.description}`);
+		if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
+
+		data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
+
+		message.channel.send(data, { split: true });
   },
 };
