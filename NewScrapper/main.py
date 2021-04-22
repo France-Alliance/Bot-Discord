@@ -106,6 +106,6 @@ def Alliance():
             return AllResult
                 # Back previous page : driver.back()
     else:
-        return json.load(open(f"./data/{date}.json", "r", encoding='utf8'))
+        return json.load(open((os.path.join(os.getcwd(), f"/data/{date}.json")), "r", encoding='utf8'))
     
 Alliance()
