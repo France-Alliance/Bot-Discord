@@ -101,11 +101,11 @@ def Alliance():
                                 result = Network(driver, result)
                     AllResult["Alliance"].append(result)
 
-                with open((os.path.join(os.getcwd(), f"/data/{date}.json")), "w", encoding='utf8') as f:
+                with open((os.path.join(os.getcwd(), "/data/"+date+".json")), "w", encoding='utf8') as f:
                     f.write(json.dumps(AllResult))
             return AllResult
                 # Back previous page : driver.back()
     else:
-        return json.load(open((os.path.join(os.getcwd(), f"/data/{date}.json")), "r", encoding='utf8'))
+        return json.load(open((os.path.join(os.getcwd(), "/data/"+date+".json")), "r", encoding='utf8'))
     
 Alliance()
