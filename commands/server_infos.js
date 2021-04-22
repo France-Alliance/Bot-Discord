@@ -1,6 +1,9 @@
 module.exports = {
   name: "server_infos",
-  description: "Ping!",
+  description: "Display infos about the server",
+  aliases: [''],
+	usage: '<>',
+	cooldown: 5,
   execute(message, args) {
     // unix timestamp
     var ts = message.guild.createdTimestamp;

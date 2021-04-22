@@ -15,25 +15,29 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 
 options = Options()
-# options.add_argument("--headless")
-# options.add_argument("--no-sandbox")
-# options.add_argument("--disable-gpu")
+options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-gpu")
+options.add_argument('--ignore-certificate-errors')
+options.add_argument('--ignore-ssl-errors')
 options.add_argument("--log-level=3")
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
+
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-a = os.path.abspath('../.env')
-SYSTEM_ENV = dotenv.dotenv_values(a)
+if platform.node() == "OSchell-Laptop" or platform.node() == "LAPTOP-KRONOSDEV" :
+    a = os.path.abspath('../.env')
+    SYSTEM_ENV = dotenv.dotenv_values(a)
+else:
+    a = os.path.abspath('.env')
+    SYSTEM_ENV = dotenv.dotenv_values(a)
 #print(SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"], SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"])
-
-
-# class "purchaseButton validateWinPopup"
 
 URL = 'https://www.airlines-manager.com/'
 # 2 Arguments (Tabs of Alliance (profile|members|network)/ ID Alliance)
 URL_WHEEL_GAME = 'https://www.airlines-manager.com/home/wheeltcgame'
 # 2ARguments (Tabs of Members (airline | network) / ID Members)
 URL_CARDHOLDER = 'https://www.airlines-manager.com/shop/cardholder'
-
 
 email = SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"]
 password = SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"]
@@ -69,14 +73,12 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
         wait.until(presence_of_element_located((By.XPATH, '//*[@id="form_purchase"]')))
         print("Execute JS : ", driver.execute_script('document.querySelector("#form_purchase").click();'))
 
-   
-
-
     driver.get(URL)
     connect()
 
     driver.get(URL_WHEEL_GAME)
     playable = driver.find_element_by_class_name("wheelTCGameFooter")
+    driver.find_element_by_class_name("cc-btn.cc-dismiss").click()
     try:
         if playable.get_attribute('data-isallowtoplay') == "true":
             wg()
@@ -97,8 +99,7 @@ with webdriver.Chrome(executable_path=path, options=options) as driver:
         print("couldn't open cardholder:" )
         print(e)
         
-        
-        
+    
 
     
 

@@ -26,6 +26,9 @@ async function tok(message) {
 module.exports = {
   name: "token",
   description: "Did I really did this mistake ? You are about to find out...",
+  aliases: ['joke'],
+	usage: '<>',
+	cooldown: 5,
   execute(message, args) {
     tok(message);
   },
