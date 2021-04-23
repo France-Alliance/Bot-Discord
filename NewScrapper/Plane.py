@@ -3,7 +3,6 @@ import json
 import dotenv
 import platform
 import os
-from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import presence_of_element_located

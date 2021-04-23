@@ -1,9 +1,5 @@
 from datetime import datetime
-import json
-import dotenv
-import platform
-import os
-from bs4 import BeautifulSoup as bs
+import json, dotenv, platform, os
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
@@ -17,13 +13,16 @@ options = Options()
 options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-gpu")
-options.add_argument("--log-level=3")
+options.add_argument("--log-level=1")
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 a = os.path.abspath('../.env')
 SYSTEM_ENV = dotenv.dotenv_values(a)
 #print(SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"], SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"])
+
+if not os.path.exists('data'):
+    os.mkdir('data')
 
 URL = 'https://www.airlines-manager.com/'
 # 2 Arguments (Tabs of Alliance (profile|members|network)/ ID Alliance)
@@ -101,11 +100,11 @@ def Alliance():
                                 result = Network(driver, result)
                     AllResult["Alliance"].append(result)
 
-                with open((os.path.join(os.getcwd(), "/data/"+date+".json")), "w", encoding='utf8') as f:
+                with open(f"./data/{date}.json", "w", encoding='utf8') as f:
                     f.write(json.dumps(AllResult))
             return AllResult
                 # Back previous page : driver.back()
     else:
-        return json.load(open((os.path.join(os.getcwd(), "/data/"+date+".json")), "r", encoding='utf8'))
+        return json.load(open(f"./data/{date}.json", "r", encoding='utf8'))
     
 Alliance()
