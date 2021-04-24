@@ -10,9 +10,9 @@ function entry(client){
       member.guild.channels.cache
         .find((channel) => channel.name === "➡-entry")
         .send(
-          `Welcome to ${member}| ${member.user.username} #${member.user.discriminator}... @ [${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}]`
+          `Welcome to ${member}| ${member.user.username}#${member.user.discriminator}... @ [${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}]\r<@&680892507567161427><@&678734127972745226>`
         );
-        console.log(`Welcome message was sent to ${member.user.username} #${member.user.discriminator}`);
+        console.log(`Welcome message was sent to ${member.user.username}#${member.user.discriminator}`);
     });
 }
 
@@ -26,9 +26,9 @@ function exit(client){
       member.guild.channels.cache
         .find((channel) => channel.name === "⬅-exit")
         .send(
-          `We have lost ${member} | ${member.user.username} #${member.user.discriminator}... @ [${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}]`
+          `We have lost ${member} | ${member.user.username}#${member.user.discriminator}... @ [${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} - ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}]\r<@&678734127972745226>`
         );
-      console.log(`Goodbye message was sent to ${member.user.username} #${member.user.discriminator}`);
+      console.log(`Goodbye message was sent to ${member.user.username}#${member.user.discriminator}`);
     });
 }
 

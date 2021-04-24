@@ -6,7 +6,7 @@ module.exports = {
     name: "amd",
     description: "Summmon a file with all France Alliance AM2 Data (take ≈ 10mn)",
     aliases: ['am2d'],
-    usage: 'Alliance : !!amd --Alliance {Name | ID (recommended)} {(Optionel) ID, Classement, Profile, Members, Networks}; Members : !!amd --Members {Name | ID (recommended)} {(Optionel) Alliance {Name | ID}} {(Optionel) ID, Name, Star, Owner, Hubs, Role, Valorisation, Solde, LastConnection}; All : !!amd --All',
+    usage: '***Alliance*** : !!amd --Alliance {Name | ID (recommended)} {(Optionel) ID, Classement, Profile, Members, Networks};\r ***Members*** : !!amd --Members {Name | ID (recommended)} {(Optionel) Alliance {Name | ID}} {(Optionel) ID, Name, Star, Owner, Hubs, Role, Valorisation, Solde, LastConnection};\r ***All*** : !!amd --All',
     cooldown: 5,
     execute(message) {
         args = message.content.replace('!!amd ', '')
