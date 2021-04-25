@@ -28,10 +28,10 @@ if __name__ == "__main__":
 
     if Type == "--alliance":
         ID = VerifIDAlliance(str(arg[1]))
-        if len(arg) == 2:
+        if len(arg) == 3:
             if GetAlliance(ID, Option=arg[2]):
                 print(f"NewScrapper/data/Alliance-{ID}-{str(arg[2]).lower()}.json")
-        elif len(arg) == 1:
+        elif len(arg) == 2:
             if GetAlliance(ID):
                 print(f"NewScrapper/data/Alliance-{ID}.json")
     if Type == "--members":
