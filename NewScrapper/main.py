@@ -19,7 +19,6 @@ options.add_experimental_option('excludeSwitches', ['enable-logging'])
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 a = os.path.abspath('../.env')
 SYSTEM_ENV = dotenv.dotenv_values(a)
-#print(SYSTEM_ENV["PY_PASSWORD_ACCOUNT_1"], SYSTEM_ENV["PY_EMAIL_ACCOUNT_1"])
 
 if not os.path.exists('data'):
     os.mkdir('data')
@@ -62,7 +61,6 @@ def Alliance():
             connect()
             driver.get("https://www.airlines-manager.com/home")
             AllResult = {"Alliance": []}
-            print(presence_of_element_located((By.XPATH, '//*[@id="mainHeader"]/div[2]')))
             if (wait.until(presence_of_element_located((By.XPATH, '//*[@id="mainHeader"]/div[2]')))):
                 for id in ALLIANCE_LIST:
                     result = {"Name": None, "ID": None, "Classement": None,
@@ -101,7 +99,7 @@ def Alliance():
                     AllResult["Alliance"].append(result)
 
                 with open(f"./data/{date}.json", "w", encoding='utf8') as f:
-                    f.write(json.dumps(AllResult))
+                    f.write(json.dumps(AllResult, indent=4))
             return AllResult
                 # Back previous page : driver.back()
     else:

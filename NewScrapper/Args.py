@@ -24,32 +24,31 @@ def VerifIDMembers(ID):
 
 if __name__ == "__main__":
     arg = sys.argv[1].split(' ')
-    Type = str(arg[0])
+    Type = str(arg[0]).lower()
 
-    if Type == "--Alliance":
+    if Type == "--alliance":
         ID = VerifIDAlliance(str(arg[1]))
         if len(arg) == 2:
             if GetAlliance(ID, Option=arg[2]):
-                print(f"NewScrapper/data/Alliance-{ID}-{arg[2]}.json")
+                print(f"NewScrapper/data/Alliance-{ID}-{str(arg[2]).lower()}.json")
         elif len(arg) == 1:
             if GetAlliance(ID):
                 print(f"NewScrapper/data/Alliance-{ID}.json")
-    if Type == "--Members":
+    if Type == "--members":
         ID = VerifIDMembers(str(arg[1]))
-        print(arg, ID, VerifIDAlliance(arg[2]) in GetNameAlliance(), VerifIDAlliance(arg[2]))
         if len(arg) == 4:
             if GetMembers(ID, Option=[VerifIDAlliance(arg[2]), arg[3]]):
-                print(f"NewScrapper/data/Members-{ID}-{VerifIDAlliance(arg[2])}-{arg[3]}.json")
+                print(f"NewScrapper/data/Members-{ID}-{VerifIDAlliance(arg[2])}-{str(arg[3]).lower()}.json")
         elif len(arg) == 3:
             if VerifIDAlliance(arg[2]) in GetNameAlliance():
                 if GetMembers(ID, Option=[VerifIDAlliance(arg[2])]):
                     print(f"NewScrapper/data/Members-{ID}-{VerifIDAlliance(arg[2])}.json")
             else:
                 if GetMembers(ID, Option=[arg[2]]):
-                    print(f"NewScrapper/data/Members-{ID}-{arg[2]}.json")
+                    print(f"NewScrapper/data/Members-{ID}-{str(arg[2]).lower()}.json")
         elif len(arg) == 2:
             if GetMembers(ID):
                 print(f"NewScrapper/data/Members-{ID}.json")
-    if Type == "--All":
+    if Type == "--all":
         if GetAllianceAll():
             print(f"NewScrapper/data/Alliance.json")
