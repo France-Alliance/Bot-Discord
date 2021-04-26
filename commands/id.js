@@ -4,12 +4,12 @@ module.exports = {
   aliases: [""],
   usage: "<> or <@user#0000>",
   cooldown: 1,
-  execute(message) {
+  execute(message, args) {
     if (message.mentions.users.size === 0) {
       message.channel.send(`Your ID is ${message.author.id} `);
     }
     if (message.mentions.users.size != 0) {
-      message.channel.send(`His ID is ${userm.users.map((user) => user.id)} `);
+      message.channel.send(`His ID is ${message.mentions.users.map((user) => user.id)} `);
     }
   },
 };
