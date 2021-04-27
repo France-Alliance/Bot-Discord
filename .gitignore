@@ -6,6 +6,7 @@ scrapper/data/Creds.json
 .env
 NewScrapper/data/*.json
 NewScrapper/data/Archive/*.json
+NewScrapper/*.json
 NewScrapper/__pycache__/*
 
 !token.js
