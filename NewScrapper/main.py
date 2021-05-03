@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from progress.bar import IncrementalBar as Bar
 from Members import Member
 from Profile import Profile
 from Network import Network
@@ -85,18 +86,23 @@ def Alliance():
                             }
                             }
 
+                    bar = Bar(f'Tabs ({id["Name"]}): ', max=(len(ALLIANCE_TABS)), suffix='%(percent).1f%% (%(index)d/%(max)d) - [%(elapsed_td)s / %(eta_td)s]')
                     for tabs in ALLIANCE_TABS:
                         driver.get(f"{URL_ALLIANCE_PROFIL}/{tabs}/{id['ID']}")
                         if tabs == "profile":
                             if (wait.until(presence_of_element_located((By.CSS_SELECTOR, 'div#alliance_profile_statistiques')))):
                                 result = Profile(driver, result)
+                                bar.next()
                         elif tabs == "members":
                             if (wait.until(presence_of_element_located((By.CSS_SELECTOR, '#allianceMembersList > tbody > tr:nth-child(1) > th:nth-child(2) > span')))):
                                 result = Member(driver, result)
+                                bar.next()
                         elif tabs == "network":
                             if (wait.until(presence_of_element_located((By.CSS_SELECTOR, 'div#map_canvas')))):
                                 result = Network(driver, result)
+                                bar.next()
                     AllResult["Alliance"].append(result)
+                    bar.finish()
 
                 with open(f"./data/{date}.json", "w", encoding='utf8') as f:
                     f.write(json.dumps(AllResult, indent=4))
