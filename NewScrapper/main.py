@@ -104,11 +104,13 @@ def Alliance():
                     AllResult["Alliance"].append(result)
                     bar.finish()
 
-                with open(f"./data/{date}.json", "w", encoding='utf8') as f:
+                with open(os.getcwd()+"\\data\\"+date+".json", "w", encoding='utf8') as f:
                     f.write(json.dumps(AllResult, indent=4))
+            print(os.getcwd()+"\\data\\"+date+".json") 
             return AllResult
                 # Back previous page : driver.back()
     else:
-        return json.load(open(f"./data/{date}.json", "r", encoding='utf8'))
+        print(os.getcwd()+"\\data\\"+date+".json") 
+        return json.load(open(os.getcwd()+"\\data\\"+date+".json", "r", encoding='utf8'))
     
 Alliance()
