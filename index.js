@@ -74,11 +74,17 @@ client.on("message", async (message) => {
   );
 
   if (!command) {
+    if (args.length == 0 ){
+      console.log(
+        `${message.author.username}#${message.author.discriminator} (${message.author}) tried non-existing command "${commandName}"`
+      );
+    } else {
+      console.log(
+        `${message.author.username}#${message.author.discriminator} (${message.author}) tried non-existing command "${commandName}" with argument(s) "${args.join(" ")}"`
+      );
+    }
     message.reply(
       `sorry but there's no command "${commandName}"... Try \`\`\`${prefix}help\`\`\` to have a list of available commands`
-    );
-    console.log(
-      `${message.author.username}#${message.author.discriminator} (${message.author}) tried non-existing command "${commandName}"`
     );
     return;
   }
@@ -108,12 +114,20 @@ client.on("message", async (message) => {
 
   try {
     command.execute(message, args);
-    console.log(
-      `${message.author.username}#${message.author.discriminator} (${message.author}) succesfully used command "${commandName}"`
-    );
+
+    if (args.length == 0 ){
+      console.log(
+        `${message.author.username}#${message.author.discriminator} (${message.author}) succesfully used command "${commandName}"`
+      );
+    } else {
+      console.log(
+        `${message.author.username}#${message.author.discriminator} (${message.author}) succesfully used command "${commandName}" with argument(s) "${args.join(" ")}"`
+      );
+    }
   } catch (error) {
+
     console.log(
-      `There was an error trying to execute that command!\r${message.author.username}#${message.author.discriminator} (${message.author}) unsuccesfully used command "${commandName}"`
+      `There was an error trying to execute that command!\r${message.author.username}#${message.author.discriminator} (${message.author}) unsuccesfully used command "${commandName}" with ${args.join(" ")}`
     );
     console.error(error);
   }

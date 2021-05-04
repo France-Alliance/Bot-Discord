@@ -13,7 +13,7 @@ module.exports = {
     execute(message) {
         message.content = message.content.replace('!!am2d ', '!!amd ')
         args = message.content.replace('!!amd ', '')
-        console.log(args);
+        //console.log(args);
         message.channel.send("Gathering the data...\rPlease wait")
 
         let pyshell = new PythonShell('NewScrapper/Args.py', { mode: 'text', args: [args] });
@@ -21,7 +21,7 @@ module.exports = {
         pyshell.on('message', res => {
             if (res.match(regex)) {
                 var regex = /NewScrapper\/data\/.*\.json/gm;
-                console.log("File Name : " + res.match(regex));
+                //console.log("File Name : " + res.match(regex));
                 nameFile = res.replace("File Name : ", "");
             } else {
                 console.log(res);
@@ -52,7 +52,7 @@ module.exports = {
                 pyshell = new PythonShell('NewScrapper/Utils.py');
 
                 pyshell.on('message', res => {
-                    console.log("File Name 2 : " + res);
+                    //console.log("File Name 2 : " + res);
                 });
                 pyshell.end((err, code, signal) => { if (err) { throw err } });
             } else {
