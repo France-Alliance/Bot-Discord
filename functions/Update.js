@@ -4,7 +4,6 @@ const cron = require("node-cron");
 const shell = require("shelljs");
 const time = require(`./Time`);
 const chalk = require("chalk");
-const { PythonShell } = require("python-shell");
 const os = require('os')
 
 function update_bot() {
