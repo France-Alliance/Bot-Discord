@@ -30,7 +30,7 @@ function data_feed(client) {
 
     if (os.hostname() == "raspberrypi") {
       options = {
-        pythonPath: "/usr/bin/env python3",
+        pythonPath: "/usr/bin/python3",
         mode: "text",
         args: [args],
       };
