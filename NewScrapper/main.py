@@ -114,3 +114,4 @@ def Alliance():
         return json.load(open(os.getcwd()+"\\data\\"+date+".json", "r", encoding='utf8'))
     
 Alliance()
+Driver.Quit()

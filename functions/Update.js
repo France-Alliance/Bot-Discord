@@ -4,6 +4,8 @@ const cron = require("node-cron");
 const shell = require("shelljs");
 const time = require(`./Time`);
 const chalk = require("chalk");
+const { PythonShell } = require("python-shell");
+const os = require('os')
 
 function update_bot() {
   cron.schedule("00 03 * * *", () => {
@@ -24,19 +26,70 @@ function update_bot() {
 }
 
 function data_feed(client) {
-  cron.schedule("34 21 * * 5", () => {
-    console.log(
-      chalk.green(
-        `--------------------------------------------------------------------------------------------------`
-      )
-    );
+  cron.schedule("00 04 * * *", () => {
+    args = "--All"
+
+    if (os.hostname() == "raspberrypi") {
+      options = {
+        pythonPath: "/usr/bin/env python3",
+        mode: "text",
+        args: [args],
+      };
+    } else {
+      options = {
+        mode: "text",
+        args: [args],
+      };
+    }
+
+    let pyshell = new PythonShell("NewScrapper/Args.py", options);
+
+    pyshell.on("message", (res) => {
+      if (res.match(regex)) {
+        var regex = /NewScrapper\/data\/.*\.json/gm;
+        //console.log("File Name : " + res.match(regex));
+        nameFile = res.replace("File Name : ", "");
+      } else {
+        console.log(res);
+      }
+    });
+
+    pyshell.end((err, code, signal) => {
+      if (err) {
+        throw err;
+      }
+      if (nameFile != null) {
+
+        nameFile = null;
+        finnish = true;
+
+        pyshell = new PythonShell("NewScrapper/Utils.py");
+
+        pyshell.on("message", (res) => {
+          //console.log("File Name 2 : " + res);
+        });
+        pyshell.end((err, code, signal) => {
+          if (err) {
+            throw err;
+          }
+        });
+      } else {
+        message.reply("Error in commands");
+      }
+    });
+  })
+}
+
+module.exports = { update_bot, data_feed };
+
+/*
     let pyshell = new PythonShell("NewScrapper/main.py");
     dest = client.channels.cache.get(`802199511102783509`);
     //client.channels.cache.get(`719108278461923369`).send();
 
 
     dest.send(`📚 | D A T A   I N C O M I N G`);
-    
+
     // sends a message to the Python script via stdin
     // pyshell.send('hello');
 
@@ -44,7 +97,7 @@ function data_feed(client) {
       // received a message sent from the Python script (a simple "print" statement)
       console.log(message);
     });
-    
+
     // end the input stream and allow the process to exit
     pyshell.end(function (err, code, signal) {
       if (err) {
@@ -70,4 +123,4 @@ function data_feed(client) {
 
   });
 }
-module.exports = { update_bot, data_feed };
+*/
