@@ -20,7 +20,7 @@ module.exports = {
 
     if (os.hostname() == "raspberrypi") {
         options = {
-            pythonPath: "usr/bin/python3",
+            pythonPath: "/usr/bin/python3",
             mode: "text",
             args: [args],
           };
