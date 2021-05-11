@@ -108,10 +108,14 @@ def Alliance():
                     f.write(json.dumps(AllResult, indent=4))
             print(os.getcwd()+"\\data\\"+date+".json") 
             return AllResult
-                # Back previous page : driver.back()
+            # Back previous page : driver.back()
+            driver.Quit()
+
     else:
         print(os.getcwd()+"\\data\\"+date+".json") 
         return json.load(open(os.getcwd()+"\\data\\"+date+".json", "r", encoding='utf8'))
+        driver.Quit()
+
+
     
 Alliance()
-Driver.Quit()
