@@ -44,8 +44,13 @@ starType = ["no", "bronze", "silver", "gold"]
 
 path = "chromedriver"
 
-if platform.node() == "OSchell-Laptop": #OSchell-Laptop || LAPTOP-KRONOSDEV
+if platform.node() == "OSchell-Laptop": #OSchell-Laptop || LAPTOP-KRONOSDEV || raspberrypi
     path = SYSTEM_ENV["CHROMEDRIVER_PATH"]
+
+if platform.node() == "raspberrypi":
+    date_str="/data/"
+else:
+    date_str="\\data\\"
 
 # if platform.system() != "Windows":
 #    path = os.path.abspath("chromedriver-v9.4.4-linux-x64/chromedriver")
@@ -104,16 +109,16 @@ def Alliance():
                     AllResult["Alliance"].append(result)
                     bar.finish()
 
-                with open(os.getcwd()+"\\data\\"+date+".json", "w", encoding='utf8') as f:
+                with open(os.getcwd()+date_str+date+".json", "w", encoding='utf8') as f:
                     f.write(json.dumps(AllResult, indent=4))
-            print(os.getcwd()+"\\data\\"+date+".json") 
+            print(os.getcwd()+date_str+date+".json") 
             return AllResult
             # Back previous page : driver.back()
             driver.Quit()
 
     else:
-        print(os.getcwd()+"\\data\\"+date+".json") 
-        return json.load(open(os.getcwd()+"\\data\\"+date+".json", "r", encoding='utf8'))
+        print(os.getcwd()+date_str+date+".json") 
+        return json.load(open(os.getcwd()+date_str+date+".json", "r", encoding='utf8'))
         driver.Quit()
 
 
