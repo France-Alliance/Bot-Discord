@@ -30,7 +30,7 @@ const time = functions.time;
 
 launch.art();
 update.update_bot();
-update.data_feed(client);
+update.data_feed();
 
 //------------
 

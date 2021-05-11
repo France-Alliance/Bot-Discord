@@ -63,7 +63,7 @@ def Alliance():
                 driver.find_element_by_id('loginSubmit').click()
 
             driver.get(URL)
-            wait = WebDriverWait(driver, 10)
+            wait = WebDriverWait(driver, 60)
             connect()
             driver.get("https://www.airlines-manager.com/home")
             AllResult = {"Alliance": []}

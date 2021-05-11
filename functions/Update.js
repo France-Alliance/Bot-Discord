@@ -24,24 +24,21 @@ function update_bot() {
   });
 }
 
-function data_feed(client) {
+function data_feed() {
   cron.schedule("00 04 * * *", () => {
-    args = "--All"
 
     if (os.hostname() == "raspberrypi") {
       options = {
         pythonPath: "/usr/bin/python3",
         mode: "text",
-        args: [args],
       };
     } else {
       options = {
         mode: "text",
-        args: [args],
       };
     }
 
-    let pyshell = new PythonShell("NewScrapper/Args.py", options);
+    let pyshell = new PythonShell("NewScrapper/main.py", options);
 
     pyshell.on("message", (res) => {
       if (res.match(regex)) {
