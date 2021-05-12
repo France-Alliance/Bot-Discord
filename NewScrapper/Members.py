@@ -12,7 +12,7 @@ def Member(driver, result):
     
     for i in range(2, len(driver.find_elements_by_css_selector('#allianceMembersList > tbody > tr'))):
         patternMembersCopy = patternMembers.copy()
-        patternMembersCopy["Name"] = driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[1]').text
+        patternMembersCopy["Name"] = driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[1]').text.replace(" ", "_")
         patternMembersCopy["ID"] = int(driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[6]/a').get_attribute('href').split("/")[-1])
         starCopy = star.copy()
 
@@ -29,7 +29,7 @@ def Member(driver, result):
                 break
 
         patternMembersCopy["Star"] = starCopy
-        patternMembersCopy["Owner"] = driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[3]').text
+        patternMembersCopy["Owner"] = driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[3]').text.replace(" ", "_")
         patternMembersCopy["Hubs"] = driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[4]').text.replace(" ", "").replace("\n", "").split("/")
         if driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[5]/ul').text != "":
             patternMembersCopy["Role"] = driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[5]/ul/li').text
