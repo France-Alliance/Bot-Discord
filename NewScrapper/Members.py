@@ -10,7 +10,7 @@ star = {"Nombre": None, "Type": None}
 def Member(driver, result):
     wait = WebDriverWait(driver, 10)
     
-    for i in range(2, len(driver.find_elements_by_css_selector('#allianceMembersList > tbody > tr'))):
+    for i in range(2, len(driver.find_elements_by_css_selector('#allianceMembersList > tbody > tr'))+1):
         patternMembersCopy = patternMembers.copy()
         patternMembersCopy["Name"] = driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[1]').text.replace(" ", "_")
         patternMembersCopy["ID"] = int(driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[6]/a').get_attribute('href').split("/")[-1])
