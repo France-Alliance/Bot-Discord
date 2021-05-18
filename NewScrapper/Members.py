@@ -37,12 +37,12 @@ def Member(driver, result):
             patternMembersCopy["Role"] = driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[5]/ul').text
         
         #driver.find_element_by_xpath(f'//*[@id="allianceMembersList"]/tbody/tr[{i}]/td[6]/a').click()
-        driver.execute_script('document.querySelector("#allianceMembersList > tbody > tr:nth-child(2) > td:nth-child(6) > a").click();')
+        driver.execute_script(f'document.querySelector("#allianceMembersList > tbody > tr:nth-child({i}) > td:nth-child(6) > a").click();')
         if (wait.until(presence_of_element_located((By.XPATH, '//*[@id="company_profile"]/div[2]/div[3]/div[1]/div[2]/span[2]')))):
             patternMembersCopy["Valorisation"] = int(driver.find_element_by_xpath(f'//*[@id="company_profile"]/div[2]/div[3]/div[1]/div[2]/span[2]').text.replace(" ", "").replace("$", "").replace(",", ""))
             patternMembersCopy["Solde"] = int(driver.find_element_by_xpath(f'//*[@id="company_profile"]/div[2]/div[3]/div[2]/div[2]/span[2]').text.replace(" ", "").replace("$", "").replace(",", ""))
             patternMembersCopy["LastConnection"] = driver.find_element_by_xpath(f'//*[@id="company_profile"]/div[2]/div[3]/div[2]/div[1]/span[2]').text
-        
+
         driver.back()
         if (wait.until(presence_of_element_located((By.CSS_SELECTOR, '#allianceMembersList > tbody > tr:nth-child(1) > th:nth-child(2) > span')))):
             del patternMembersCopy["Hubs"][len(patternMembersCopy["Hubs"])-1]
