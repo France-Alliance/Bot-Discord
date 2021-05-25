@@ -2,22 +2,23 @@ const discord = require(`discord.js`);
 const chalk = require("chalk");
 const path = require("path");
 const fs = require("fs");
+const os = require('os')
 
-const functions = require(`./functions_manager`);
+const functions = require(`./bot_essentials/functions_manager`);
 
-const { token } = require(`./token.json`);
-const { prefix, state } = require(`./config.json`);
+const { token } = require(`./bot_essentials/token.json`);
+const { prefix, state } = require(`./bot_essentials/config.json`);
 
 const client = new discord.Client();
 client.commands = new discord.Collection();
 client.cooldowns = new discord.Collection();
 
 const commandFiles = fs
-  .readdirSync(path.join(__dirname, "./", `commands`))
+  .readdirSync(path.join(__dirname, "./", `bot_essentials/commands`))
   .filter((file) => file.endsWith(".js"));
 
 for (const file of commandFiles) {
-  const command = require(`./commands/${file}`);
+  const command = require(`./bot_essentials/commands/${file}`);
   client.commands.set(command.name, command);
 }
 
@@ -58,7 +59,7 @@ client.on("message", async (message) => {
   // e.g. if we have the message "!!say Is this the real life?" , we`ll get the following:
   // command = say
   // args = ["Is", "this", "the", "real", "life?"]
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  args = message.content.slice(prefix.length).trim().split(/ +/g);
   const commandName = args.shift().toLowerCase();
 
   const command =
@@ -113,21 +114,40 @@ client.on("message", async (message) => {
 
 
   try {
+    opt=["serv_id"]
+    arg2=[]
+    optargs=[]
+    for (i in opt) {
+      for (v in args) {
+        if (args[v] != opt[i]){
+          arg2.push(args[v])
+        } else {
+          optargs.push(args[v])         
+        }
+      }
+    }
+    args = arg2
+    
+    joinarg=args.join(" ")
+
     command.execute(message, args);
 
-    if (args.length == 0 ){
+    if (optargs.includes(opt[0]) && message.member.permissions.has("ADMINISTRATOR")== true){
+      message.channel.send(`SERVER: ${os.hostname()}`)
+    }
+    if (arg2.length == 0 ){
       console.log(
         `${message.author.username}#${message.author.discriminator} (${message.author}) succesfully used command "${commandName}"`
       );
     } else {
       console.log(
-        `${message.author.username}#${message.author.discriminator} (${message.author}) succesfully used command "${commandName}" with argument(s) "${args.join(" ")}"`
+        `${message.author.username}#${message.author.discriminator} (${message.author}) succesfully used command "${commandName}" with argument(s) "${joinarg}"`
       );
     }
   } catch (error) {
 
     console.log(
-      `There was an error trying to execute that command!\r${message.author.username}#${message.author.discriminator} (${message.author}) unsuccesfully used command "${commandName}" with ${args.join(" ")}`
+      `There was an error trying to execute that command!\r${message.author.username}#${message.author.discriminator} (${message.author}) unsuccesfully used command "${commandName}" with ${joinarg}`
     );
     console.error(error);
   }

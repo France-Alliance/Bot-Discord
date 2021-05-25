@@ -1,2 +1,2 @@
-cd ../NewScrapper
+cd ../../NewScrapper
 start python daily.py

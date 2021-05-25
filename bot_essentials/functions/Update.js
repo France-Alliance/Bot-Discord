@@ -1,5 +1,5 @@
 var { PythonShell } = require("python-shell");
-const date = require(`../functions/Time`);
+const date = require(`./Time`);
 const cron = require("node-cron");
 const shell = require("shelljs");
 const time = require(`./Time`);

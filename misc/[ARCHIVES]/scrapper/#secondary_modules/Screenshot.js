@@ -1,5 +1,5 @@
 var fs = require("fs");
-const file = require(`../#secondary_modules/File`);
+const file = require(`./File`);
 
 
 async function take(page, dest_folder) {

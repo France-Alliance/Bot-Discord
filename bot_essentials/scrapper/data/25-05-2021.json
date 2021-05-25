@@ -1,0 +1,1868 @@
+{
+    "Alliance": [
+        {
+            "Name": "France Aquila",
+            "ID": 74365,
+            "Classement": 26,
+            "Profile": {
+                "General": {
+                    "Created": "06/11/2019",
+                    "nbCompanies": 18,
+                    "Solde": 3260717380,
+                    "BeneficeHebdo": 578325200,
+                    "TaxeHebdo": 0.25
+                },
+                "Hub": {
+                    "HubsDispo": 279,
+                    "KmPartage": 3954185,
+                    "TaxeLigne": 0.0,
+                    "TaxeCompanies": null,
+                    "TaxeCompagnies": 5.0
+                },
+                "AG": {
+                    "nbAvionProposer": "-",
+                    "ReducMax": 10.0,
+                    "Reduc30j": 51749157000,
+                    "nbAvionAcheter": null,
+                    "AideAchatMax": 0.0,
+                    "AideAchat30j": "-",
+                    "nbAvionAchter": 7374
+                },
+                "R&D": 81
+            },
+            "Members": [
+                {
+                    "ID": 450718,
+                    "Name": "Fly_Toulouse",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Enzo",
+                    "Hubs": [
+                        "MEL",
+                        "ORD",
+                        "ORY",
+                        "DXB",
+                        "TLS",
+                        "GRU",
+                        "NRT",
+                        "JFK",
+                        "CDG",
+                        "CUN",
+                        "ISL",
+                        "MAD",
+                        "LHR",
+                        "LAX"
+                    ],
+                    "Role": "Fondateur",
+                    "Valorisation": 243704223482,
+                    "Solde": -12974733736,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 131573,
+                    "Name": "FranceJetAir",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "RyanLateb",
+                    "Hubs": [
+                        "HHH",
+                        "TLS",
+                        "MKE",
+                        "PPT",
+                        "PKX",
+                        "SFO",
+                        "LTT",
+                        "OSL",
+                        "ICN",
+                        "NCE",
+                        "MRU",
+                        "YYZ",
+                        "AKL",
+                        "MEX",
+                        "MPL",
+                        "HKG",
+                        "CDG",
+                        "ORY",
+                        "PVG",
+                        "LHR",
+                        "LAX",
+                        "ATL",
+                        "SIN",
+                        "GIG",
+                        "SYD",
+                        "LOS",
+                        "JFK",
+                        "NRT",
+                        "JNB",
+                        "DME",
+                        "DXB"
+                    ],
+                    "Role": "",
+                    "Valorisation": 1069318678696,
+                    "Solde": 444136841797,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 95202,
+                    "Name": "MeyAir",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Meyou",
+                    "Hubs": [
+                        "AMS",
+                        "JFK",
+                        "LHR",
+                        "FRA",
+                        "HNL",
+                        "SYD",
+                        "GRU",
+                        "HKG",
+                        "YUL",
+                        "ZRH",
+                        "SFO",
+                        "DME",
+                        "NRT"
+                    ],
+                    "Role": "",
+                    "Valorisation": 311018900877,
+                    "Solde": 19549269670,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 1920749,
+                    "Name": "JetJeff",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "JeffreyvanBeveren",
+                    "Hubs": [
+                        "CDG",
+                        "SYD",
+                        "GRU",
+                        "LHR",
+                        "DXB"
+                    ],
+                    "Role": "",
+                    "Valorisation": 305090857048,
+                    "Solde": 995636535,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 8647,
+                    "Name": "VexinAir",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Joel",
+                    "Hubs": [
+                        "MAA",
+                        "MEL",
+                        "VIE",
+                        "CDG",
+                        "SIN",
+                        "NGO",
+                        "MRU",
+                        "MIA",
+                        "GRU",
+                        "AKL",
+                        "DXB",
+                        "JNB",
+                        "PTP",
+                        "SEA",
+                        "YYZ"
+                    ],
+                    "Role": "",
+                    "Valorisation": 558289023085,
+                    "Solde": 398219031665,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 3471107,
+                    "Name": "France_B_Air",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Franck",
+                    "Hubs": [
+                        "ADD",
+                        "BOM",
+                        "FRA",
+                        "HKG",
+                        "IAH",
+                        "DXB",
+                        "GRU",
+                        "CDG"
+                    ],
+                    "Role": "Directeur D\u00e9veloppement",
+                    "Valorisation": 96270424411,
+                    "Solde": 11632909342,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 53907,
+                    "Name": "GAIV'AIR",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Tuemoon",
+                    "Hubs": [
+                        "LVI",
+                        "MDK",
+                        "SVP",
+                        "CAB",
+                        "BZV",
+                        "LBV",
+                        "NKC",
+                        "OZZ",
+                        "DSS",
+                        "NDB",
+                        "LRL",
+                        "TML",
+                        "ENU",
+                        "CBQ",
+                        "LOS",
+                        "ABV",
+                        "LAD",
+                        "PHC",
+                        "EBB",
+                        "ACC",
+                        "DLA",
+                        "ABJ",
+                        "FIH",
+                        "NSI",
+                        "VPE",
+                        "EUN",
+                        "SDD",
+                        "LLW",
+                        "MTS",
+                        "LFW",
+                        "BKO",
+                        "BJL",
+                        "KAD",
+                        "NOV",
+                        "OND",
+                        "KGL",
+                        "FKI",
+                        "UYL",
+                        "FBM",
+                        "NTY",
+                        "CBT",
+                        "SPP",
+                        "ROB",
+                        "OUA",
+                        "NDJ",
+                        "CKY",
+                        "VIL",
+                        "BUQ",
+                        "YOL",
+                        "ERH",
+                        "BJM",
+                        "BGF",
+                        "MSU",
+                        "FNA",
+                        "NIM",
+                        "OXB",
+                        "GOU",
+                        "VHC",
+                        "VXC",
+                        "KMN",
+                        "NGE",
+                        "MZI",
+                        "BOY",
+                        "ULU",
+                        "ASK",
+                        "ZRH",
+                        "MPM",
+                        "KAN"
+                    ],
+                    "Role": "",
+                    "Valorisation": 1385903971004,
+                    "Solde": -122642871010,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 1000752,
+                    "Name": "myFly",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "AlbertC",
+                    "Hubs": [
+                        "SJO",
+                        "HNL",
+                        "GRO",
+                        "KIX",
+                        "SMR",
+                        "CPT",
+                        "NCE",
+                        "OSL",
+                        "BCN",
+                        "NRT",
+                        "SCL",
+                        "MEL",
+                        "MIA"
+                    ],
+                    "Role": "",
+                    "Valorisation": 248698385506,
+                    "Solde": 142142648911,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 2045158,
+                    "Name": "Mikebasosky_Air",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Michele_2045158",
+                    "Hubs": [
+                        "ZRH",
+                        "ORD",
+                        "SYD",
+                        "HNL",
+                        "FRA",
+                        "AMS",
+                        "NRT",
+                        "FCO",
+                        "JNB",
+                        "PEK",
+                        "DXB",
+                        "SIN",
+                        "MXP",
+                        "ATL",
+                        "GMP",
+                        "LHR"
+                    ],
+                    "Role": "",
+                    "Valorisation": 136676032072,
+                    "Solde": 51561732046,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 3482089,
+                    "Name": "Air_Mondial_Group",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Paul",
+                    "Hubs": [
+                        "ADD",
+                        "MPM",
+                        "CDG"
+                    ],
+                    "Role": "Directeur Communication",
+                    "Valorisation": 46111013220,
+                    "Solde": 1372955345,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 332485,
+                    "Name": "PED_Airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "PED",
+                    "Hubs": [
+                        "MAD",
+                        "DEN",
+                        "HND",
+                        "FCO",
+                        "DXB",
+                        "MEM",
+                        "AMS",
+                        "MEX",
+                        "JFK",
+                        "CDG",
+                        "LAX"
+                    ],
+                    "Role": "",
+                    "Valorisation": 124116588946,
+                    "Solde": 12059139704,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 2512766,
+                    "Name": "Sky_Gate_Airline",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Guillaume",
+                    "Hubs": [
+                        "MPM",
+                        "LHR",
+                        "FRA",
+                        "BER",
+                        "MEX",
+                        "CDG",
+                        "HND",
+                        "SYD",
+                        "LYS",
+                        "ATL"
+                    ],
+                    "Role": "",
+                    "Valorisation": 134131243544,
+                    "Solde": 453738600,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 2531195,
+                    "Name": "BorisAirlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Bori7ka",
+                    "Hubs": [
+                        "FRA",
+                        "MEX",
+                        "NCY",
+                        "JFK",
+                        "SIN",
+                        "VKO",
+                        "GOA",
+                        "LED",
+                        "OVB",
+                        "IST"
+                    ],
+                    "Role": "",
+                    "Valorisation": 76362191080,
+                    "Solde": -21646437,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 196809,
+                    "Name": "Smugglers_Air",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Smuggler",
+                    "Hubs": [
+                        "JNB",
+                        "SYD",
+                        "NRT",
+                        "PTY",
+                        "PPT",
+                        "IAH",
+                        "JFK",
+                        "KUL",
+                        "LAX",
+                        "MIA"
+                    ],
+                    "Role": "",
+                    "Valorisation": 459108508989,
+                    "Solde": 163046432018,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 4164392,
+                    "Name": "Houston&Co",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Henri",
+                    "Hubs": [
+                        "NTE"
+                    ],
+                    "Role": "Bras droit",
+                    "Valorisation": 57755808898,
+                    "Solde": 2653509114,
+                    "LastConnection": "Il y a 5 jours"
+                },
+                {
+                    "ID": 3370602,
+                    "Name": "Volorama",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "silver"
+                    },
+                    "Owner": "Marcus_White",
+                    "Hubs": [
+                        "TLS",
+                        "EZE",
+                        "HKG",
+                        "CDG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 9523580417,
+                    "Solde": 422028489,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 190963,
+                    "Name": "Michanais_airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Yukinini",
+                    "Hubs": [
+                        "OAK",
+                        "CFU",
+                        "DUB",
+                        "DSS",
+                        "HNL",
+                        "MUC",
+                        "PAP",
+                        "MEX",
+                        "LCY",
+                        "KIN",
+                        "JED",
+                        "KIX",
+                        "SMR",
+                        "LGW",
+                        "LHR",
+                        "SNN",
+                        "ACA",
+                        "MIA",
+                        "CAN",
+                        "SYD",
+                        "PPT",
+                        "DOH",
+                        "MLE",
+                        "ORY",
+                        "DXB",
+                        "SHA",
+                        "SFO",
+                        "BKK",
+                        "MAD",
+                        "NRT",
+                        "SVO",
+                        "AER",
+                        "PUJ",
+                        "KOA",
+                        "SEA",
+                        "AMS",
+                        "BRU",
+                        "AUH",
+                        "JNB",
+                        "ALA",
+                        "JFK"
+                    ],
+                    "Role": "",
+                    "Valorisation": 269018388062,
+                    "Solde": 28267718951,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 864256,
+                    "Name": "Parisii_Airlines",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "Maxime_Stark",
+                    "Hubs": [
+                        "MEL",
+                        "GRU",
+                        "JNB",
+                        "ORD",
+                        "CAN",
+                        "CDG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 43869952800,
+                    "Solde": 978727951,
+                    "LastConnection": "Aujourd'hui"
+                }
+            ],
+            "Networks": {
+                "Statistique": {
+                    "NbrHub": 166,
+                    "NbrLigne": 457,
+                    "KmLigne": 3954185
+                },
+                "Hubs": []
+            }
+        },
+        {
+            "Name": "France Pyxis",
+            "ID": 88492,
+            "Classement": 105,
+            "Profile": {
+                "General": {
+                    "Created": "22/02/2020",
+                    "nbCompanies": 19,
+                    "Solde": 1500131333,
+                    "BeneficeHebdo": 68160122,
+                    "TaxeHebdo": 0.25
+                },
+                "Hub": {
+                    "HubsDispo": 59,
+                    "KmPartage": 198610,
+                    "TaxeLigne": 0.0,
+                    "TaxeCompanies": null,
+                    "TaxeCompagnies": 5.0
+                },
+                "AG": {
+                    "nbAvionProposer": "-",
+                    "ReducMax": 10.0,
+                    "Reduc30j": 6799071077,
+                    "nbAvionAcheter": null,
+                    "AideAchatMax": 0.0,
+                    "AideAchat30j": "-",
+                    "nbAvionAchter": 1796
+                },
+                "R&D": 70
+            },
+            "Members": [
+                {
+                    "ID": 5424862,
+                    "Name": "PanAmWorldAirways",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Beyer",
+                    "Hubs": [
+                        "MIA"
+                    ],
+                    "Role": "",
+                    "Valorisation": 3103768531,
+                    "Solde": 531283293,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 4543058,
+                    "Name": "TNT_\u00ae",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "silver"
+                    },
+                    "Owner": "David_Binks",
+                    "Hubs": [
+                        "HKG"
+                    ],
+                    "Role": "Directeur D\u00e9veloppement",
+                    "Valorisation": 5303349417,
+                    "Solde": 1526895548,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 5958850,
+                    "Name": "Mistoufly",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Mistouflon",
+                    "Hubs": [
+                        "CDG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 1059125198,
+                    "Solde": 140656363,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 4032981,
+                    "Name": "Metro_Clark_Airlines",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Angelo_Valdepe\u00f1as",
+                    "Hubs": [
+                        "NRT",
+                        "LHR",
+                        "YYZ"
+                    ],
+                    "Role": "",
+                    "Valorisation": 37469110942,
+                    "Solde": 419153748,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 2783241,
+                    "Name": "Fr_Space",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "silver"
+                    },
+                    "Owner": "Bryan_blanchard",
+                    "Hubs": [
+                        "LAX",
+                        "SVO",
+                        "ORY"
+                    ],
+                    "Role": "Bras droit",
+                    "Valorisation": 18878273316,
+                    "Solde": 3438954013,
+                    "LastConnection": "Il y a 2 jours"
+                },
+                {
+                    "ID": 822929,
+                    "Name": "AirLm",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Lucas",
+                    "Hubs": [
+                        "YYZ",
+                        "LHR",
+                        "ARN",
+                        "ATH",
+                        "HEL",
+                        "NCE",
+                        "MAD"
+                    ],
+                    "Role": "",
+                    "Valorisation": 46413416837,
+                    "Solde": 259164242,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 592859,
+                    "Name": "Malaise_Airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Jack_Sparrow",
+                    "Hubs": [
+                        "LIL",
+                        "DEN"
+                    ],
+                    "Role": "",
+                    "Valorisation": 240675775159,
+                    "Solde": 4055096694,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 4581509,
+                    "Name": "Secret_Fly",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Walter",
+                    "Hubs": [
+                        "CDG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 1192261797,
+                    "Solde": 238211505,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 97800,
+                    "Name": "Celtic-Airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Mr_White",
+                    "Hubs": [
+                        "DUB",
+                        "TLS",
+                        "FRA",
+                        "LHR",
+                        "BFH",
+                        "CDG"
+                    ],
+                    "Role": "Directeur Ressources Humaines",
+                    "Valorisation": 50311004338,
+                    "Solde": 2879911833,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 955715,
+                    "Name": "Fiji_Airways_\u00ae",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "silver"
+                    },
+                    "Owner": "Thomas_MUZELLEC",
+                    "Hubs": [
+                        "CDG"
+                    ],
+                    "Role": "Bras droit",
+                    "Valorisation": 7676820832,
+                    "Solde": 3921831076,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 127689,
+                    "Name": "G2G_Airlines",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "HellRaiser",
+                    "Hubs": [
+                        "KAN",
+                        "ABJ",
+                        "PHC"
+                    ],
+                    "Role": "",
+                    "Valorisation": 10900522327,
+                    "Solde": -99998781,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 5772000,
+                    "Name": "Flight_Society",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Baptiste",
+                    "Hubs": [
+                        "CDG"
+                    ],
+                    "Role": "Directeur Marketing",
+                    "Valorisation": 1716475152,
+                    "Solde": 131161201,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 2855364,
+                    "Name": "LEEROY_AIRLINES",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "bronze"
+                    },
+                    "Owner": "LEEROY_JENKINS",
+                    "Hubs": [
+                        "CDG"
+                    ],
+                    "Role": "Directeur Commercial",
+                    "Valorisation": 938286603,
+                    "Solde": 64087700,
+                    "LastConnection": "Il y a 3 jours"
+                },
+                {
+                    "ID": 1339044,
+                    "Name": "Mezab_Air",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "silver"
+                    },
+                    "Owner": "Mezaber",
+                    "Hubs": [
+                        "CDG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 1796744993,
+                    "Solde": 408652557,
+                    "LastConnection": "Il y a 2 jours"
+                },
+                {
+                    "ID": 732847,
+                    "Name": "Novex_Airline",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Harry_Specter",
+                    "Hubs": [
+                        "ZRH"
+                    ],
+                    "Role": "",
+                    "Valorisation": 2263946143,
+                    "Solde": 133635859,
+                    "LastConnection": "Il y a 3 jours"
+                },
+                {
+                    "ID": 198075,
+                    "Name": "Torrens_Airline",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "Torrens",
+                    "Hubs": [
+                        "HKG",
+                        "DXB",
+                        "CDG",
+                        "ATL",
+                        "HND",
+                        "SFO"
+                    ],
+                    "Role": "Fondateur",
+                    "Valorisation": 72521724190,
+                    "Solde": 45437497916,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 409794,
+                    "Name": "Air_Internal_-_HT",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "silver"
+                    },
+                    "Owner": "Lovenio",
+                    "Hubs": [
+                        "TLS"
+                    ],
+                    "Role": "",
+                    "Valorisation": 54847726657,
+                    "Solde": 53372179304,
+                    "LastConnection": "Il y a 7 jours"
+                },
+                {
+                    "ID": 3730877,
+                    "Name": "AERO_SOL",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "gold"
+                    },
+                    "Owner": "Elianto",
+                    "Hubs": [
+                        "DXB",
+                        "SYD",
+                        "GRU",
+                        "JNB",
+                        "SMR",
+                        "NRT",
+                        "JFK",
+                        "BLQ"
+                    ],
+                    "Role": "",
+                    "Valorisation": 33190737643,
+                    "Solde": 2862745673,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 619167,
+                    "Name": "CHUiii",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Tristan-",
+                    "Hubs": [
+                        "BCN",
+                        "LGW",
+                        "AMS",
+                        "MUC",
+                        "NRT",
+                        "CDG",
+                        "FCO",
+                        "FRA",
+                        "BRU",
+                        "LHR",
+                        "MAD"
+                    ],
+                    "Role": "",
+                    "Valorisation": 127219588276,
+                    "Solde": 21675065365,
+                    "LastConnection": "Il y a 2 jours"
+                }
+            ],
+            "Networks": {
+                "Statistique": {
+                    "NbrHub": 40,
+                    "NbrLigne": 21,
+                    "KmLigne": 198610
+                },
+                "Hubs": []
+            }
+        },
+        {
+            "Name": "France Cygnus",
+            "ID": 92914,
+            "Classement": 96,
+            "Profile": {
+                "General": {
+                    "Created": "25/03/2020",
+                    "nbCompanies": 20,
+                    "Solde": 170780398,
+                    "BeneficeHebdo": 117156522,
+                    "TaxeHebdo": 0.5
+                },
+                "Hub": {
+                    "HubsDispo": 80,
+                    "KmPartage": 1026807,
+                    "TaxeLigne": 0.0,
+                    "TaxeCompanies": null,
+                    "TaxeCompagnies": 5.0
+                },
+                "AG": {
+                    "nbAvionProposer": "-",
+                    "ReducMax": 10.0,
+                    "Reduc30j": 8499826337,
+                    "nbAvionAcheter": null,
+                    "AideAchatMax": 0.0,
+                    "AideAchat30j": "-",
+                    "nbAvionAchter": 2042
+                },
+                "R&D": 79
+            },
+            "Members": [
+                {
+                    "ID": 3510587,
+                    "Name": "Glenn_Airliners",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "Glenn",
+                    "Hubs": [
+                        "IST",
+                        "MEX",
+                        "ICN",
+                        "LBV",
+                        "LYS"
+                    ],
+                    "Role": "Fondateur",
+                    "Valorisation": 33210048068,
+                    "Solde": 3509471832,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 5401950,
+                    "Name": "-Ad_Airlines-",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "silver"
+                    },
+                    "Owner": "Adrouche",
+                    "Hubs": [
+                        "NBO",
+                        "CDG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 5243050019,
+                    "Solde": 245120968,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 1434623,
+                    "Name": "Air_France_Cygnus",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Matthieu_1434623",
+                    "Hubs": [
+                        "DOH",
+                        "LAX",
+                        "CDG"
+                    ],
+                    "Role": "Directeur Ressources Humaines",
+                    "Valorisation": 31342465664,
+                    "Solde": 2146263689,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 4090282,
+                    "Name": "Skarface_Airlines",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Skatface",
+                    "Hubs": [
+                        "GRU",
+                        "FRA",
+                        "GVA",
+                        "DXB",
+                        "LAX",
+                        "SMR",
+                        "ZRH"
+                    ],
+                    "Role": "Directeur Commercial",
+                    "Valorisation": 71854252826,
+                    "Solde": 779078085,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 2877025,
+                    "Name": "Oc_Airways",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "gold"
+                    },
+                    "Owner": "NickBrady",
+                    "Hubs": [
+                        "BOG",
+                        "KIX",
+                        "TLS"
+                    ],
+                    "Role": "",
+                    "Valorisation": 18569471278,
+                    "Solde": 1341161711,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 4604664,
+                    "Name": "Makwa_Air",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "Makwa07",
+                    "Hubs": [
+                        "GRU",
+                        "NBO",
+                        "DXB",
+                        "DEN"
+                    ],
+                    "Role": "",
+                    "Valorisation": 28597726086,
+                    "Solde": 5328881634,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 5576180,
+                    "Name": "LATAMAIR_CHILE",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "silver"
+                    },
+                    "Owner": "Sebasti\u00e1n",
+                    "Hubs": [
+                        "MAD",
+                        "SCL"
+                    ],
+                    "Role": "",
+                    "Valorisation": 5147863076,
+                    "Solde": 279536656,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 243506,
+                    "Name": "PatateAir",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "gold"
+                    },
+                    "Owner": "vava",
+                    "Hubs": [
+                        "CPT",
+                        "CDG",
+                        "YUL",
+                        "NRT"
+                    ],
+                    "Role": "",
+                    "Valorisation": 24744524130,
+                    "Solde": 1268836166,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 1526728,
+                    "Name": "Nice_Cloud",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "silver"
+                    },
+                    "Owner": "Darzzake",
+                    "Hubs": [
+                        "DRW",
+                        "VIE",
+                        "DFW",
+                        "NCE"
+                    ],
+                    "Role": "Bras droit",
+                    "Valorisation": 10543633083,
+                    "Solde": 835480726,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 453427,
+                    "Name": "AIR_MININ",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "donovan_453427",
+                    "Hubs": [
+                        "JNB",
+                        "ORY",
+                        "PTP",
+                        "FDF"
+                    ],
+                    "Role": "",
+                    "Valorisation": 78724832063,
+                    "Solde": 9030274282,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 3798582,
+                    "Name": "BCK_Logistics_Inc",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Reinhol_Unt",
+                    "Hubs": [
+                        "TLS",
+                        "DXB",
+                        "JFK",
+                        "NRT",
+                        "TLL"
+                    ],
+                    "Role": "",
+                    "Valorisation": 21951174189,
+                    "Solde": 1189513894,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 540238,
+                    "Name": "Fulmetal",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "Axel_Ardan",
+                    "Hubs": [
+                        "CDG",
+                        "DEN",
+                        "BNE",
+                        "GRU",
+                        "NGO"
+                    ],
+                    "Role": "Bras droit",
+                    "Valorisation": 68969471057,
+                    "Solde": 902089994,
+                    "LastConnection": "Hier"
+                },
+                {
+                    "ID": 2843325,
+                    "Name": "Dutch_Air'ways",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "silver"
+                    },
+                    "Owner": "Sam",
+                    "Hubs": [
+                        "AMS"
+                    ],
+                    "Role": "Directeur Marketing",
+                    "Valorisation": 21704590432,
+                    "Solde": 7013258450,
+                    "LastConnection": "Hier"
+                },
+                {
+                    "ID": 282864,
+                    "Name": "Jamaican_Airline",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "silver"
+                    },
+                    "Owner": "Nicahlos",
+                    "Hubs": [
+                        "MBJ",
+                        "JFK"
+                    ],
+                    "Role": "",
+                    "Valorisation": 8748424906,
+                    "Solde": 1124769901,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 1278977,
+                    "Name": "Dangerous_Air",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Kool_Kyle",
+                    "Hubs": [
+                        "DEL",
+                        "DUB",
+                        "YVR",
+                        "PEK",
+                        "JFK",
+                        "FRA",
+                        "LAX",
+                        "JNB",
+                        "YYZ",
+                        "LHR",
+                        "YYC",
+                        "NRT",
+                        "MIA",
+                        "DXB",
+                        "DME",
+                        "GRU",
+                        "SYD"
+                    ],
+                    "Role": "",
+                    "Valorisation": 94644157581,
+                    "Solde": 11324762666,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 1914129,
+                    "Name": "DynamoBuisness",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Th\u00e9o_Gomes",
+                    "Hubs": [
+                        "LGW",
+                        "GRU",
+                        "DXB",
+                        "CDG",
+                        "LAX",
+                        "PVG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 40877524281,
+                    "Solde": 1288910174,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 4261063,
+                    "Name": "Air_France_4261063",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "silver"
+                    },
+                    "Owner": "James",
+                    "Hubs": [
+                        "ATL",
+                        "CDG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 10805722497,
+                    "Solde": 1039983117,
+                    "LastConnection": "Il y a 5 jours"
+                },
+                {
+                    "ID": 4125895,
+                    "Name": "ANDAIR_Corporation",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Andres7777",
+                    "Hubs": [
+                        "TFN"
+                    ],
+                    "Role": "",
+                    "Valorisation": -136688556,
+                    "Solde": -2208026202,
+                    "LastConnection": "Il y a 9 jours"
+                },
+                {
+                    "ID": 2429257,
+                    "Name": "France_air_2429257",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Charles",
+                    "Hubs": [
+                        "CDG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 2620517812,
+                    "Solde": 492762170,
+                    "LastConnection": "Il y a 12 jours"
+                },
+                {
+                    "ID": 2487614,
+                    "Name": "Air_France_Yamaha",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "silver"
+                    },
+                    "Owner": "Staniswag",
+                    "Hubs": [
+                        "HNL",
+                        "CDG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 10803011571,
+                    "Solde": 3268886637,
+                    "LastConnection": "Hier"
+                }
+            ],
+            "Networks": {
+                "Statistique": {
+                    "NbrHub": 53,
+                    "NbrLigne": 172,
+                    "KmLigne": 1026807
+                },
+                "Hubs": [
+                    {
+                        "IATA": "LAX",
+                        "DemandPartage": 50.0,
+                        "NbLigne": 3,
+                        "KmLigne": 28564,
+                        "NbKmAutoriser": 0,
+                        "KmRestant": 0.0,
+                        "Benefices": 0
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "France Lyrae",
+            "ID": 93220,
+            "Classement": 149,
+            "Profile": {
+                "General": {
+                    "Created": "27/03/2020",
+                    "nbCompanies": 12,
+                    "Solde": 3422795538,
+                    "BeneficeHebdo": 735703600,
+                    "TaxeHebdo": 5.5
+                },
+                "Hub": {
+                    "HubsDispo": 61,
+                    "KmPartage": 1252576,
+                    "TaxeLigne": 2.0,
+                    "TaxeCompanies": null,
+                    "TaxeCompagnies": 5.0
+                },
+                "AG": {
+                    "nbAvionProposer": "-",
+                    "ReducMax": 7.0,
+                    "Reduc30j": 2237865000,
+                    "nbAvionAcheter": null,
+                    "AideAchatMax": 0.0,
+                    "AideAchat30j": "-",
+                    "nbAvionAchter": 240
+                },
+                "R&D": 35
+            },
+            "Members": [
+                {
+                    "ID": 319840,
+                    "Name": "Groupe_Air_Libert\u00e9",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "gold"
+                    },
+                    "Owner": "Filipe_Deneuve",
+                    "Hubs": [
+                        "CAY",
+                        "SXB",
+                        "NTE",
+                        "FDF",
+                        "RUN",
+                        "NOU",
+                        "PPT",
+                        "MRS",
+                        "TLS",
+                        "CDG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 35671745995,
+                    "Solde": 1520282718,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 718454,
+                    "Name": "Saint-P_Air",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Bezrukov",
+                    "Hubs": [
+                        "GRU",
+                        "VCE",
+                        "LED",
+                        "JFK",
+                        "DXB",
+                        "FRA"
+                    ],
+                    "Role": "",
+                    "Valorisation": 105226492842,
+                    "Solde": 36805339084,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 4806206,
+                    "Name": "TStineDamo_Airways",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "gold"
+                    },
+                    "Owner": "Trev",
+                    "Hubs": [
+                        "DXB",
+                        "JNB",
+                        "LAX",
+                        "LHR"
+                    ],
+                    "Role": "",
+                    "Valorisation": 29846919513,
+                    "Solde": 77502587,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 5385473,
+                    "Name": "Air_France_Lyrae",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "bronze"
+                    },
+                    "Owner": "AF_Lyrae",
+                    "Hubs": [
+                        "YYZ"
+                    ],
+                    "Role": "Fondateur",
+                    "Valorisation": 557227491,
+                    "Solde": 28292126,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 3838687,
+                    "Name": "OVALIE_69",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Bertrand",
+                    "Hubs": [
+                        "JNB",
+                        "MEX",
+                        "IAD",
+                        "GVA",
+                        "HAN",
+                        "AKL",
+                        "SKB",
+                        "ICN",
+                        "DRW",
+                        "MEM",
+                        "BAH",
+                        "YOW",
+                        "DSS",
+                        "LYS"
+                    ],
+                    "Role": "Bras droit",
+                    "Valorisation": 95471053667,
+                    "Solde": 1777545509,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 4797512,
+                    "Name": "EM_Southern",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "_4797512",
+                    "Hubs": [
+                        "BNE",
+                        "LAX",
+                        "PEK",
+                        "CDG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 23741417457,
+                    "Solde": 120428757,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 5790057,
+                    "Name": "HyperJet_Aviation",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Zafeiridis",
+                    "Hubs": [
+                        "LCA"
+                    ],
+                    "Role": "Directeur Commercial",
+                    "Valorisation": 2006282942,
+                    "Solde": 281273663,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 5805539,
+                    "Name": "MEXICANA_Airlines",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Joshua_L\u00f3pez",
+                    "Hubs": [
+                        "MEX"
+                    ],
+                    "Role": "",
+                    "Valorisation": 1631825567,
+                    "Solde": 282392442,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 3659361,
+                    "Name": "Brastemp",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Billy_Airbus",
+                    "Hubs": [
+                        "LHR",
+                        "GIG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 32337019885,
+                    "Solde": 1766388663,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 1219643,
+                    "Name": "Tarik_Airlines",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "Tarik_BOSS",
+                    "Hubs": [
+                        "NJC",
+                        "MDE",
+                        "MSP",
+                        "CHR",
+                        "FNJ",
+                        "DXB",
+                        "USH"
+                    ],
+                    "Role": "",
+                    "Valorisation": 124137266877,
+                    "Solde": 89857875830,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 777139,
+                    "Name": "solaire",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "amaury1998",
+                    "Hubs": [
+                        "PRG",
+                        "BRU",
+                        "LYS",
+                        "MKE",
+                        "NRT"
+                    ],
+                    "Role": "",
+                    "Valorisation": 54163938949,
+                    "Solde": 234142747,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 2136274,
+                    "Name": "RoyalAirEmirats",
+                    "Star": {
+                        "Nombre": 2,
+                        "Type": "gold"
+                    },
+                    "Owner": "Taoufik_abdelhak",
+                    "Hubs": [
+                        "GRU",
+                        "JNB",
+                        "LHR",
+                        "KIX",
+                        "DXB",
+                        "CUN"
+                    ],
+                    "Role": "",
+                    "Valorisation": 30670776454,
+                    "Solde": 889649446,
+                    "LastConnection": "Aujourd'hui"
+                }
+            ],
+            "Networks": {
+                "Statistique": {
+                    "NbrHub": 49,
+                    "NbrLigne": 220,
+                    "KmLigne": 1252576
+                },
+                "Hubs": []
+            }
+        },
+        {
+            "Name": "France Gemini",
+            "ID": 153431,
+            "Classement": 198,
+            "Profile": {
+                "General": {
+                    "Created": "16/04/2021",
+                    "nbCompanies": 7,
+                    "Solde": 477969898,
+                    "BeneficeHebdo": 151646186,
+                    "TaxeHebdo": 2.0
+                },
+                "Hub": {
+                    "HubsDispo": 30,
+                    "KmPartage": 412248,
+                    "TaxeLigne": 0.25,
+                    "TaxeCompanies": null,
+                    "TaxeCompagnies": 5.0
+                },
+                "AG": {
+                    "nbAvionProposer": "-",
+                    "ReducMax": 5.25,
+                    "Reduc30j": 805168560,
+                    "nbAvionAcheter": null,
+                    "AideAchatMax": 0.0,
+                    "AideAchat30j": "-",
+                    "nbAvionAchter": 77
+                },
+                "R&D": 3
+            },
+            "Members": [
+                {
+                    "ID": 652755,
+                    "Name": "TOuFoX_Airlines",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "TOuFoX",
+                    "Hubs": [
+                        "AMS",
+                        "NRT",
+                        "DWC",
+                        "CDG"
+                    ],
+                    "Role": "",
+                    "Valorisation": 35209830719,
+                    "Solde": 571060403,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 5407471,
+                    "Name": "eden_airline13",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "silver"
+                    },
+                    "Owner": "Juju",
+                    "Hubs": [
+                        "EYP",
+                        "HAN",
+                        "ORY"
+                    ],
+                    "Role": "Directeur Ressources Humaines",
+                    "Valorisation": 14500509718,
+                    "Solde": 176463877,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 4164046,
+                    "Name": "Estreux_Air",
+                    "Star": {
+                        "Nombre": 4,
+                        "Type": "gold"
+                    },
+                    "Owner": "Chris",
+                    "Hubs": [
+                        "CPT",
+                        "GVA"
+                    ],
+                    "Role": "",
+                    "Valorisation": 38249389565,
+                    "Solde": 9961287605,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 3770921,
+                    "Name": "Fly_Toulouse_Cargo",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "bronze"
+                    },
+                    "Owner": "Enzo",
+                    "Hubs": [
+                        "DXB"
+                    ],
+                    "Role": "Fondateur",
+                    "Valorisation": 2196869132,
+                    "Solde": 118729601,
+                    "LastConnection": "Hier"
+                },
+                {
+                    "ID": 899679,
+                    "Name": "DecAirline",
+                    "Star": {
+                        "Nombre": 1,
+                        "Type": "silver"
+                    },
+                    "Owner": "Quentin",
+                    "Hubs": [
+                        "PUB",
+                        "KEF"
+                    ],
+                    "Role": "",
+                    "Valorisation": 1956266145,
+                    "Solde": 128498264,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 1558596,
+                    "Name": "Air_Barca_FC",
+                    "Star": {
+                        "Nombre": 5,
+                        "Type": "gold"
+                    },
+                    "Owner": "Massia_dop",
+                    "Hubs": [
+                        "NOU",
+                        "CDG",
+                        "DXB",
+                        "SCL",
+                        "LOS",
+                        "HKG",
+                        "ORY",
+                        "LAX"
+                    ],
+                    "Role": "Directeur D\u00e9veloppement",
+                    "Valorisation": 56973204904,
+                    "Solde": 5062224422,
+                    "LastConnection": "Aujourd'hui"
+                },
+                {
+                    "ID": 1815330,
+                    "Name": "Leocis",
+                    "Star": {
+                        "Nombre": 3,
+                        "Type": "gold"
+                    },
+                    "Owner": "Leon_francisco",
+                    "Hubs": [
+                        "NRT",
+                        "YYZ",
+                        "GRU",
+                        "SIN",
+                        "PPT",
+                        "DEL",
+                        "TFF",
+                        "BOM",
+                        "LHR",
+                        "MIA"
+                    ],
+                    "Role": "",
+                    "Valorisation": 51788791121,
+                    "Solde": 2292104951,
+                    "LastConnection": "Hier"
+                }
+            ],
+            "Networks": {
+                "Statistique": {
+                    "NbrHub": 26,
+                    "NbrLigne": 64,
+                    "KmLigne": 412248
+                },
+                "Hubs": []
+            }
+        }
+    ]
+}
