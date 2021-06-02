@@ -1,0 +1,19 @@
+{
+    "ID": 1526728,
+    "Name": "Nice_Cloud",
+    "Star": {
+        "Nombre": 2,
+        "Type": "silver"
+    },
+    "Owner": "Darzzake",
+    "Hubs": [
+        "DRW",
+        "VIE",
+        "DFW",
+        "NCE"
+    ],
+    "Role": "Bras droit",
+    "Valorisation": 10444761411,
+    "Solde": 736609054,
+    "LastConnection": "Aujourd'hui"
+}

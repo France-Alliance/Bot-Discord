@@ -3,7 +3,7 @@ import json
 
 def GetAllianceAll(Local=False):
     if not Local:
-        f = open(f"./data/Alliance.json", "w", encoding='utf8')
+        f = open(f"./scrap_essentials/data/Alliance.json", "w", encoding='utf8')
         f.write(json.dumps(Alliance(), indent=4))
         return True
     else:
@@ -15,7 +15,7 @@ def GetAlliance(ID, Option=None, Local=False):
     for i in range(len(data)):
         if int(data[i]['ID']) == int(ID):
             if Option in data[i].keys():
-                f = open(f"./data/Alliance-{ID}-{Option.lower()}.json", "w", encoding='utf8')
+                f = open(f"./scrap_essentials/data/Alliance-{ID}-{Option.lower()}.json", "w", encoding='utf8')
                 f.write(json.dumps(data[i][Option], indent=4))
                 return True
             elif Option == "Hubs":
@@ -24,12 +24,12 @@ def GetAlliance(ID, Option=None, Local=False):
                 for elem in members:
                     for hubs in elem['Hubs']:
                         Hubs.append(hubs)
-                f = open(f"./data/Alliance-{ID}-{Option.lower()}.json", "w", encoding='utf8')
+                f = open(f"./scrap_essentials/data/Alliance-{ID}-{Option.lower()}.json", "w", encoding='utf8')
                 f.write(json.dumps({"Hubs": Hubs}, indent=4))
                 return True
             elif Option == None:
                 if not Local:
-                    f = open(f"./data/Alliance-{ID}.json", "w", encoding='utf8')
+                    f = open(f"./scrap_essentials/data/Alliance-{ID}.json", "w", encoding='utf8')
                     f.write(json.dumps(data[i], indent=4))
                     return True
                 elif Local:
@@ -58,12 +58,12 @@ def GetMembers(ID, Option=None):
             for el in GetAlliance(Option[0], Local=True)['Members']:
                 if el['ID'] == ID:
                     if len(Option) == 1 :
-                        f = open(f"./data/Members-{ID}-{Option[0].lower()}.json", "w", encoding='utf8')
+                        f = open(f"./scrap_essentials/data/Members-{ID}-{Option[0].lower()}.json", "w", encoding='utf8')
                         f.write(json.dumps(el, indent=4))
                         return True
                     elif len(Option) == 2:
                         if Option[1] in el.keys():
-                            f = open(f"./data/Members-{ID}-{Option[0].lower()}-{Option[1].lower()}.json", "w", encoding='utf8')
+                            f = open(f"./scrap_essentials/data/Members-{ID}-{Option[0].lower()}-{Option[1].lower()}.json", "w", encoding='utf8')
                             f.write(json.dumps(el[Option[1]], indent=4))
                             return True
         elif not Option[0] in GetNameAlliance():
@@ -72,7 +72,7 @@ def GetMembers(ID, Option=None):
             for all in data:
                 for mem in all['Members']:
                     if mem['ID'] == ID:
-                        f = open(f"./data/Members-{ID}-{Option[0].lower()}.json", "w", encoding='utf8')
+                        f = open(f"./scrap_essentials/data/Members-{ID}-{Option[0].lower()}.json", "w", encoding='utf8')
                         f.write(json.dumps(mem[Option[0]], indent=4))
                         return True
     elif Option == None:
@@ -81,6 +81,6 @@ def GetMembers(ID, Option=None):
         for all in data:
             for mem in all['Members']:
                 if mem['ID'] == ID:
-                    f = open(f"./data/Members-{ID}.json", "w", encoding='utf8')
+                    f = open(f"./scrap_essentials/data/Members-{ID}.json", "w", encoding='utf8')
                     f.write(json.dumps(mem, indent=4))
                     return True
