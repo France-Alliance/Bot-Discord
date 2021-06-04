@@ -1,4 +1,4 @@
-const file = require(`../#secondary_modules/File`);
+const file = require(`./File`);
 
 async function value(page, html){
     html=html.replace('<a href="/company/profile/airline/','')

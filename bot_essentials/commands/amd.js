@@ -10,7 +10,7 @@ module.exports = {
   description: "Summmon a file with all France Alliance AM2 Data (take ≈ 10mn)",
   aliases: ["am2d"],
   usage:
-    "\r*Alliance* : --alliance    {Name | (recommended) ID }    (optional){ ID, Classement, Profile, Members, Networks};\r*Members* : --members    {Name | (recommended) ID}    (optional){Alliance Name | Alliance ID}    (optional){ID, Name, Star, Owner, Hubs, Role, Valorisation, Solde, LastConnection};\r*All* : --all",
+    "\r*Alliance* : --alliance    {Name | (recommended) ID }    (optional){ ID, Classement, Profile, Members, Networks};\r*Members* : --member    {Name | (recommended) ID}    (optional){Alliance Name | Alliance ID}    (optional){ID, Name, Star, Owner, Hubs, Role, Valorisation, Solde, LastConnection};\r*All* : --all",
   cooldown: 5,
   execute(message) {
     message.content = message.content.replace("!!am2d ", "!!amd ");
@@ -30,13 +30,13 @@ module.exports = {
             args: [args],
           };
     }
-
-    let pyshell = new PythonShell("NewScrapper/Args.py", options);
+    
+    let pyshell = new PythonShell("../../bot_essentials/scrapper/Args.py", options);
 
     pyshell.on("message", (res) => {
       if (res.match(regex)) {
         var regex = /NewScrapper\/data\/.*\.json/gm;
-        //console.log("File Name : " + res.match(regex));
+        console.log("File Name : " + res.match(regex));
         nameFile = res.replace("File Name : ", "");
       } else {
         console.log(res);
@@ -68,7 +68,7 @@ module.exports = {
         nameFile = null;
         finnish = true;
 
-        pyshell = new PythonShell("NewScrapper/Utils.py");
+        pyshell = new PythonShell("../../bot_essentials/scrapper/Utils.py");
 
         pyshell.on("message", (res) => {
           //console.log("File Name 2 : " + res);
