@@ -4,10 +4,15 @@ infos.*
 node_modules/
 scrapper/data/Creds.json
 .env
-NewScrapper/data/*.json
-NewScrapper/data/Archive/*.json
-NewScrapper/*.json
-NewScrapper/__pycache__/*
+bot_essentials/scrapper/data/*.json
+bot_essentials/scrapper/Archive/*.json
+bot_essentials/scrapper/*.json
+bot_essentials/scrapper/__pycache__/*.pyc
+
+misc/[ARCHIVES]/NewScrapper/__pycache__/*.pyc
+
+
+bot_essentials/compagnon_scripts/lm_data/*.json
 
 !token.js
 !infos.js
