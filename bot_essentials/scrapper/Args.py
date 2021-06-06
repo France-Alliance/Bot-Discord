@@ -30,25 +30,25 @@ if __name__ == "__main__":
         ID = VerifIDAlliance(str(arg[1]))
         if len(arg) == 3:
             if GetAlliance(ID, Option=arg[2]):
-                print(f"scrapper/scrap_essentials/data/Alliance-{ID}-{str(arg[2]).lower()}.json")
+                print(f"../../bot_essentials/scrapper/scrap_essentials/data/Alliance-{ID}-{str(arg[2]).lower()}.json")
         elif len(arg) == 2:
             if GetAlliance(ID):
-                print(f"scrapper/scrap_essentials/data/Alliance-{ID}.json")
+                print(f"../../bot_essentials/scrapper/scrap_essentials/data/Alliance-{ID}.json")
     if Type == "--member":
         ID = VerifIDMembers(str(arg[1]))
         if len(arg) == 4:
             if GetMembers(ID, Option=[VerifIDAlliance(arg[2]), arg[3]]):
-                print(f"scrapper/scrap_essentials/data/Members-{ID}-{VerifIDAlliance(arg[2])}-{str(arg[3]).lower()}.json")
+                print(f"../../bot_essentials/scrapper/scrap_essentials/data/Members-{ID}-{VerifIDAlliance(arg[2])}-{str(arg[3]).lower()}.json")
         elif len(arg) == 3:
             if VerifIDAlliance(arg[2]) in GetNameAlliance():
                 if GetMembers(ID, Option=[VerifIDAlliance(arg[2])]):
-                    print(f"scrapper/scrap_essentials/data/Members-{ID}-{VerifIDAlliance(arg[2])}.json")
+                    print(f"../../bot_essentials/scrapper/scrap_essentials/data/Members-{ID}-{VerifIDAlliance(arg[2])}.json")
             else:
                 if GetMembers(ID, Option=[arg[2]]):
-                    print(f"scrapper/scrap_essentials/data/Members-{ID}-{str(arg[2]).lower()}.json")
+                    print(f"../../bot_essentials/scrapper/scrap_essentials/data/Members-{ID}-{str(arg[2]).lower()}.json")
         elif len(arg) == 2:
             if GetMembers(ID):
-                print(f"scrapper/scrap_essentials/data/Members-{ID}.json")
+                print(f"../../bot_essentials/scrapper/scrap_essentials/data/Members-{ID}.json")
     if Type == "--all":
         if GetAllianceAll():
-            print(f"scrapper/scrap_essentials/data/Alliance.json")
+            print(f"../../bot_essentials/scrapper/scrap_essentials/data/Alliance.json")
