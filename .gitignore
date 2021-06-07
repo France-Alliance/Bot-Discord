@@ -1,18 +1,24 @@
+# File pattern
 token.*
 infos.*
 .history/.json
-node_modules/
-scrapper/data/Creds.json
 .env
-bot_essentials/scrapper/data/*.json
-bot_essentials/scrapper/Archive/*.json
-bot_essentials/scrapper/*.json
-bot_essentials/scrapper/__pycache__/*.pyc
+creds.json
 
-misc/[ARCHIVES]/NewScrapper/__pycache__/*.pyc
+# Folder pattern
+node_modules/
+**/data/*.json
+**/Archive/*.json
+**/scrapper/*.json
+**/__pycache__/
+*.pyc
+
+/bot_essentials/scrapper/__pycache__/**.pyc
 
 
 bot_essentials/compagnon_scripts/lm_data/*.json
+
+# Execptions
 
 !token.js
 !infos.js

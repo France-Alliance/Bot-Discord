@@ -2,8 +2,8 @@ import os, re, sys, json
 from datetime import datetime
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-if not os.path.exists('data/Archive'):
-    os.mkdir('data/Archive')
+if not os.path.exists('scrap_essentials/data/Archive'):
+    os.mkdir('scrap_essentials/data/Archive')
 
 def minify(file_name):
     file_data = open(file_name, "r", 1).read()
@@ -16,15 +16,15 @@ def minify(file_name):
 
 def RemoveFile():
     prog = re.compile("\d{2}-\d{2}-\d{4}.json") 
-    for elem in os.listdir("data/"):
+    for elem in os.listdir("scrap_essentials/data/"):
         print(elem)
         if prog.match(elem) == None and elem != "Archive":
-            os.remove(f"data/{elem}")
+            os.remove(f"scrap_essentials/data/{elem}")
         elif elem != f'{datetime.now().strftime("%d-%m-%Y")}.json' and elem != "Archive":
             print("File Outdated", elem)
-            NewName = minify(f"data/{elem}")
-            os.rename(NewName, f"data/Archive/{elem.split('/')[-1]}")
-            os.remove(f"data/{elem}")
+            NewName = minify(f"scrap_essentials/data/{elem}")
+            os.rename(NewName, f"scrap_essentials/data/Archive/{elem.split('/')[-1]}")
+            os.remove(f"scrap_essentials/data/{elem}")
 RemoveFile()
 
 
