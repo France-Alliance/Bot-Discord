@@ -10,27 +10,34 @@ const client = new discord.Client();
 ts = Date.now();
 
 async function sleep(ms) {
-    return new Promise((resolve) => {
-        setTimeout(resolve, ms);
-    });
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
 }
 
 console.log("Start script");
-var data = '';
+var data = "";
 
 client.on("message", async (message) => {
-    console.log("");
-    console.log("------");
-    console.log("");
+  console.log("");
+  console.log("------");
+  console.log("");
 
-    m_guild = message.guild;
-    m_author = message.author.toString().replace('<@', '').replace('>', '');
-    m_date = new Date(message.createdTimestamp).toISOString();
-    //console.log(m_guild.name+" ("+m_guild.id+")")
-    console.log(message.author.username +"#"+ message.author.discriminator +" ("+ message.author.id+")")
-    console.log(`@ ${m_date}`)
-  
-    /*
+  m_guild = message.guild;
+  m_author = message.author.toString().replace("<@", "").replace(">", "");
+  m_date = new Date(message.createdTimestamp).toISOString();
+  //console.log(m_guild.name+" ("+m_guild.id+")")
+  console.log(
+    message.author.username +
+      "#" +
+      message.author.discriminator +
+      " (" +
+      message.author.id +
+      ")"
+  );
+  console.log(`@ ${m_date}`);
+
+  /*
     fs.open(`./${m_guild.id}.json`, "w", function (err) {
         if (err) {
             console.log(err);
@@ -40,24 +47,36 @@ client.on("message", async (message) => {
     await sleep(500);
     */
 
-    if(fs.existsSync(`./lm_data/${m_guild.id}.json`)) {
-        //console.log(`${m_guild.id}.json exist`);
-    } else {
-        console.log(`${m_guild.id} don't exist`);
-        fs.writeFile(`./lm_data/${m_guild.id}.json`,'{}', function (err) {
-            if (err) throw err;
-            console.log('File is created successfully.');
-          });
+  if (fs.existsSync(`./lm_data`)) {
+    //console.log("Directory exists!");
+  } else {
+    console.log("Directory not found.");
+    fs.mkdir(`./lm_data`, function (err) {
+      if (err) throw err;
+      console.log("Directory is created.");
+    });
+  }
 
-    }
+  if (fs.existsSync(`./lm_data/${m_guild.id}.json`)) {
+    //console.log(`${m_guild.id}.json exist`);
+  } else {
+    console.log(`${m_guild.id} don't exist`);
+    fs.writeFile(`./lm_data/${m_guild.id}.json`, "{}", function (err) {
+      if (err) throw err;
+      console.log("File is created successfully.");
+    });
+  }
 
-    await sleep(500)
+  await sleep(1000);
 
-    const data = JSON.parse(fs.readFileSync(`./lm_data/${m_guild.id}.json`));
-    data[m_author] = `${m_date}`;
-    fs.writeFileSync(`./lm_data/${m_guild.id}.json`, JSON.stringify(data, null, 4));
+  const data = JSON.parse(fs.readFileSync(`./lm_data/${m_guild.id}.json`));
+  data[m_author] = `${m_date}`;
+  fs.writeFileSync(
+    `./lm_data/${m_guild.id}.json`,
+    JSON.stringify(data, null, 4)
+  );
 
-    /*
+  /*
     databases = JSON.parse(content);
   
     try {
@@ -87,7 +106,7 @@ client.on("message", async (message) => {
     }
     */
 
-        /*
+  /*
         else if (data == "") {
             console.log("empty")
 
