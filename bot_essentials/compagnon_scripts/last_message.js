@@ -2,6 +2,7 @@ const discord = require(`discord.js`);
 const path = require("path");
 const fs = require("fs");
 const os = require("os");
+const process = require('process');
 
 const { token } = require(`../token.json`);
 
@@ -37,31 +38,24 @@ client.on("message", async (message) => {
   );
   console.log(`@ ${m_date}`);
 
-  /*
-    fs.open(`./${m_guild.id}.json`, "w", function (err) {
-        if (err) {
-            console.log(err);
-        }
-    });
-
-    await sleep(500);
-    */
-
-  if (fs.existsSync(`./lm_data`)) {
-    //console.log("Directory exists!");
+  dirPath = path.join(__dirname, `/lm_data`);
+  filePath = path.join(dirPath, `/${m_guild.id}.json`)
+  
+  if (fs.existsSync(dirPath)) {
+    console.log("Directory exists !");
   } else {
     console.log("Directory not found.");
-    fs.mkdir(`./lm_data`, function (err) {
+    fs.mkdir(dirPath, function (err) {
       if (err) throw err;
       console.log("Directory is created.");
     });
   }
-
-  if (fs.existsSync(`./lm_data/${m_guild.id}.json`)) {
-    //console.log(`${m_guild.id}.json exist`);
+  
+  if (fs.existsSync(filePath)) {
+    console.log(`${m_guild.id}.json exist`);
   } else {
     console.log(`${m_guild.id} don't exist`);
-    fs.writeFile(`./lm_data/${m_guild.id}.json`, "{}", function (err) {
+    fs.writeFile(filePath, "{}", function (err) {
       if (err) throw err;
       console.log("File is created successfully.");
     });
@@ -75,105 +69,6 @@ client.on("message", async (message) => {
     `./lm_data/${m_guild.id}.json`,
     JSON.stringify(data, null, 4)
   );
-
-  /*
-    databases = JSON.parse(content);
-  
-    try {
-      databases.push({
-          m_author: `${m_date}`,
-      });
-      fs.writeFile(`./${m_guild.id}.json`, JSON.stringify(databases, null, 4), (err) => {
-          if (err) {
-              console.log(`Error writing file: ${err}`);
-          }
-      });
-      console.log(
-        m_author.username +
-          "#" +
-          m_author.discriminator +
-          " (" +
-          m_author.id +
-          ") : " +
-          m_guild.name +
-          " (" +
-          m_guild.id +
-          ") @ " +
-          m_date
-      );
-    } catch {
-      console.log(message);
-    }
-    */
-
-  /*
-        else if (data == "") {
-            console.log("empty")
-
-            // add a new record
-            m_data = {m_author: `${m_date}`}
-
-            // write new data back to the file
-            fs.writeFile(`./${m_guild.id}.json`, JSON.stringify(m_data, null, 4), (err) => {
-                if (err) {
-                    console.log(`Error writing file: ${err}`);
-                }
-            }); 
-        }else {
-            console.log("not empty")
-
-            // add a new record
-            data.m_author = m_date
-            console.log("databases: "+databases)
-
-            // write new data back to the file
-            
-            fs.writeFile(`./${m_guild.id}.json`, JSON.stringify(databases, null, 4), (err) => {
-                if (err) {
-                    console.log(`Error writing file: ${err}`);
-                }
-            });
-        }
-        */
 });
 client.login(token);
 
-/*
-fs.open('<fileName>',w,  function (err, file) {
-    if (!err){
-        console.log('File is opened in write mode.');
-    } else {
-        console.log('File is created and is now opened in write mode.');
-    }
-});
-*/
-
-/*
-client.users.fetch(message.author.id).then(a =>
-    //console.log(a.username + " :  " + a.lastMessageID)
-    console.log(a)
-)
-*/
-
-/*
-a = Array.from(message.guild.members.cache);
-for (i in a) {
-    u = a[i][0];
-    //console.log(a[i][0])
-    client.users.fetch(u).then((b) => {
-    u_ID = b.id;
-    u_MID = b.lastMessageID
-    message.channel.messages
-        .fetch(u_MID)
-        .then((message) => {
-            console.log
-            if (message.createdTimestamp){
-            console.log(new Date(message.createdTimestamp))
-            }
-        })
-        .catch(console.error);
-    //console.log(u_ID + " :  " + u_MID);
-    content.u_ID = u_MID;
-    });
-}
-*/
