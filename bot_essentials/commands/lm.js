@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 module.exports = {
     name: "lm",
     description: "Display a liste of timestamp of last message by users",
@@ -10,13 +11,13 @@ module.exports = {
         message.channel.send(
             ` :arrow_right: data of ${message.guild} is ready !`,
             {
-              files: [`../../bot_essentials/compagnon_scripts/lm_data/${message.guild.id}.json`],
+              files: [path.join(__dirname, `../../bot_essentials/compagnon_scripts/lm_data/${message.guild.id}.json`)],
             }
           );
       }
       if (message.mentions.users.size >= 1) {
         //message.channel.send(`His ID is ${message.mentions.users.map((user) => user.id)} `);
-        const data = JSON.parse(fs.readFileSync(`../../bot_essentials/compagnon_scripts/lm_data/${message.guild.id}.json`));
+        const data = JSON.parse(fs.readFileSync(path.join(__dirname, `../../bot_essentials/compagnon_scripts/lm_data/${message.guild.id}.json`)));
         
         for (i in args) {
             if (args[i].includes('<@!')) {

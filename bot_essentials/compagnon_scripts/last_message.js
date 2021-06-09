@@ -42,7 +42,7 @@ client.on("message", async (message) => {
   filePath = path.join(dirPath, `/${m_guild.id}.json`)
   
   if (fs.existsSync(dirPath)) {
-    console.log("Directory exists !");
+    //console.log("Directory exists !");
   } else {
     console.log("Directory not found.");
     fs.mkdir(dirPath, function (err) {
@@ -52,7 +52,7 @@ client.on("message", async (message) => {
   }
   
   if (fs.existsSync(filePath)) {
-    console.log(`${m_guild.id}.json exist`);
+    //console.log(`${m_guild.id}.json exist`);
   } else {
     console.log(`${m_guild.id} don't exist`);
     fs.writeFile(filePath, "{}", function (err) {
@@ -63,10 +63,10 @@ client.on("message", async (message) => {
 
   await sleep(1000);
 
-  const data = JSON.parse(fs.readFileSync(`./lm_data/${m_guild.id}.json`));
+  const data = JSON.parse(fs.readFileSync(filePath));
   data[m_author] = `${m_date}`;
   fs.writeFileSync(
-    `./lm_data/${m_guild.id}.json`,
+    filePath,
     JSON.stringify(data, null, 4)
   );
 });
