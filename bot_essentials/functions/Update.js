@@ -16,8 +16,8 @@ function update_bot() {
     console.log(
       `Control Tower is updating ! @ ${time.hours()}:${time.minutes()}:${time.secondes()} - ${time.date()}/${time.month()}/${time.year()}`
     );
-    shell.exec("sudo git fetch --all");
-    shell.exec("sudo git reset --hard origin/master");
+    shell.exec("git fetch --all");
+    shell.exec("git reset --hard origin/master");
     console.log(
       `Control Tower has updated ! @ ${time.hours()}:${time.minutes()}:${time.secondes()} - ${time.date()}/${time.month()}/${time.year()}`
     );

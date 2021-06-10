@@ -15,15 +15,22 @@ async function sleep(ms) {
     setTimeout(resolve, ms);
   });
 }
+console.log(`
+\n\n\n\n
+ _                 _       __  __                                         
+| |     __ _  ___ | |_    |  \\/  |  ___  ___  ___   __ _   __ _   ___  ___    
+| |    / _\` |/ __|| __|   | |\\/| | / _ \\/ __|/ __| / _\` | / _\` | / _ \\/ __|
+| |___| (_| |\\__ \\| |_    | |  | ||  __/\\__ \\\\__ \\| (_| || (_| ||  __/\\__ \\
+|_____|\\__,_||___/ \\__|   |_|  |_| \\___||___/|___/ \\__,_| \\__, | \\___||___/     
+                                                          |___/
+----------------------------------------------------------------------
+\n\n            
+`)
 
-console.log("Start script");
+
 var data = "";
 
 client.on("message", async (message) => {
-  console.log("");
-  console.log("------");
-  console.log("");
-
   m_guild = message.guild;
   m_author = message.author.toString().replace("<@", "").replace(">", "");
   m_date = new Date(message.createdTimestamp).toISOString();
