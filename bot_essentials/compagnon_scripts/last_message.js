@@ -76,6 +76,10 @@ client.on("message", async (message) => {
     filePath,
     JSON.stringify(data, null, 4)
   );
+
+  console.log("")
+  console.log("------")
+  console.log("")
 });
 client.login(token);
 
