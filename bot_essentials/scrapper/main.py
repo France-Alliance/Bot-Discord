@@ -48,14 +48,14 @@ if platform.node() == "OSchell-Laptop": #OSchell-Laptop || LAPTOP-KRONOSDEV || r
     path = SYSTEM_ENV["CHROMEDRIVER_PATH"]
 
 if platform.node() == "raspberrypi":
-    date_str="/data/"
+    date_str="/scrap_essentials/data/"
 else:
-    date_str="\\data\\"
+    date_str="\\scrap_essentials\\data\\"
 
 # if platform.system() != "Windows":
 #    path = os.path.abspath("chromedriver-v9.4.4-linux-x64/chromedriver")
 def Alliance():
-    if not os.path.exists(f"./data/{date}.json"):
+    if not os.path.exists(f"./scrap_essentials/data/{date}.json"):
         with webdriver.Chrome(executable_path=path, options=options) as driver:
             def connect():
                 driver.find_element_by_id('username').send_keys(email)
