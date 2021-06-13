@@ -1,7 +1,6 @@
 # File pattern
 token.*
 infos.*
-.history/.json
 .env
 creds.json
 
@@ -11,9 +10,8 @@ node_modules/
 **/Archive/*.json
 **/scrapper/*.json
 **/__pycache__/
-*.pyc
+**.pyc
 
-/bot_essentials/scrapper/__pycache__/**.pyc
 
 
 bot_essentials/compagnon_scripts/lm_data/*.json

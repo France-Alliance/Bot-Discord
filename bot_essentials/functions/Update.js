@@ -5,6 +5,7 @@ const shell = require("shelljs");
 const time = require(`./Time`);
 const chalk = require("chalk");
 const os = require('os')
+const path = require("path");
 
 function update_bot() {
   cron.schedule("00 03 * * *", () => {
@@ -25,7 +26,7 @@ function update_bot() {
 }
 
 function data_feed() {
-  cron.schedule("00 04 * * *", () => {
+  cron.schedule("00 02 * * *", () => {
 
     if (os.hostname() == "raspberrypi") {
       options = {
@@ -37,8 +38,8 @@ function data_feed() {
         mode: "text",
       };
     }
-
-    let pyshell = new PythonShell("NewScrapper/main.py", options);
+    
+    let pyshell = new PythonShell(path.join(__dirname, "../scrapper/main.py"), options);
 
     pyshell.on("message", (res) => {
       if (res.match(regex)) {
@@ -58,8 +59,8 @@ function data_feed() {
 
         nameFile = null;
         finnish = true;
-
-        pyshell = new PythonShell("NewScrapper/Utils.py");
+        
+        pyshell = new PythonShell(path.join(__dirname, "../scrapper/Utils.py"), options);
 
         pyshell.on("message", (res) => {
           //console.log("File Name 2 : " + res);

@@ -1,6 +1,7 @@
 const date = require(`../functions/Time`);
 const { PythonShell } = require("python-shell");
-const os=require('os')
+const os = require('os')
+const path = require("path");
 
 let nameFile = null,
   finnish = false;
@@ -31,7 +32,7 @@ module.exports = {
           };
     }
     
-    let pyshell = new PythonShell("../../bot_essentials/scrapper/Args.py", options);
+    let pyshell = new PythonShell(path.join(__dirname, "../../bot_essentials/scrapper/Args.py"), options);
 
     pyshell.on("message", (res) => {
       if (res.match(regex)) {
@@ -67,8 +68,8 @@ module.exports = {
 
         nameFile = null;
         finnish = true;
-
-        pyshell = new PythonShell("../../bot_essentials/scrapper/Utils.py");
+       
+        pyshell = new PythonShell( path.join(__dirname, "../../bot_essentials/scrapper/Utils.py"), options);
 
         pyshell.on("message", (res) => {
           //console.log("File Name 2 : " + res);
