@@ -29,7 +29,7 @@ pip install requirements.txt
 ```
 
 
-### create "token.json"
+### create "token.json" in bot_essentials
 
 ```json
 {
@@ -37,7 +37,7 @@ pip install requirements.txt
 }
 ```
 
-### create ".env"
+### create ".env" in  bot_essentials
 
 ```
 PY_EMAIL_ACCOUNT_1="YOUR_AM2_EMAIL"
