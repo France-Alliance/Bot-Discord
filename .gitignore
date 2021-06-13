@@ -8,15 +8,11 @@ creds.json
 node_modules/
 **/data/*.json
 **/Archive/*.json
-**/scrapper/*.json
 **/__pycache__/
-**.pyc
-
-
-
-bot_essentials/compagnon_scripts/lm_data/*.json
+**/lm_data/*.json
 
 # Execptions
 
 !token.js
 !infos.js
+!misc/[ARCHIVES]/scrapper/data
