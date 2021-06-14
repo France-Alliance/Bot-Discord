@@ -37,7 +37,7 @@ pip install requirements.txt
 }
 ```
 
-### create ".env" in  bot_essentials
+### create ".env" in bot_essentials
 
 ```
 PY_EMAIL_ACCOUNT_1="YOUR_AM2_EMAIL"
