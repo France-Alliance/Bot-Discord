@@ -35,10 +35,10 @@ module.exports = {
     let pyshell = new PythonShell(path.join(__dirname, "../../bot_essentials/scrapper/Args.py"), options);
 
     pyshell.on("message", (res) => {
-      console.log("res: "+res)
+      //console.log("res: "+res)
       if (res/*.match(regex)*/) {
         //var regex = /NewScrapper\/data\/.*\.json/gm;
-        console.log("File Name : " + res/*.match(regex)*/);
+        //console.log("File Name : " + res/*.match(regex)*/);
         nameFile = res/*.replace("File Name : ", "");*/
       } else {
         console.log(res);
@@ -46,7 +46,6 @@ module.exports = {
     });
 
     pyshell.end((err, code, signal) => {
-      console.log("nameFile: "+ nameFile.split("\\")[(nameFile.split("\\").length - 1)])
       if (err) {
         throw err;
       }
