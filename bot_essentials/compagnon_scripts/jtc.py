@@ -1,8 +1,10 @@
+from datetime import datetime
 from pandas import DataFrame
+import plateforme
 import pandas
 import json
-from datetime import datetime
 import os
+
 
 c = [
     [
@@ -48,7 +50,7 @@ global al
 al = []
 
 date = datetime.now().strftime("%d-%m-%Y")
-if os.environ['COMPUTERNAME'] == "raspberrypi" :
+if platform.node() == "raspberrypi":
     file = open(os.path.abspath(f"bot_essentials/scrapper/scrap_essentials/data/{date}.json"), 'r')
 else:
     file = open(os.path.abspath(f"../../bot_essentials/scrapper/scrap_essentials/data/{date}.json"), 'r')
@@ -156,7 +158,7 @@ for i in range(2):
     print(DataFrame(C[i]))
     for valeur in C[i]:
        print(f"Size {valeur}: {len(C[i].get(valeur))}")
-    if os.environ['COMPUTERNAME'] == "raspberrypi" :
+    if platform.node() == "raspberrypi":
         name = f'bot_essentials/compagnon_scripts/csv_data/XCEL{kb}.csv'
     else:
         name = f'../../bot_essentials/compagnon_scripts/csv_data/XCEL{kb}.csv'
