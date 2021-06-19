@@ -18,11 +18,13 @@ module.exports = {
         mode: "text",
         args: [args],
       };
+      name = "bot_essentials/compagnon_scripts/csv_data/"
     } else {
       options = {
         mode: "text",
         args: [args],
       };
+      name = "../../bot_essentials/compagnon_scripts/csv_data/"
     }
 
     let pyshell = new PythonShell(
@@ -40,8 +42,8 @@ module.exports = {
       } else {
         message.channel.send({
           files: [
-            "../../bot_essentials/compagnon_scripts/csv_data/XCEL1.csv",
-            "../../bot_essentials/compagnon_scripts/csv_data/XCEL2.csv",
+            `${name}XCEL1.csv`,
+            `${name}XCEL2.csv`,
           ],
         });
       }
