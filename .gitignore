@@ -10,7 +10,7 @@ node_modules/
 **/Archive/*.json
 **/__pycache__/
 **/lm_data/*.json
-
+**/csv_data/*.csv
 # Execptions
 
 !token.js
