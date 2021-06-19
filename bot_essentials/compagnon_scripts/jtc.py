@@ -1,10 +1,9 @@
 from datetime import datetime
 from pandas import DataFrame
-import plateforme
+import plateform
 import pandas
 import json
 import os
-
 
 c = [
     [
