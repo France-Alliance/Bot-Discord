@@ -1,3 +1,4 @@
 selenium
 dotenv
 progress
+pandas

@@ -3,24 +3,7 @@ import pandas
 import json
 from datetime import datetime
 import os
-# ------------
-"""
 
-# ligne puis colonnne
-file = open('C:/Users/O\'Schell wokspace/Google Drive/Famille/Schell/Gaby/For fun/Code/Projects/NodeJS/AM2_Discord_Bot/a.csv', 'r')
-lc = 1
-for ligne in file:
-    print("ligne ", lc)
-    ligne = ligne.split(";")
-    cc = 1
-    for colonne in ligne:
-        print("colonne ", cc)
-        print(colonne)
-        cc += 1
-    lc += 1
-
-"""
-# ------------
 c = [
     [
         "Alliance",
@@ -65,8 +48,10 @@ global al
 al = []
 
 date = datetime.now().strftime("%d-%m-%Y")
-
-file = open(os.path.abspath(f"../../bot_essentials/scrapper/scrap_essentials/data/{date}.json"), 'r')
+if os.environ['COMPUTERNAME'] == "raspberrypi" :
+    file = open(os.path.abspath(f"bot_essentials/scrapper/scrap_essentials/data/{date}.json"), 'r')
+else:
+    file = open(os.path.abspath(f"../../bot_essentials/scrapper/scrap_essentials/data/{date}.json"), 'r')
 
 Alliances = json.load(file).get("Alliance")
 
@@ -171,119 +156,9 @@ for i in range(2):
     print(DataFrame(C[i]))
     for valeur in C[i]:
        print(f"Size {valeur}: {len(C[i].get(valeur))}")
+    if os.environ['COMPUTERNAME'] == "raspberrypi" :
+        name = f'bot_essentials/compagnon_scripts/csv_data/XCEL{kb}.csv'
+    else:
+        name = f'../../bot_essentials/compagnon_scripts/csv_data/XCEL{kb}.csv'
        
-    DataFrame(C[i]).to_csv(os.path.abspath(f'../../bot_essentials/compagnon_scripts/csv_data/XCEL{kb}.csv'), index=None, encoding='utf-8', sep=';')
-    #pandas.read_csv(f'XCEL{kb}.csv')
-
-"""
-for alliance in Alliances:
-    data[0].append([])
-
-    print()
-    print(f"data[0]: {data[0]}")
-    print()
-
-    data[0][nb_a].append(alliance.get("Name"))
-    al.append(alliance.get("Name"))
-    data[0][nb_a].append(alliance.get("ID"))
-    data[0][nb_a].append(alliance.get("Classement"))
-
-    general = alliance.get("Profile").get("General")
-    for valeur in general.values():
-       data[0][nb_a].append(valeur)
-
-    hub = alliance.get("Profile").get("Hub")
-    for valeur in hub.values():
-       data[0][nb_a].append(valeur)
-
-    ag = alliance.get("Profile").get("AG")
-    for valeur in ag.values():
-       data[0][nb_a].append(valeur)
-
-    net_stat = alliance.get("Networks").get("Statistique")
-    for valeur in net_stat.values():
-       data[0][nb_a].append(valeur)
-    
-    data[0][nb_a].append(alliance.get("Profile").get("R&D"))
-
-    print()
-    print(f"data[0] #2: {data[0]}")
-    print()
-
-    nb_a+=1
-
-nb_a=0
-for alliance in Alliances:
-    data[1].append([])
-
-    print()
-    print(f"data[1]: {data[1]}")
-    print()
-
-    data[1][nb_a].append(alliance.get("Name"))
-
-    members = alliance.get("Members")
-    for member in members:
-        print(f"member: {member}")
-        for mbr_key in member:
-            temp=[]
-
-
-            print(f"mbr_key: {mbr_key}")
-            if mbr_key == "Star" :
-                    star = member.get("Star")
-                    for valeur in star.values():
-                        #print(f"star: {valeur}")
-                        temp.append(valeur)
-                    data[1][nb_a].append(temp)
-            elif mbr_key == "Hubs" : 
-                    hubs = member.get("Hubs")
-                    for valeur in hubs:
-                        print(f"hub: {valeur}")
-                        temp.append(valeur)
-                    data[1][nb_a].append(temp)
-        
-
-            #data[1][nb_a].append(valeur)
-            #print(f"valeur: {mbr_key}")
-        
-
-
-    print()
-    print(f"data[1] #2: {data[1]}")
-    print()
-
-    nb_a+=1
-    
-#print(data[0])
-
-
-for j in range(len(al)):
-        print(data[0][j])
-
-
-
-for h in range(len(c)):
-    l = c[h]
-    s_l = len(l)
-    #print("Data Frame: ",h)
-    for i in range(len(l)):
-        temp = []
-        l2 = l[i]
-        name = "c"+str(i)
-        temp.append([l2][0])
-        #print("Colonne: ",i)
-        for j in range(len(al)):
-            temp.append(data[h][j][i])
-            #print("Ligne: ",j,"=>",data[h][j][i],f"({temp})")
-        C[h][f"{name}"] = temp
-        
-        #print(f"C[{h}]: ",C[h])
-        
-        
-
-for k in range(2):
-    kb = k+1
-    #print(f"C[{k}]: ",C[k])
-    DataFrame(C[k]).to_csv(f'XCEL{kb}.csv', index=None, header=False, encoding='utf-8', sep=';')
-"""
+    DataFrame(C[i]).to_csv(os.path.abspath(name), index=None, encoding='utf-8', sep=';')
