@@ -1,6 +1,6 @@
 from datetime import datetime
 from pandas import DataFrame
-import plateform
+import platform
 import pandas
 import json
 import os
