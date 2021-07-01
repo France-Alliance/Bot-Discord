@@ -10,8 +10,7 @@ module.exports = {
   usage: "",
   cooldown: 5,
   execute(message, args) {
-    message.channel.send("Gathering the data...\rPlease wait");
-
+    
     if (os.hostname() == "raspberrypi") {
       options = {
         pythonPath: "/usr/bin/python3",
