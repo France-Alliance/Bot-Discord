@@ -6,7 +6,7 @@ module.exports = {
   name: "lm",
   description: "Display a liste of timestamp of last message by users",
   aliases: ["LM"],
-  usage: "<>",
+  usage: "<> <ago> <warn> <json> <@user>",
   cooldown: 1,
   execute(message, args) {
     if (args == "ago") {
@@ -143,8 +143,20 @@ module.exports = {
         }
       }
       //console.log();
-    } else if (args == "warn"){
-      update.lm(message)
+    } else if (args == "warn") {
+      update.lm(message);
+    } else if (args == "json") {
+      message.channel.send(
+        ` :arrow_right: data of ${message.guild} is ready !`,
+        {
+          files: [
+            path.join(
+              __dirname,
+              `../../bot_essentials/compagnon_scripts/lm_data/${message.guild.id}.json`
+            ),
+          ],
+        }
+      );
     } else if (message.mentions.users.size === 0) {
       const data = JSON.parse(
         fs.readFileSync(
