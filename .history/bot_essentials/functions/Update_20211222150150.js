@@ -188,11 +188,11 @@ function lm(message) {
       var date = fcdate(date[1] - date[2], false);
       //console.log(`D:${date[3]}\nM:${date[4]}\nY:${date[5]}`)
       if (date[5] > 0) {
-        var mydatestr = `${username} send his last massage a long long time ago (${date[5]} Year(s) >= 15 Days) `;
+        var mydatestr = `${username} send his last massage a long long time ago (${date[3]} Day(s) >= 15 Days)  `;
       } else if ((date[4] <= 12) & (date[4] > 0)) {
         var mydatestr = `${username} send his last massage a long long time ago (${date[4]} Month(s) >= 15 Days)`;
       } else if (date[3] <= 31) {
-        var mydatestr = `${username} send his last massage a long long time ago (${date[3]} Day(s) >= 15 Days)`;
+        var mydatestr = `${username} send his last massage a long long time ago (${date[5]} Year(s) >= 15 Days)`;
       }
       //console.log(`D:${date[3]}  M:${date[4]}  Y:${date[5]}   ${username} `);
       message.channel.send(`${mydatestr}`);

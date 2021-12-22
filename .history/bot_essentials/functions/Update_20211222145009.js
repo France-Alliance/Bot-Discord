@@ -147,6 +147,7 @@ function lm(message) {
 
   for (i in data) {
     var date = fcdate(data[i], true);
+    console.log(i)
 
     t_n = date[1]; //mtn
     t = date[2]; //msg
@@ -171,32 +172,31 @@ function lm(message) {
 
     //console.log(message.guild.member(i).nickname)
     if (message.guild.member(i) == null) {
-      //console.log(`User with ID ${message.guild.member(i)} has already left the server, can't do anything`)
-      //message.channel.send(`<@!${i}> ${i}`);
-      username=''
-      nc = `∅ ${username}(${i})`; //namecheck
+      console.log(`WTF ${message.guild.member(i)}`)
+      message.channel.send(`<@!${i}> ${i}`);
     } else if (message.guild.member(i).nickname != null) {
       username = message.guild.member(i).nickname;
-      nc = `N ${username}(${i})`; //namecheck
+      nc = `Nick ${username}(${i})`; //namecheck
+      console.log(nc)
     } else {
       username = message.guild.member(i).user.username;
-      nc = `U ${username}(${i})`; //namecheck
+      nc = `User ${username}(${i})`; //namecheck
+      console.log(nc)
     }
-    //console.log(nc)
-    if (r >= 1296000000 & username != '') {
+    if (r >= 1296000000) {
       //console.log("Matched 15")
       var date = fcdate(date[1] - date[2], false);
       //console.log(`D:${date[3]}\nM:${date[4]}\nY:${date[5]}`)
       if (date[5] > 0) {
-        var mydatestr = `${username} send his last massage a long long time ago (${date[5]} Year(s) >= 15 Days) `;
+        var mydatestr = `${username} send his last massage a long long time ago (${date[3]} Day(s) >= 15 Days)  `;
       } else if ((date[4] <= 12) & (date[4] > 0)) {
         var mydatestr = `${username} send his last massage a long long time ago (${date[4]} Month(s) >= 15 Days)`;
       } else if (date[3] <= 31) {
-        var mydatestr = `${username} send his last massage a long long time ago (${date[3]} Day(s) >= 15 Days)`;
+        var mydatestr = `${username} send his last massage a long long time ago (${date[5]} Year(s) >= 15 Days)`;
       }
       //console.log(`D:${date[3]}  M:${date[4]}  Y:${date[5]}   ${username} `);
-      message.channel.send(`${mydatestr}`);
-    } else if (r >= 604800000 & username != '') {
+      //message.channel.send(`${mydatestr}`);
+    } else if (r >= 604800000) {
       //console.log("Matched 7")
       var date = fcdate(r, false);
       //console.log(`D:${date[3]}`)

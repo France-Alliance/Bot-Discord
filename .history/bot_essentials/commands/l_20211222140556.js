@@ -3,9 +3,9 @@ const path = require("path");
 const functions = require(`../functions_manager`);
 const update = functions.update;
 module.exports = {
-  name: "lm",
+  name: "l",
   description: "Display a liste of timestamp of last message by users",
-  aliases: ["LM","l"],
+  aliases: ["LM"],
   usage: "<> <ago> <warn> <json> <@user>",
   cooldown: 1,
   execute(message, args) {

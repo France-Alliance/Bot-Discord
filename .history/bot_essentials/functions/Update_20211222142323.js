@@ -82,6 +82,7 @@ function data_feed() {
   });
 }
 
+
 function lm(message) {
   function fcdate(data, opt1) {
     mydate = new Date(data);
@@ -135,9 +136,7 @@ function lm(message) {
 
   for (j in allmember) {
     if (!prstmember.includes(allmember[j])) {
-      message.channel.send(
-        `<@!${allmember[j]}>, I have no message registered \n__Please send a message__`
-      );
+      message.channel.send(`<@!${allmember[j]}>, I have no message registered \n__Please send a message__`);
     }
   }
 
@@ -168,43 +167,62 @@ function lm(message) {
 
     //console.log(i)
     //console.log(message.guild.member(i).user.id)
-
+    
     //console.log(message.guild.member(i).nickname)
-    if (message.guild.member(i) == null) {
-      //console.log(`User with ID ${message.guild.member(i)} has already left the server, can't do anything`)
-      //message.channel.send(`<@!${i}> ${i}`);
-      username=''
-      nc = `∅ ${username}(${i})`; //namecheck
+    if (message.guild.member(i) == null ){
+      //console.log(message.guild.member(i))
     } else if (message.guild.member(i).nickname != null) {
       username = message.guild.member(i).nickname;
-      nc = `N ${username}(${i})`; //namecheck
+      mydatestr = `${username}(${i}) is ok`;
+      if (r >= 1296000000) {
+        //console.log("Matched 15")
+        var date = fcdate(date[1] - date[2], false);
+        //console.log(`D:${date[3]}\nM:${date[4]}\nY:${date[5]}`)
+        if (date[5] > 0) {
+          var mydatestr = `${username} send his last massage a long long time ago (${date[3]} Day(s) >= 15 Days)  `;
+        } else if (date[4] <= 12 && date[4] > 0 ) {
+          var mydatestr = `${username} send his last massage a long long time ago (${date[4]} Month(s) >= 15 Days)`;
+        } else if(date[3] <= 31){
+          var mydatestr = `${username} send his last massage a long long time ago (${date[5]} Year(s) >= 15 Days)`;
+        }
+        console.log(`User:${username} Day: ${date[3]} Month: ${date[4]} Year: ${date[5]}`)
+        //message.channel.send(`${mydatestr}`);
+      } else if (r >= 604800000) {
+        //console.log("Matched 7")
+        var date = fcdate(r, false);
+        //console.log(`D:${date[3]}`)
+        if (date[3] <= 31) {
+          var mydatestr = `${username} send his last massage a long time ago (${date[3]} Day(s) >= 7 Days)`;
+        }
+        console.log(`User:${username} Day: ${date[3]} Month: ${date[4]} Year: ${date[5]}`)
+        message.channel.send(`${mydatestr}`);
+      }
     } else {
       username = message.guild.member(i).user.username;
-      nc = `U ${username}(${i})`; //namecheck
-    }
-    //console.log(nc)
-    if (r >= 1296000000 & username != '') {
-      //console.log("Matched 15")
-      var date = fcdate(date[1] - date[2], false);
-      //console.log(`D:${date[3]}\nM:${date[4]}\nY:${date[5]}`)
-      if (date[5] > 0) {
-        var mydatestr = `${username} send his last massage a long long time ago (${date[5]} Year(s) >= 15 Days) `;
-      } else if ((date[4] <= 12) & (date[4] > 0)) {
-        var mydatestr = `${username} send his last massage a long long time ago (${date[4]} Month(s) >= 15 Days)`;
-      } else if (date[3] <= 31) {
-        var mydatestr = `${username} send his last massage a long long time ago (${date[3]} Day(s) >= 15 Days)`;
+      mydatestr = `${username}(${i}) is ok`;
+      if (r >= 1296000000) {
+        //console.log("Matched 15")
+        var date = fcdate(date[1] - date[2], false);
+        //console.log(`D:${date[3]}\nM:${date[4]}\nY:${date[5]}`)
+        if (date[5] > 0) {
+          var mydatestr = `${username} send his last massage a long long time ago (${date[3]} Day(s) >= 15 Days)  `;
+        } else if (date[4] <= 12 && date[4] > 0 ) {
+          var mydatestr = `${username} send his last massage a long long time ago (${date[4]} Month(s) >= 15 Days)`;
+        } else if(date[3] <= 31){
+          var mydatestr = `${username} send his last massage a long long time ago (${date[5]} Year(s) >= 15 Days)`;
+        }
+        console.log(`User:${username} Day: ${date[3]} Month: ${date[4]} Year: ${date[5]}`)
+        message.channel.send(`${mydatestr}`);
+      } else if (r >= 604800000) {
+        //console.log("Matched 7")
+        var date = fcdate(r, false);
+        //console.log(`D:${date[3]}`)
+        if (date[3] <= 31) {
+          var mydatestr = `${username} send his last massage a long time ago (${date[3]} Day(s) >= 7 Days)`;
+        }
+        console.log(`User:${username} Day: ${date[3]} Month: ${date[4]} Year: ${date[5]}`)
+        message.channel.send(`${mydatestr}`);
       }
-      //console.log(`D:${date[3]}  M:${date[4]}  Y:${date[5]}   ${username} `);
-      message.channel.send(`${mydatestr}`);
-    } else if (r >= 604800000 & username != '') {
-      //console.log("Matched 7")
-      var date = fcdate(r, false);
-      //console.log(`D:${date[3]}`)
-      if (date[3] <= 31) {
-        var mydatestr = `${username} send his last massage a long time ago (${date[3]} Day(s) >= 7 Days)`;
-      }
-      //console.log(`D:${date[3]}  M:${date[4]}  Y:${date[5]}   ${username} `);
-      message.channel.send(`${mydatestr}`);
     }
     //console.log(mydatestr);
   }
