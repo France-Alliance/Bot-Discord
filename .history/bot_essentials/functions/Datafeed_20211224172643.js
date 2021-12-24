@@ -48,7 +48,7 @@ async function dtfd(client) {
     );
     fs.close;
 
-    //console.log(client.channels.cache.get(`802199511102783509`))
+    console.log(client.channels.cache.get(`802199511102783509`))
     console.log(
       chalk.green(
         `--------------------------------------------------------------------------------------------------`
