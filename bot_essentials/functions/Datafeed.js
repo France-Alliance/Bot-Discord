@@ -2,6 +2,7 @@ const date = require(`./Time`);
 const cron = require("node-cron");
 const chalk = require("chalk");
 const fs = require("fs");
+const os = require("os");
 
 async function sleep(ms) {
   return new Promise((resolve) => {
@@ -11,9 +12,15 @@ async function sleep(ms) {
 
 
 async function dtfd(client) {
-  cron.schedule("30 06 * * *", () => {
+  cron.schedule("48 16 * * *", () => {
+    if (os.hostname() == "raspberrypi") {
+      path=`./bot_essentials/scrapper/scrap_essentials/data/${date.date()}-${date.month()}-${date.year()}.json`
+
+    } else {
+      path=`../../bot_essentials/scrapper/scrap_essentials/data/${date.date()}-${date.month()}-${date.year()}.json`
+    }
     fs.readFile(
-      `../../bot_essentials/scrapper/scrap_essentials/data${date.date()}-${date.month()}-${date.year()}.json`,
+      path,
       "utf8",
       (err, data) => {
         if (err) {
@@ -65,7 +72,7 @@ async function dtfd(client) {
       .get(`802199511102783509`)
       .send({
         files: [
-          `../../bot_essentials/scrapper/data/${date.date()}-${date.month()}-${date.year()}.json`,
+          path,
         ],
       });
     console.log(`The command "am2d" was automatically & succesfully used `);
