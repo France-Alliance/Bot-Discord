@@ -6,7 +6,11 @@ const process = require('process');
 
 const { token } = require(`../token.json`);
 
-const client = new discord.Client();
+const client = new discord.Client({ intents: [new discord.Intents(32767)],
+  makeCache: discord.Options.cacheWithLimits({
+		MessageManager: 100
+	}),
+});
 
 ts = Date.now();
 
