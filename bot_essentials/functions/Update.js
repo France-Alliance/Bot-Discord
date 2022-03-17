@@ -27,7 +27,7 @@ function update_bot() {
 }
 
 function data_feed() {
-  cron.schedule("44 10 * * *", () => {
+  cron.schedule("00 6 * * *", () => {
     if (os.hostname() == "raspberrypi") {
       options = {
         pythonPath: "/usr/bin/python3",
