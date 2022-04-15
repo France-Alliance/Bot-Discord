@@ -33,7 +33,7 @@ async function dtfd(client) {
           al = databases.Alliance;
           for (i in al) {
             a= `**__Nom: ${al[i].Name}__**\nID: ${al[i].ID}\nClassement: ${al[i].Classement}\n${JSON.stringify(al[i].Profile, null, 2)}\n${JSON.stringify(al[i].Networks,null,2)}\n\n`;
-            client.channels.cache.get(`802199511102783509`).send(a);
+            //client.channels.cache.get(`802199511102783509`).send(a);
             /*console.log(`Name: ${al[i].Name}`)
             console.log(`ID: ${al[i].ID}`)
             console.log(`Classement: ${al[i].Classement}`)
