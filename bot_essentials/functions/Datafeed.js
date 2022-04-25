@@ -15,10 +15,11 @@ async function dtfd(client) {
   cron.schedule("30 06 * * *", () => {
     if (os.hostname() == "raspberrypi") {
       path=`./bot_essentials/scrapper/scrap_essentials/data/${date.date()}-${date.month()}-${date.year()}.json`
-
     } else {
       path=`../../bot_essentials/scrapper/scrap_essentials/data/${date.date()}-${date.month()}-${date.year()}.json`
     }
+    
+    /*
     fs.readFile(
       path,
       "utf8",
@@ -34,26 +35,26 @@ async function dtfd(client) {
           for (i in al) {
             a= `**__Nom: ${al[i].Name}__**\nID: ${al[i].ID}\nClassement: ${al[i].Classement}\n${JSON.stringify(al[i].Profile, null, 2)}\n${JSON.stringify(al[i].Networks,null,2)}\n\n`;
             //client.channels.cache.get(`802199511102783509`).send(a);
-            /*console.log(`Name: ${al[i].Name}`)
+            console.log(`Name: ${al[i].Name}`)
             console.log(`ID: ${al[i].ID}`)
             console.log(`Classement: ${al[i].Classement}`)
             console.log(al[i].Profile)
-            console.log(al[i].Networks)+
-            */
+            console.log(al[i].Networks)
             //console.log(al[i])
           }
           //console.log(a)
   
           // print all databases
-          /*for (i in databases) {
+          for (i in databases) {
               console.log(`${i.name}: ${i.type}`);
-          };*/
+          };
   
         }
         
       }
     );
     fs.close;
+    */
 
     //console.log(client.channels.cache.get(`802199511102783509`))
     console.log(
