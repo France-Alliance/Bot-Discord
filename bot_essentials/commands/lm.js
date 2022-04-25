@@ -146,17 +146,14 @@ module.exports = {
     } else if (args == "warn") {
       update.lm(message);
     } else if (args == "json") {
-      message.channel.send(
-        ` :arrow_right: data of ${message.guild} is ready !`,
-        {
-          files: [
-            path.join(
-              __dirname,
-              `../../bot_essentials/compagnon_scripts/lm_data/${message.guild.id}.json`
-            ),
-          ],
-        }
-      );
+      var path = "";
+      if (os.hostname() == "raspberrypi") {
+        path=`./bot_essentials/compagnon_scripts/lm_data/${message.guild.id}.json`
+      } else {
+        path=`../../bot_essentials/compagnon_scripts/lm_data/${message.guild.id}.json`
+      }
+      message.reply(` :arrow_right: data of ${message.guild} is ready !`);
+      message.channel.send({files: [path,],});
     } else if (message.mentions.users.size === 0) {
       const data = JSON.parse(
         fs.readFileSync(
